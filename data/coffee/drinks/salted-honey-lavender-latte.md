@@ -11,6 +11,10 @@ ingredients:
   - 1 jar honey [pantry]
   - 1 packet culinary lavender [specialty]
 pantry: [flaky salt, granulated sugar]
+photo_url: https://images.pexels.com/photos/15023076/pexels-photo-15023076.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
+photo_credit: Julissa Pires / Pexels
+photo_source: https://www.pexels.com/photo/cup-of-coffee-beside-a-jar-of-honey-15023076/
+photo_pinned: true
 syrup: salted-honey-lavender
 crumbles: [pistachio-rose, espresso-sugar]
 tags: [floral, summer, easy-to-overdo]

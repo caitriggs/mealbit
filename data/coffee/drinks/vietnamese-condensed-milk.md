@@ -10,6 +10,10 @@ ingredients:
   - 1 can sweetened condensed milk [pantry]
   - 1 bag dark-roast coffee, preferably with chicory [specialty]
 pantry: []
+photo_url: https://images.pexels.com/photos/31990173/pexels-photo-31990173.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
+photo_credit: 🇻🇳🇻🇳Nguyễn Tiến Thịnh 🇻🇳🇻🇳 / Pexels
+photo_source: https://www.pexels.com/photo/vietnamese-iced-coffee-and-vintage-camera-on-wooden-table-31990173/
+photo_pinned: true
 syrup: null
 crumbles: []
 tags: [iced, cheapest, strong, four-ingredients]

@@ -11,6 +11,10 @@ ingredients:
   - 1 stick butter [dairy]
   - 1 vanilla bean || 1 tbsp vanilla extract [pantry]
 pantry: [brown sugar, flaky salt]
+photo_url: https://images.pexels.com/photos/6166821/pexels-photo-6166821.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
+photo_credit: Olha Ruskykh / Pexels
+photo_source: https://www.pexels.com/photo/close-up-shot-of-a-glass-of-coffee-6166821/
+photo_pinned: true
 syrup: null
 crumbles: [brown-butter-crumb, candied-hazelnut, espresso-sugar]
 tags: [small, strong, technique, purist]

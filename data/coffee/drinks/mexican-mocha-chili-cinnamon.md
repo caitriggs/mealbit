@@ -12,6 +12,10 @@ ingredients:
   - 1 box Mexican drinking chocolate (Abuelita or Ibarra) [specialty]
   - 1 ancho chile || 1 tsp ancho chile powder [specialty]
 pantry: [cinnamon, cocoa powder, granulated sugar, flaky salt, vanilla extract]
+photo_url: https://images.pexels.com/photos/11048259/pexels-photo-11048259.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
+photo_credit: Jana Ohajdova / Pexels
+photo_source: https://www.pexels.com/photo/close-up-photo-of-a-glass-cup-with-brown-powder-11048259/
+photo_pinned: true
 syrup: null
 crumbles: [cocoa-nib, spiced-oat-streusel, espresso-sugar]
 tags: [chocolate, spicy, warming, january]

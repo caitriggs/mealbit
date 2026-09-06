@@ -155,7 +155,7 @@ def main():
                     help="also re-do photos currently borrowed from Openverse")
     a = ap.parse_args()
 
-    pool = L.load_dinners() + L.load_lunches()
+    pool = L.load_dinners() + L.load_lunches() + L.load_drinks()
     if a.sheet:
         r = next((x for x in pool if x["slug"] == a.sheet), None)
         if not r:

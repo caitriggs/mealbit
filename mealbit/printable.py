@@ -486,46 +486,66 @@ def render_cards(plan):
     one file that has to stay HTML because it is tapped in the aisle.
     """
     sheets = ""
-    # A boxed dinner has no recipe of ours to print — the kit brings its own card. Cards
-    # are only for the nights actually being cooked from this library.
-    pairs = [(n, r) for n, r in zip(plan["cook_nights"], plan["dinners"])
-             if not r.get("external")]
-    # Then the lunches, which are cooked and built in this kitchen too and had no card at
-    # all. Sunday batches first, because that is the order you do the work in: everything
-    # batched on Sunday, then the five-minute builds through the week.
-    order = {"sunday-prep": 0, "assembly": 1}
-    for r in sorted(plan["lunches"], key=lambda x: order.get(x.get("lunch_style"), 9)):
-        pairs.append(("Sunday batch" if r.get("lunch_style") == "sunday-prep"
-                      else "5-minute build", r))
-    # Then the coffee: each featured drink, and whatever the box needs made this week.
-    # "Make miso caramel syrup" was in the email for months with the method printed
-    # nowhere; the drink's card says what goes in the cup and the syrup's says how the
-    # jar gets filled.
-    for c in plan.get("coffee") or []:
-        d = dict(c["drink"], _syrup=(c["syrup"], c["syrup_needed"][0]),
-                 _crumble=(c["crumble"], c["crumble_needed"][0]))
-        pairs.append(("Coffee", d))
-    for t in plan.get("to_make") or []:
-        pairs.append((str(t.get("kind", "syrup")).capitalize(), t))
-    for i in range(0, len(pairs), 2):
-        two = pairs[i:i + 2]
-        cards = "".join(_card(n, r) for n, r in two)
-        # An odd number of dinners would otherwise leave a half-width sheet; pad so the
-        # cut line still lands on the centre of the page.
-        if len(two) == 1:
-            cards += '<div class="card"></div>'
-        # The cut markers come AFTER the cards: they are absolutely positioned so the
-        # order is invisible, but it keeps the first .card an actual :first-child, which
-        # is what draws the cut line.
-        sheets += (f'<div class="sheet">{cards}'
-                   f'<div class="cut top">&#9986;</div>'
-                   f'<div class="cut bot">&#9986;</div></div>')
+    for group in card_groups(plan):
+        for i in range(0, len(group), 2):
+            two = group[i:i + 2]
+            cards = "".join(_card(n, r) for n, r in two)
+            # An odd group would otherwise leave a half-width sheet; pad so the cut line
+            # still lands on the centre of the page.
+            if len(two) == 1:
+                cards += '<div class="card"></div>'
+            # The cut markers come AFTER the cards: they are absolutely positioned so the
+            # order is invisible, but it keeps the first .card an actual :first-child,
+            # which is what draws the cut line.
+            sheets += (f'<div class="sheet">{cards}'
+                       f'<div class="cut top">&#9986;</div>'
+                       f'<div class="cut bot">&#9986;</div></div>')
 
     ws, we = plan["week_start"], plan["week_end"]
     span = f'{ws.strftime("%b %-d")} – {we.strftime("%b %-d, %Y")}'
     return (f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
             f'<title>Mealbit cards — {E(span)}</title>'
             f'<style>{PRINT_CSS}</style></head><body>{sheets}</body></html>')
+
+
+def card_groups(plan):
+    """
+    The week's cards in print order, grouped so that a sheet never mixes kinds.
+
+    Three groups, each padded to a whole sheet: the meals (dinners in cooking order,
+    then Sunday batches, then the five-minute builds), the coffee drinks on a sheet of
+    their own, and whatever the syrup box needs made — so the two things you make once a
+    season come off one sheet and go in a drawer, and the drinks sheet lives by the
+    machine. The household asked for exactly that split.
+    """
+    # A boxed dinner has no recipe of ours to print — the kit brings its own card. Cards
+    # are only for the nights actually being cooked from this library.
+    meals = [(n, r) for n, r in zip(plan["cook_nights"], plan["dinners"])
+             if not r.get("external")]
+    # Then the lunches, which are cooked and built in this kitchen too and had no card at
+    # all. Sunday batches first, because that is the order you do the work in: everything
+    # batched on Sunday, then the five-minute builds through the week.
+    order = {"sunday-prep": 0, "assembly": 1}
+    for r in sorted(plan["lunches"], key=lambda x: order.get(x.get("lunch_style"), 9)):
+        meals.append(("Sunday batch" if r.get("lunch_style") == "sunday-prep"
+                      else "5-minute build", r))
+    # The coffee: each featured drink, with its photo in the header like a dinner's, and
+    # whatever the box needs made this week. "Make miso caramel syrup" was in the email
+    # for months with the method printed nowhere; the drink's card says what goes in
+    # the cup and the syrup's says how the jar gets filled.
+    drinks = []
+    for c in plan.get("coffee") or []:
+        d = dict(c["drink"], _syrup=(c["syrup"], c["syrup_needed"][0]),
+                 _crumble=(c["crumble"], c["crumble_needed"][0]))
+        drinks.append(("Coffee", d))
+    box = [(str(t.get("kind", "syrup")).capitalize(), t) for t in (plan.get("to_make") or [])]
+    return [g for g in (meals, drinks, box) if g]
+
+
+def sheet_count(plan):
+    """Sheets the cards come to: each group padded to whole sheets, two cards a sheet."""
+    return sum(-(-len(g) // 2) for g in card_groups(plan))
+
 
 
 # ---------------------------------------------------------------- the phone list

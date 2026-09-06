@@ -12,6 +12,10 @@ ingredients:
   - 1 bunch rosemary || dried rosemary [produce]
   - 1 orange || any orange [produce]
 pantry: [granulated sugar]
+photo_url: https://images.pexels.com/photos/33567051/pexels-photo-33567051.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
+photo_credit: Loriz E / Pexels
+photo_source: https://www.pexels.com/photo/refreshing-iced-coffee-with-citrus-garnish-in-vietnam-33567051/
+photo_pinned: true
 syrup: rosemary-honey
 crumbles: []
 tags: [iced, fizzy, no-milk, afternoon]

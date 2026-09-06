@@ -10,6 +10,10 @@ ingredients:
   - 1 carton barista oat milk [dairy]
   - 1 bag dark brown sugar [pantry]
 pantry: [cinnamon, vanilla extract, flaky salt]
+photo_url: https://images.pexels.com/photos/18142624/pexels-photo-18142624.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
+photo_credit: Denys Gromov / Pexels
+photo_source: https://www.pexels.com/photo/sweet-cocktail-on-glass-18142624/
+photo_pinned: true
 syrup: brown-sugar-cinnamon
 crumbles: [spiced-oat-streusel, espresso-sugar, cocoa-nib]
 tags: [iced, foamy, summer-staple, theatrical]
