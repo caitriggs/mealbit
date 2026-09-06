@@ -11,6 +11,10 @@ ingredients:
   - 1 jar honey [pantry]
   - 1 jar green cardamom pods [pantry]
 pantry: [granulated sugar]
+photo_url: https://images.pexels.com/photos/459489/pexels-photo-459489.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
+photo_credit: Pixabay / Pexels
+photo_source: https://www.pexels.com/photo/cup-of-coffee-on-saucer-459489/
+photo_pinned: true
 syrup: cardamom-honey
 crumbles: [pistachio-rose, candied-orange-cardamom, brown-butter-crumb]
 tags: [warming, floral, gateway-drink]

@@ -486,8 +486,7 @@ def test_cards_are_a_two_page_pdf():
     # Two recipes to a sheet. The count follows from the week — four dinners and five
     # lunches is five sheets — but the PDF's page count must always match the HTML's
     # sheet count, or `break-after` has started emitting a stray blank page.
-    want = -(-(len(plan["dinners"]) + len(plan["lunches"])
-               + len(plan["coffee"]) + len(plan["to_make"])) // 2)
+    want = PR.sheet_count(plan)
     check(topdf.page_count(pdf) == want,
           f"the cards should be {want} sheets, got {topdf.page_count(pdf)}")
 
@@ -569,7 +568,9 @@ def test_every_recipe_has_a_photo():
     # sub standing in for her giardiniera sub, and the card prints a labelled rule rather
     # than an empty grey box. It is capped, because "pending" must stay a queue and not
     # become the way the library works.
-    pool = L.load_dinners() + L.load_lunches()
+    # Drinks carry a photo too: the coffee card's header is a photo, like a dinner's.
+    # Syrups and crumbles don't — a jar of syrup is not a picture anyone needs.
+    pool = L.load_dinners() + L.load_lunches() + L.load_drinks()
     pending = [r for r in pool if r.get("photo_pending")]
     # The queue is 4 deep on the upstream, where every recipe is curated. A household's
     # copy gets recipes written at setup to fit its taste, usually before it has a photo
@@ -685,11 +686,21 @@ def test_printables_render():
     # Two recipes per sheet, cut down the middle. Every dinner cooked from this library
     # and every lunch gets a card — the household asked for the lunch cards, and the two dishes
     # batched on Sunday are real cooking that existed only in the email.
-    n = len(plan["dinners"]) + len(plan["lunches"]) + len(plan["coffee"]) + len(plan["to_make"])
-    check(cards.count('class="card"') == n + (n % 2),
-          f"expected a card for each of the {n} recipes, two to a sheet")
-    check(cards.count('class="sheet"') == -(-n // 2),
-          f"{n} cards should print on {-(-n // 2)} sheets")
+    groups = PR.card_groups(plan)
+    n = sum(len(g) for g in groups)
+    check(cards.count('class="card"') == n + sum(len(g) % 2 for g in groups),
+          f"expected a card for each of the {n} recipes, two to a sheet, groups padded")
+    check(cards.count('class="sheet"') == PR.sheet_count(plan),
+          f"{n} cards in {len(groups)} groups should print on {PR.sheet_count(plan)} sheets")
+    # The household asked for the split: meals together, the two drinks on their own
+    # sheet, the syrups and crumbles on theirs. No sheet mixes kinds.
+    for sheet in cards.split('<div class="sheet">')[1:]:
+        labels = set(re.findall(r'<div class="night">([^<&]+)', sheet))
+        drinkish = {x for x in labels if x.startswith("Coffee")}
+        boxish = {x for x in labels if x.startswith(("Syrup", "Crumble"))}
+        mealish = labels - drinkish - boxish
+        check(sum(bool(x) for x in (drinkish, boxish, mealish)) <= 1,
+              f"a sheet mixes card kinds: {sorted(labels)}")
     for sheet in cards.split('<div class="sheet">')[1:]:
         check(sheet.count('class="card"') == 2, "a sheet does not hold exactly two cards")
     check("size: 11in 8.5in" in cards, "cards must be landscape letter, cut down the middle")

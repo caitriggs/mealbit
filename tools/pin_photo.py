@@ -22,7 +22,8 @@ def main():
         raise SystemExit(__doc__)
     slug, url, credit = sys.argv[1], sys.argv[2], sys.argv[3]
     source = sys.argv[4] if len(sys.argv) > 4 else ""
-    hit = next((r for r in L.load_dinners() + L.load_lunches() if r["slug"] == slug), None)
+    hit = next((r for r in L.load_dinners() + L.load_lunches() + L.load_drinks()
+                if r["slug"] == slug), None)
     if not hit:
         raise SystemExit(f"no recipe with slug {slug!r}")
     txt = open(hit["path"], encoding="utf-8").read()
@@ -30,7 +31,14 @@ def main():
         txt = re.sub(rf"^{key}:.*\n", "", txt, flags=re.M)
     block = (f"photo_url: {url}\nphoto_credit: {credit}\n"
              f"photo_source: {source}\nphoto_pinned: true\n")
-    txt = re.sub(r"^(rating:)", block + r"\1", txt, count=1, flags=re.M)
+    # Before `rating:` on a recipe; a drink has no rating line, so before its `syrup:`;
+    # failing both, at the end of the frontmatter.
+    if re.search(r"^rating:", txt, re.M):
+        txt = re.sub(r"^(rating:)", block + r"\1", txt, count=1, flags=re.M)
+    elif re.search(r"^syrup:", txt, re.M):
+        txt = re.sub(r"^(syrup:)", block + r"\1", txt, count=1, flags=re.M)
+    else:
+        txt = txt.replace("\n---\n", "\n" + block + "---\n", 1)
     open(hit["path"], "w", encoding="utf-8").write(txt)
     print(f"pinned {slug} -> {credit}")
 

@@ -181,7 +181,8 @@ in order.
 
 ### Photos and the source link
 
-Every card carries a photo **a person has looked at**, and a QR code. Two tiers, in order:
+Every card carries a photo **a person has looked at**, and a QR code — dinners, lunches
+and coffee drinks alike (syrups and crumbles print without one). Two tiers, in order:
 
 1. **A verified published recipe** — the real dish, its photo, and the QR opens it.
    ```bash

@@ -136,8 +136,8 @@ def _sheets(plan):
     this counted dinners only. Every cooked dinner, every lunch, each coffee drink and
     each syrup or crumble to make is a card; two cards to a sheet, rounded up.
     """
-    n = -(-(_n_cooked(plan) + len(plan.get("lunches") or [])
-            + len(plan.get("coffee") or []) + len(plan.get("to_make") or [])) // 2)
+    from .printable import sheet_count
+    n = sheet_count(plan)
     return {0: "nothing to print this week", 1: "one sheet",
             2: "two sheets"}.get(n, f"{n} sheets")
 

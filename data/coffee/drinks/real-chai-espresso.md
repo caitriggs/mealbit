@@ -14,6 +14,10 @@ ingredients:
   - 1 jar black peppercorns [pantry]
   - 1 knob fresh ginger || ground ginger [produce]
 pantry: [cinnamon, granulated sugar, fennel seed]
+photo_url: https://images.pexels.com/photos/9903178/pexels-photo-9903178.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
+photo_credit: Leonora Brebner / Pexels
+photo_source: https://www.pexels.com/photo/close-up-photo-of-creamy-latte-9903178/
+photo_pinned: true
 syrup: null
 crumbles: [pistachio-rose, candied-orange-cardamom, spiced-oat-streusel]
 tags: [spiced, from-scratch, cheapest, batch-it]

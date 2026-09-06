@@ -13,6 +13,10 @@ ingredients:
   - 1 orange || any orange [produce]
   - 1 jar green cardamom pods [pantry]
 pantry: [cocoa powder, granulated sugar, flaky salt]
+photo_url: https://images.pexels.com/photos/12756895/pexels-photo-12756895.png?auto=compress&cs=tinysrgb&h=650&w=940
+photo_credit: Ömer Aydın / Pexels
+photo_source: https://www.pexels.com/photo/white-cup-with-brown-liquid-12756895/
+photo_pinned: true
 syrup: null
 crumbles: [candied-orange-cardamom, cocoa-nib, candied-hazelnut]
 tags: [chocolate, festive, december, rich]

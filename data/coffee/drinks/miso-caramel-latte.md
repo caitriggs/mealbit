@@ -11,6 +11,10 @@ ingredients:
   - 1 pint heavy cream [dairy]
   - 1 tub white miso [specialty]
 pantry: [granulated sugar, butter, vanilla extract, flaky salt]
+photo_url: https://images.pexels.com/photos/5567613/pexels-photo-5567613.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
+photo_credit: Denys Gromov / Pexels
+photo_source: https://www.pexels.com/photo/blue-ceramic-mug-with-saucer-5567613/
+photo_pinned: true
 syrup: miso-caramel
 crumbles: [sesame-halva, cocoa-nib, brown-butter-crumb, espresso-sugar]
 tags: [weird, savory, the-one-to-show-off, best-in-library]

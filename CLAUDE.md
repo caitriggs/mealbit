@@ -182,8 +182,11 @@ Break these and the newsletter stops doing its job, even if it still renders:
 12. **Three attachments, three formats, and only one of them is HTML.** The shopping list
     is HTML because its checkboxes get tapped in the aisle. The recipe cards are a **PDF**
     — landscape letter, **two recipes per sheet**, cut down the middle. Every cooked dinner,
-    **every lunch, both coffee drinks and anything the box needs made** gets one, so a
-    normal week is 11–13 cards on 6–7 sheets. A card is a fixed 8.5in with
+    **every lunch, both coffee drinks and anything the box needs made** gets one, in
+    **three groups that never share a sheet**: the meals, the two drinks on a sheet of
+    their own, the syrups and crumbles on theirs (`printable.card_groups`). Drinks carry a
+    photo in the header like a dinner; syrups and crumbles don't. A normal week is 12–13
+    cards on 7 sheets. A card is a fixed 8.5in with
     `overflow:hidden`; `test_cards_fit_their_sheet` renders several draws and measures.
     The **photo** is the flexible element and absorbs the slack. Coffee files use the same
     `ingredients:` kind tags as recipes; they once carried fixed store fields instead, the

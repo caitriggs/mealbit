@@ -11,6 +11,10 @@ ingredients:
   - 1 jar cinnamon sticks [pantry]
   - 1 can sweetened condensed milk [pantry]
 pantry: [granulated sugar, vanilla extract]
+photo_url: https://images.pexels.com/photos/37603073/pexels-photo-37603073.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
+photo_credit: azra melek / Pexels
+photo_source: https://www.pexels.com/photo/refreshing-iced-coffee-on-a-sunny-day-37603073/
+photo_pinned: true
 syrup: null
 crumbles: [spiced-oat-streusel, espresso-sugar]
 tags: [iced, make-the-milk-yourself, cheapest, summer]

@@ -11,6 +11,10 @@ ingredients:
   - 1 jar tahini [pantry]
   - 1 bottle maple syrup [pantry]
 pantry: [cinnamon, flaky salt, vanilla extract]
+photo_url: https://images.pexels.com/photos/14366134/pexels-photo-14366134.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
+photo_credit: Thomas Plets / Pexels
+photo_source: https://www.pexels.com/photo/ceramic-mug-with-coffee-14366134/
+photo_pinned: true
 syrup: maple-tahini
 crumbles: [sesame-halva, candied-hazelnut, espresso-sugar]
 tags: [nutty, rich, dairy-free-able, unusual]

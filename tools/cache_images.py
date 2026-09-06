@@ -67,7 +67,7 @@ def main():
     a = ap.parse_args()
 
     got = skipped = failed = 0
-    for r in L.load_dinners() + L.load_lunches():
+    for r in L.load_dinners() + L.load_lunches() + L.load_drinks():
         # A verified recipe's own photo first; otherwise the representative one that
         # tools/find_photos.py found, so every card gets a picture.
         url = r.get("image_url") or r.get("photo_url")
