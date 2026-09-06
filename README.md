@@ -11,7 +11,7 @@ the day and hour you choose.
 and opens with a short survey — who eats, what they won't eat, where you shop, how many
 dinners, what lunch means to you — then writes the configuration, schedules the weekly
 send for your timezone, walks you through the two things only you can do in your browser
-(a Gmail app password and four repository secrets), and sends you a test. You never edit
+(a Gmail app password and five secrets, one of them a free photo key), and sends you a test. You never edit
 a file. About twenty minutes, most of it Google.
 
 A fork works too, but GitHub won't let a fork of a public repository be made private, and

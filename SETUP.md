@@ -124,12 +124,16 @@ want to send from your machine:
 export GMAIL_APP_PASSWORD='xxxx xxxx xxxx xxxx'
 ```
 
-**Keeping the repository public?** Then your email addresses shouldn't be in
-`household.yml` either. Add three more repository secrets — `MEALBIT_SEND_FROM`,
+**The addresses are secrets too.** Add three more repository secrets — `MEALBIT_SEND_FROM`,
 `MEALBIT_SEND_TO`, `MEALBIT_SEND_TEST_TO` — and leave the placeholders in the file. The
 workflow passes them in as environment variables, and an environment value always wins
-over the file. For a local send, `export` the same three. A private fork can skip this and
-just write the addresses into the file.
+over the file. For a local send, `export` the same three.
+
+**And a photo key.** Every new recipe's card carries a photo, fetched from Pexels with a
+free key from <https://www.pexels.com/api/>. Put it in `PEXELS_API_KEY` — as a repository
+secret for safekeeping, and in the environment where you run the tools (for Claude Code,
+Settings → Environments → Environment variables), because that is where photos are
+fetched, not on GitHub.
 
 ## 5. Send yourself one
 
@@ -171,8 +175,7 @@ You can also run it by hand from the **Actions** tab: choose `self` for a test s
 Every card carries a photo. The library ships with them. If you add recipes and want
 photos for them, `tools/find_sources.py` looks for a real published version of the dish
 (that also gives the card a QR code to the recipe), and `tools/stock_photos.py` falls
-back to Pexels stock photography — that one needs a free key from
-<https://www.pexels.com/api/> in `PEXELS_API_KEY`. Both tools show you candidates and
+back to Pexels stock photography — the `PEXELS_API_KEY` from step 4. Both tools show you candidates and
 make you pick; a photo nobody has looked at cannot reach a card.
 
 ## Running it from Claude Code

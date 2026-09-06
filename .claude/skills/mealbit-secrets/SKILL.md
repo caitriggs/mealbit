@@ -1,6 +1,6 @@
 ---
 name: mealbit-secrets
-description: Walk a non-technical person, step by step and in their browser, through creating a Gmail app password and adding the four repository secrets (GMAIL_APP_PASSWORD, MEALBIT_SEND_FROM, MEALBIT_SEND_TO, MEALBIT_SEND_TEST_TO) that let their fork send email without any address ever being committed. Use after onboarding, or whenever a send fails with "addresses are placeholders" or a Gmail login error.
+description: Walk a non-technical person, step by step and in their browser, through creating a Gmail app password and adding the five secrets (GMAIL_APP_PASSWORD, MEALBIT_SEND_FROM, MEALBIT_SEND_TO, MEALBIT_SEND_TEST_TO, PEXELS_API_KEY) that let their copy send email and fetch recipe photos without any address or key ever being committed. Use after onboarding, or whenever a send fails with "addresses are placeholders" or a Gmail login error.
 ---
 
 # Secrets: the one part you cannot do for them
@@ -14,19 +14,25 @@ secret into the chat.
 anyway, tell them to revoke it at <https://myaccount.google.com/apppasswords> and make a
 new one, and do not write it anywhere.
 
-## Why four secrets
+## Why five secrets
 
-Their fork is a copy of a public repository, and the config file carries placeholder
-addresses so nothing personal is committed. The real addresses and the password live in
-**repository secrets** — encrypted values GitHub hands to the weekly job and shows to
-nobody, including them, after saving.
+Their copy came from a public template, and the config file carries placeholder addresses
+so nothing personal is committed. The real addresses, the password and the photo key live
+in **secrets** — encrypted values shown to nobody, including them, after saving.
 
-| Secret | What goes in it |
-|---|---|
-| `GMAIL_APP_PASSWORD` | the 16-character app password from step 1 |
-| `MEALBIT_SEND_FROM` | the Gmail address that sends (the account the password belongs to) |
-| `MEALBIT_SEND_TO` | where the real weekly email goes — often a shared household address |
-| `MEALBIT_SEND_TEST_TO` | where test sends go — usually their own address. **Must differ from `MEALBIT_SEND_TO`** |
+| Secret | What goes in it | Where it is used |
+|---|---|---|
+| `GMAIL_APP_PASSWORD` | the 16-character app password from step 1 | the weekly send, on GitHub |
+| `MEALBIT_SEND_FROM` | the Gmail address that sends (the account the password belongs to) | the weekly send |
+| `MEALBIT_SEND_TO` | where the real weekly email goes — often a shared household address | the weekly send |
+| `MEALBIT_SEND_TEST_TO` | where test sends go — usually their own address. **Must differ from `MEALBIT_SEND_TO`** | the weekly send |
+| `PEXELS_API_KEY` | a free key from Pexels, for the photo on every new recipe's card | **this Claude Code session**, when you write a recipe |
+
+The first four are GitHub repository secrets; the weekly job reads them. The fifth is
+different: the photo tool runs *here*, in the Claude Code session, which never sees
+GitHub's secrets. So the Pexels key goes into the **Claude Code environment** (and into
+GitHub too, so it is in one place they can find later). Without it, every recipe you write
+for them prints a card with no photo.
 
 If `TO` and `TEST_TO` are the same, a test would reach the whole household. The code
 refuses that combination; tell them why rather than letting it fail later.
@@ -62,14 +68,33 @@ Google Workspace accounts an administrator has disabled it. Say so plainly.
 5. "You should see four names listed. GitHub won't show the values again — that's
    expected."
 
-## Step 3 — check it worked, without sending to anyone else
+## Step 3 — the Pexels key, for recipe photos (about 3 minutes)
+
+1. "Open <https://www.pexels.com/api/> and press **Get Started**. Sign up or sign in;
+   it's free."
+2. "Once you're in, the page shows **Your API Key** — a long string. Leave it open."
+3. "Back on GitHub, same Secrets page: **New repository secret**, name `PEXELS_API_KEY`,
+   paste the key, **Add secret**." (Five names listed now.)
+4. "One more place, because I fetch the photos from here, not from GitHub: open
+   <https://claude.ai/code>, open **Settings**, then **Environments**, pick the
+   environment this repository uses, and under **Environment variables** add
+   `PEXELS_API_KEY` with the same key. Save."
+5. "Tell me when that's done and I'll check I can see it." Then run
+   `python tools/setup_status.py`; its Pexels line says whether the key reached this
+   session. If not, the session needs restarting after the environment change — say so in
+   one sentence.
+
+If they'd rather not sign up for Pexels: fine, the emails still send. Say that any new
+dish gets a card with a labelled blank where the photo goes, and move on.
+
+## Step 4 — check it worked, without sending to anyone else
 
 The check *is* a test send to them alone. Hand off to
 **`.claude/skills/mealbit-send/SKILL.md`** and run the `self` test. What the failures mean:
 
 - **"the send addresses are placeholders and the three MEALBIT_SEND_* secrets are not
   set"** — a secret name is misspelled or missing. Have them re-open the Secrets page and
-  read the four names back to you.
+  read the names back to you.
 - **`535 Username and Password not accepted`** — the app password is wrong, was revoked,
   or belongs to a different account than `MEALBIT_SEND_FROM`. Make a new one.
 - **Nothing arrives but the job is green** — check spam, then confirm
@@ -84,7 +109,8 @@ no schedule has been written (`python tools/schedule.py` says so; `--write` fixe
 **Actions** tab and presses **I understand my workflows, go ahead and enable them**. A
 repository made with "Use this template" has Actions on from the start.
 
-## Optional secret: Pexels
+## If a recipe was written before the key existed
 
-`PEXELS_API_KEY` is only needed to fetch stock photos for **new** recipes they add. The
-library ships with photos. Don't raise it during onboarding.
+`photo_pending: true` marks it. Once `setup_status.py` shows the key in this session, run
+`python tools/stock_photos.py --sheet <slug>` for each pending recipe, look, pin — see
+`.claude/skills/mealbit-recipes`, "Photos and the source link".

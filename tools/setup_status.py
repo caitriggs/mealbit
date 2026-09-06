@@ -17,6 +17,8 @@ mealbit-onboarding) or get on with the week. The signals:
   addresses    the three send addresses are real, either in the file or in the
                environment (MEALBIT_SEND_FROM / _TO / _TEST_TO from repository secrets)
   password     GMAIL_APP_PASSWORD is in the environment (only checkable where it runs)
+  pexels       PEXELS_API_KEY is in the environment — the photo tools run in the session,
+               not in GitHub Actions, so a repository secret alone does nothing for them
 
 Nothing here reads secrets' values or prints them.
 """
@@ -107,6 +109,7 @@ def facts():
         "addresses_real": addresses_real,
         "addresses_from_env": addresses_from_env,
         "password_in_env": bool(os.environ.get("GMAIL_APP_PASSWORD")),
+        "pexels_in_env": bool(os.environ.get("PEXELS_API_KEY") or os.environ.get("PEXEL_API_KEY")),
         "stores": [s["name"] for s in stores],
         "dinners_per_week": cfg.get("dinners_per_week") if cfg else None,
         "lunch_mode": cfg.get("lunch_mode") if cfg else None,
@@ -148,6 +151,9 @@ def main():
              "still placeholders and no MEALBIT_SEND_* in the environment"))
     print(f"  {tick(f['password_in_env'])} GMAIL_APP_PASSWORD in this environment"
           + ("" if f['password_in_env'] else "  (normal on a laptop; it lives in GitHub secrets)"))
+    print(f"  {tick(f['pexels_in_env'])} PEXELS_API_KEY in this environment"
+          + ("" if f['pexels_in_env'] else "  (needed HERE to fetch photos for new recipes — "
+             "Claude Code: Settings → Environments → Environment variables)"))
     print(f"  {tick(f['onboarded'])} onboarding recorded (config/onboarded.yml)"
           + (f"  — written for {f['onboarded_for']}, not this repository"
              if f["onboarded_for"] and not f["onboarded"] else ""))
