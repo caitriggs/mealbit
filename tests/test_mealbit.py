@@ -542,6 +542,14 @@ def test_only_the_shopping_list_is_html():
           "the cards must be attached as a PDF when one could be rendered")
 
 
+def _on_upstream():
+    """True when this checkout IS the template, not a household's copy."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("setup_status", os.path.join(ROOT, "tools", "setup_status.py"))
+    S = importlib.util.module_from_spec(spec); spec.loader.exec_module(S)
+    return bool(S.facts().get("is_upstream"))
+
+
 def test_every_recipe_has_a_photo():
     """
     The brief: "every meal card should have a photo of what the dish should look like."
@@ -563,7 +571,11 @@ def test_every_recipe_has_a_photo():
     # become the way the library works.
     pool = L.load_dinners() + L.load_lunches()
     pending = [r for r in pool if r.get("photo_pending")]
-    check(len(pending) <= 4,
+    # The queue is 4 deep on the upstream, where every recipe is curated. A household's
+    # copy gets recipes written at setup to fit its taste, usually before it has a photo
+    # key, so it may carry more — 12 — before this insists on photos.
+    cap = 4 if _on_upstream() else 12
+    check(len(pending) <= cap,
           f"{len(pending)} recipes are waiting for a photo ({', '.join(sorted(x['slug'] for x in pending))}). "
           f"That is no longer a queue — run tools/stock_photos.py with a PEXELS_API_KEY set")
     for r in pool:
