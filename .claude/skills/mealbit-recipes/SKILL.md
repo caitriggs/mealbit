@@ -85,7 +85,7 @@ opinions are not this household's.
 **At setup** (from the onboarding skill's Round 4): write without a shortlist and without
 discussion — they haven't seen a week yet and the point is that they never have to think
 about this. Weight to their top proteins and the coming season. `photo_pending: true` is
-allowed up to 12 on a copy; get photos later, when they add a Pexels key.
+allowed up to 12 on a copy; the Pexels key is part of the secrets step that follows, so pin the photos right after it.
 
 You write the file; they never do. The recipe is a Markdown file with YAML frontmatter in
 `data/recipes/dinners/` or `data/recipes/lunches/`, and **the tests are the contract** —

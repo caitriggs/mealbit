@@ -142,11 +142,13 @@ you say is their first week, in this shape and nothing more:
 > Thu — …
 > Lunches are leftovers plus two Sunday batches: a white bean and tuna jar, a noodle salad.
 > Want to swap any of these? If not, next is the two things only you can do — a Gmail app
-> password and four secrets — and then I'll send you a test.
+> password and five secrets — and then I'll send you a test.
 
 A swap is `.claude/skills/mealbit-recipes` (skip and re-render, library first). Then
-`.claude/skills/mealbit-secrets`, then `.claude/skills/mealbit-send` for the first test —
-to them alone, never the household, until they've seen one.
+`.claude/skills/mealbit-secrets` — the Pexels key is part of it, so any recipe you wrote in
+Round 4 with `photo_pending` gets its photo pinned right after — then
+`.claude/skills/mealbit-send` for the first test, to them alone, never the household,
+until they've seen one.
 
 ## What never goes in the repository
 

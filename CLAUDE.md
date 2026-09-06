@@ -60,7 +60,7 @@ and fails the build; the upstream repository is public and a fork may be too.
 | Skill | Use it when |
 |---|---|
 | `mealbit-onboarding` | `setup_status.py` says NOT SET UP. The survey, writing the two config files, recording `config/onboarded.yml` |
-| `mealbit-secrets` | Gmail app password and the four repository secrets, in their browser |
+| `mealbit-secrets` | Gmail app password and the five secrets — four for the send, the Pexels key for photos — in their browser and the Claude Code environment |
 | `mealbit-send` | rendering, test sends to the person alone, the real send, reading a failed run |
 | `mealbit-preferences` | changing anything about how the week is planned, after setup |
 | `mealbit-recipes` | a specific dish: "not that one this week", "we loved / hated it", "add a katsu", the monthly seasonal-refresh issue |
@@ -88,7 +88,7 @@ quotes are from the household this was built for, kept because the reasoning is 
 | File | Holds |
 |---|---|
 | `config/household.yml` | who eats (two names), what they won't eat, per-plate items, how many dinners and what lunch means (`meals:`), where it's sent and when, the coffee counter |
-| repository secrets | `GMAIL_APP_PASSWORD` and the three real addresses `MEALBIT_SEND_FROM / _TO / _TEST_TO`; the file carries placeholders |
+| secrets | `GMAIL_APP_PASSWORD` and the three real addresses `MEALBIT_SEND_FROM / _TO / _TEST_TO` as repository secrets for the send; `PEXELS_API_KEY` in the Claude Code environment for photos. The file carries placeholders |
 | `config/stores.yml` | shops in visit order, what each `takes:`, which one is the catch-all, which is a farmers market and what model it uses |
 | `data/markets/` | the market availability model (shared across a region) and one file of stall tips per market |
 
