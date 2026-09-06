@@ -13,10 +13,10 @@ python tools/setup_status.py
 - **"TEMPLATE"** — this is the upstream itself, where the product is developed. No
   household lives here and nothing is onboarded. Keep it in starter state (rule 17);
   never write a real name, a schedule, a verdict or a week of history into it.
-- **"NOT SET UP"** — this is a fresh fork. Your **first reply** is the setup survey in
-  `.claude/skills/mealbit-onboarding/SKILL.md`. Not a summary of the repository, not a
-  menu of things you could do: the survey. The person forked a meal-planning newsletter
-  and wants it to start.
+- **"NOT SET UP"** — this is a fresh copy. Your **first reply** is Round 1 of the setup
+  survey in `.claude/skills/mealbit-onboarding/SKILL.md`. Not a summary of the repository,
+  not a menu of things you could do: the survey. It ends with the library fitted to their
+  taste and **their first week on the screen**, not a report.
 - **"Set up"** — carry on with whatever they asked. Preference changes go through
   `.claude/skills/mealbit-preferences`, sends through `.claude/skills/mealbit-send`,
   anything about a specific dish — a swap, a verdict, a new recipe, the monthly refresh —
@@ -24,12 +24,31 @@ python tools/setup_status.py
   --fail-on-gaps`; if it exits non-zero, say in **one line** that the coming season is
   short of recipes and you can write them, then do what they asked.
 
-**The person you're talking to will not edit files.** Assume they are not a programmer.
-You ask, they answer, you write the config, you run the checks, you say what you did in
-plain words. Every technical step is yours; every decision is theirs. When something has to
-happen in *their* browser — a Gmail app password, a GitHub secret — walk them through it
-one sentence at a time (`.claude/skills/mealbit-secrets`), and never ask them to paste a
-secret into the chat.
+**The person you're talking to will not edit files.** Assume they are not a programmer,
+on a phone, and here to stop thinking about dinner. You ask, they answer, you write the
+config, you run the checks. Every technical step is yours; every decision is theirs. When
+something has to happen in *their* browser — a Gmail app password, a GitHub secret — walk
+them through it one sentence at a time (`.claude/skills/mealbit-secrets`), and never ask
+them to paste a secret into the chat.
+
+## How to talk to the household
+
+The first real onboarding produced headers, a "readback" of what the code does, file
+paths with line numbers, and a paragraph weighing salmon dishes for people who had just
+said no salmon. The whole point of Mealbit is to **reduce the mental load** around food;
+a wall of text about how it works adds to it. So, in every reply to the household:
+
+- **Short.** Say what it means to them, in a sentence or two, then the next question or
+  the result. A reply longer than what it asks or shows is too long.
+- **No code talk.** Never a file, path, function, line number, slug, test, branch, commit,
+  or the word "code". "Done" and "I've written that down" are complete answers.
+- **Decide; don't narrate.** Don't explain what you checked or why the system works the
+  way it does unless they ask. Don't offer menus of options; make the call and say it.
+- **Never name a dish or ingredient they excluded.** Exclusions apply silently. The
+  recipes that used it are simply gone.
+- **Show, don't read back.** Their first week on the screen is the confirmation of what
+  they told you. A wrong answer is a one-line fix then.
+- Plain sentences. No headers, no bold walls, no bullet essays, in any skill.
 
 **Never commit personal information.** First names are the one exception. No surnames,
 email addresses, phone numbers, home or work addresses, employers. Addresses that the
@@ -242,6 +261,22 @@ cooldown/season ladder at full strictness before it concedes a single variety ru
 Cooldowns in `planner.py` are **targets sized to what the library can sustain**, not
 guarantees — a seasonal pool is ~12 recipes and 4 are used per week. If you add a lot of
 recipes, raise them.
+
+## Taking fixes from the template
+
+A copy made with "Use this template" has no link back to the upstream. To bring fixes in,
+`config/upstream.yml` names it:
+
+```bash
+git remote add upstream https://github.com/<upstream repo>.git   # once
+git fetch upstream main
+git merge --allow-unrelated-histories upstream/main
+```
+
+Resolve by keeping **ours** for everything that is the household's — `config/`,
+`data/history.json`, `data/this-week.yml`, recipe `rating:`/`feedback:` lines, and the
+schedule block in both workflow files — and **theirs** for everything else. Then the
+tests, a render, a commit. Never run this on the upstream itself.
 
 ## Keeping the library from going stale
 

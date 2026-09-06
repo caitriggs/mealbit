@@ -46,6 +46,13 @@ what it can't stock moves to the next store with a printed reason. So:
 - Two supermarkets: the first takes what they prefer to buy there, the second takes
   `everything`.
 
+## Taking fixes from the template
+
+"Is there anything new?" or "update from the template": `CLAUDE.md`, "Taking fixes from
+the template". Keep ours for the household's files, theirs for the rest, run the tests,
+render, commit. Say what changed for them in one or two sentences — a bug fixed, a new
+feature — never the file list.
+
 ## After every change
 
 ```bash
