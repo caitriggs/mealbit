@@ -13,7 +13,7 @@ edit; they never do. Every change ends with the tests, a render, a look, and a c
 | They say | You change | Notes |
 |---|---|---|
 | "we don't eat X" | `diet.exclude_ingredients` in `household.yml` | removes every recipe that uses it; matched inside names ("salmon" catches "salmon fillet") |
-| "Sam doesn't like X but I do" | `diet.per_plate` → `Sam: [x]` | the recipe stays; X goes on the other plate. The library is written around cilantro, raw tomatoes, arugula. Anything else works as a check but the recipe prose won't mention it — say so |
+| "Max doesn't like X but I do" | `diet.per_plate` → `Max: [x]` | the recipe stays; X goes on the other plate. The library is written around cilantro, raw tomatoes, arugula. Anything else works as a check but the recipe prose won't mention it — say so |
 | "more chicken, less pork" | `diet.protein_preference` | a ranking, not a rule |
 | "3 dinners, not 4" | `meals.dinners_per_week` | 2–5, Monday onward |
 | "we don't want leftover lunches" | `meals.lunch_mode: fresh` | dinners cooked for the table, list buys for two, cards say to halve |
@@ -23,6 +23,7 @@ edit; they never do. Every change ends with the tests, a render, a look, and a c
 | "add Costco / drop Trader Joe's / we go to Safeway first now" | `config/stores.yml` | order = visit order; exactly one store takes `everything`, last |
 | "we switched farmers markets" | the `kind: farmers_market` entry | name, `when`, `where` (cross-street, never a home address), `tips:` → a new `data/markets/<name>.md` |
 | "the market never has X" | `data/markets/pnw-washington-growers.md` | add to `never` (doesn't grow here) or check `seasonal-pnw.md` |
+| "Trader Joe's doesn't carry X" | that store's `never:` list in `config/stores.yml` | the line moves to the next store; matched by name |
 | "we always have soy sauce" | `data/pantry.md` | be sparing — anything in there is a line the shopper never sees |
 | "not the pulled pork this week" / "we loved it" / "add a katsu" | not a preference — a dish | `.claude/skills/mealbit-recipes`: one-week skips and pins, verdicts, new recipes, the seasonal refresh |
 
@@ -61,7 +62,7 @@ python -m mealbit.meal_plan       # render
 python tools/screenshot.py        # look at it — light and dark
 ```
 
-Then commit with a message that says what changed in their words ("Ada skips blue cheese
+Then commit with a message that says what changed in their words ("Max skips blue cheese
 now"). Never commit an email address, phone number, or street address; the tests refuse
 them, and the reason is that this repository's upstream is public.
 

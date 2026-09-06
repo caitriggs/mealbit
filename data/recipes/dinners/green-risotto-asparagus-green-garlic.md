@@ -17,12 +17,20 @@ ingredients:
   - 4 stalks green garlic || 1 leek + 2 garlic cloves [produce]
   - 1 lb English peas in the pod || 1.5 cups frozen peas [produce]
   - 1 bunch mint [produce]
-  - 1 bag arborio or carnaroli rice [pantry]
-  - 1 wedge Parmigiano-Reggiano [dairy]
-  - 1 stick butter [dairy]
+  - 1 bag arborio or carnaroli rice {1½ cups} [pantry]
+  - 1 wedge Parmigiano-Reggiano {1 cup grated} [dairy]
+  - 1 stick butter {5 tbsp} [dairy]
   - 1 lemon [produce]
-  - 1 bottle dry white wine [wine]
+  - 1 bottle dry white wine {½ cup} [wine]
 pantry: [olive oil, stock, kosher salt, black pepper, yellow onions]
+steps:
+  - "Snap asparagus ends; simmer them in 5 cups stock 15 min, strain. Keep at a bare simmer."
+  - "Blanch tips and half the peas 90 sec; shock. Blitz the other half with stock and mint."
+  - "1 yellow onion and sliced green garlic in 2 tbsp butter and olive oil, 8 min, no color."
+  - "1½ cups rice toasted 2 min; ½ cup white wine, stirred until absorbed."
+  - "Stock a ladle at a time, stirring, 18 min. Taste from minute 16."
+  - "Pea purée in, then the blanched asparagus and peas."
+  - "Off heat: beat in 3 tbsp cold butter, 1 cup Parmigiano. Rest 2 min. Lemon zest, mint."
 source_url: https://www.themediterraneandish.com/asparagus-risotto/
 image_url: https://www.themediterraneandish.com/wp-content/uploads/2024/02/The-Mediterranean-Dish_Asparagus-Risotto_LEAD_4.jpg
 source_name: themediterraneandish.com
@@ -43,14 +51,14 @@ spoon — instead of stiff.
    strain. Keep the stock at a bare simmer.
 2. Blanch the asparagus tips and half the peas for 90 seconds; shock in ice water. Blitz
    the *other* half of the peas with a ladle of stock and a handful of mint into a purée.
-3. Onion and sliced green garlic in butter and olive oil, 8 minutes, no color.
+3. 1 yellow onion and sliced green garlic in 2 tbsp butter and olive oil, 8 minutes, no color.
 4. Rice in dry, toasted 2 minutes until the edges go translucent and it smells toasty.
-   Splash of white wine, stirred until fully absorbed.
+   ½ cup white wine, stirred until fully absorbed.
 5. Stock a ladle at a time, stirring, adding the next only when the pan bottom shows a
    clean track behind the spoon. **18 minutes.** Taste from minute 16 — you want the
    grain just barely resistant at the center.
 6. Pea purée in, then the blanched asparagus and peas.
-7. Off the heat: 3 tbsp cold butter and a large handful of Parmigiano, beaten in hard.
+7. Off the heat: 3 tbsp cold butter and 1 cup grated Parmigiano, beaten in hard.
    Lid on, **rest 2 minutes.** Loosen with stock if it's stiff. Lemon zest, mint, pepper.
 
 **Leftover plan:** **don't pack this one.** Risotto reheats into paste, and the classic fix — chilling it solid, rolling arancini, breading and shallow-frying them — is a second dinner's worth of work, not a five-minute lunch. Cook it for the night it is cooked. If there is surplus, arancini are a genuinely great Friday project.

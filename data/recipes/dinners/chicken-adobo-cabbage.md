@@ -1,5 +1,5 @@
 ---
-title: Chicken adobo with charred cabbage and garlic rice
+title: Chicken adobo with charred cabbage and yellow garlic rice
 kind: dinner
 serves: 4
 leftovers: 2
@@ -16,8 +16,21 @@ ingredients:
   - 1 head green cabbage || savoy, or Brussels sprouts halved [produce]
   - 1 bunch scallions [produce]
   - 2 lb bone-in skin-on chicken thighs [protein]
-  - 1 bag jasmine rice [pantry]
-pantry: [soy sauce, apple cider vinegar, garlic, bay leaves, black pepper, sugar, neutral oil, kosher salt]
+  - 1 head garlic {1 whole head} [produce]
+  - 1 bottle soy sauce {½ cup} [pantry]
+  - 1 bottle cane vinegar || apple cider vinegar {⅓ cup} [pantry]
+  - 1 jar bay leaves {4} [pantry]
+  - 1 jar whole black peppercorns {1 tbsp} [pantry]
+  - 1 bag jasmine rice {1½ cups} [pantry]
+  - 1 jar ground turmeric {½ tsp} [pantry]
+pantry: [sugar, neutral oil, kosher salt]
+steps:
+  - "Marinate thighs in soy, vinegar, smashed garlic, bay and peppercorns, 30 min to overnight."
+  - "Rice: 1½ cups jasmine, ½ tsp turmeric, 2 smashed garlic cloves, pinch of salt."
+  - "Thighs and marinade skin-up in a wide pan with ½ cup water and 1 tbsp sugar."
+  - "Boil uncovered 10 min without stirring, then cover and simmer 20 min."
+  - "Thighs onto a tray; boil the sauce to a glaze. Broil oiled cabbage wedges till charred."
+  - "Thighs under the broiler 3 min. Glaze over both, rice alongside, scallions on top."
 source_url: https://www.budgetbytes.com/chicken-adobo/
 image_url: https://www.budgetbytes.com/wp-content/uploads/2018/02/Chicken-Adobo-Front-Drizzle.jpg
 source_name: budgetbytes.com
@@ -44,8 +57,9 @@ skin is otherwise a sad, pale thing.
    a spoon. Taste it. It should be sharp, salty and slightly sweet.
 6. Cabbage cut into thick wedges, seared cut-side down in a dry hot pan until blackened,
    then a splash of the adobo liquid and a lid for 4 minutes.
-7. Garlic rice: cooked rice fried in oil with a lot of thin-sliced garlic until the grains
-   separate and some go crisp.
+7. Yellow garlic rice: 1½ cups jasmine rice cooked with ½ tsp turmeric in the water, then
+   fried in oil with a lot of thin-sliced garlic until the grains separate and some go
+   crisp.
 
 **Leftover plan:** shred the leftover meat into the sauce and pack over rice. Adobo is a
 preserved dish by design — it is *supposed* to sit. Day three is fine.

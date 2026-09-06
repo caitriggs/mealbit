@@ -14,10 +14,15 @@ register: comfort
 tags: [five-minutes, no-cooking, high-protein, sweet]
 ingredients:
   - 1 pint berries || 1 bag frozen berries, thawed [produce]
-  - 2 containers full-fat cottage cheese [dairy]
-  - 1 bag sliced almonds [pantry]
-  - 1 loaf seeded bread || seeded crackers [bakery]
+  - 2 containers full-fat cottage cheese {2 cups} [dairy]
+  - 1 bag sliced almonds {¼ cup} [pantry]
+  - 1 loaf seeded bread || seeded crackers {2 slices} [bakery]
 pantry: [maple syrup, flaky salt, vanilla extract]
+steps:
+  - "Toast ¼ cup sliced almonds in a dry pan till nutty; cool fully. Once for the week."
+  - "1 cup cottage cheese per box; 1 tbsp maple syrup, a drop of vanilla extract, flaky salt."
+  - "Berries on top, whole, not cut. Almonds in a twist of foil, added at the desk."
+  - "A slice of seeded toast or crackers alongside. Stir once before eating."
 photo_url: https://images.pexels.com/photos/15048297/pexels-photo-15048297.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
 photo_credit: Jessica Lewis 🦋 thepaintedsquare / Pexels
 photo_source: https://www.pexels.com/photo/healthy-breakfast-with-fruits-15048297/
@@ -38,7 +43,7 @@ difference between a crunchy bowl and a soft one.
 
 1. Toast the sliced almonds until they smell nutty. Cool them completely before they go
    in a jar — warm nuts steam themselves soft. Once for the week.
-2. Cottage cheese into the container. A thread of maple over it, a drop of vanilla, a
+2. A cup of cottage cheese into the container. A tablespoon of maple over it, a drop of vanilla, a
    pinch of flaky salt.
 3. Berries on top, **whole, not cut** — cut fruit weeps, and by lunchtime you have pink
    liquid in the bottom of the tub.

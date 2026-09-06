@@ -7,8 +7,8 @@ storage: fridge — it thickens cold, warm briefly before use
 active_time: 15
 ingredients:
   - 1 pint heavy cream [dairy]
-  - 1 tub white miso [specialty]
-  - 1 stick butter [dairy]
+  - 1 tub white miso {1½ tbsp} [specialty]
+  - 1 stick butter {2 tbsp} [dairy]
 pantry: [granulated sugar, vanilla extract, flaky salt]
 tags: [weird, best-in-box, savory]
 pairs_with: [espresso, hot, sesame-crumble, cocoa-nib-crumble]

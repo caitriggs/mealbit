@@ -19,7 +19,14 @@ ingredients:
   - 1 small red onion [produce]
   - 1.5 lb boneless pork loin chops || pork shoulder steaks [protein]
   - 2 limes [produce]
-pantry: [olive oil, red wine vinegar, honey, garlic, kosher salt, black pepper, flaky salt]
+pantry: [olive oil, red wine vinegar, honey, kosher salt, black pepper, flaky salt]
+steps:
+  - "Brine: 4 cups warm water, 3 tbsp salt; pork in 15 min while the grill heats. Dry, oil."
+  - "Relish: onion paper-thin, juice of 2 limes, 2 tbsp red wine vinegar, salt, 10 min; chiles."
+  - "Peaches halved, cut-side down on the dry hot grill 4 min untouched. Cut into wedges."
+  - "Pork on the same heat 3–4 min a side to 140°F. Rest 8 min."
+  - "Fold the warm peaches into the relish with a drizzle of honey and a lot of olive oil."
+  - "Pork sliced thick, relish and its juice over, a lot of torn basil, flaky salt."
 photo_url: https://images.pexels.com/photos/4411690/pexels-photo-4411690.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
 photo_credit: zydeaosika / Pexels
 photo_source: https://www.pexels.com/photo/a-delicious-pork-barbeque-on-round-plate-4411690/

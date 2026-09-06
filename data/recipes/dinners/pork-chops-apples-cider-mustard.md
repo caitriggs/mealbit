@@ -17,10 +17,18 @@ ingredients:
   - 1 bunch sage || thyme [produce]
   - 1.5 lb small potatoes [produce]
   - 4 thick-cut bone-in pork chops (about 2.5 lb) [protein]
-  - 1 stick butter [dairy]
-  - 1 container heavy cream [dairy]
-  - 1 bottle dry hard cider || apple cider + a splash of vinegar [wine]
+  - 1 stick butter {4 tbsp} [dairy]
+  - 1 container heavy cream {¼ cup} [dairy]
+  - 1 bottle dry hard cider || apple cider + a splash of vinegar {1 cup} [wine]
 pantry: [whole-grain mustard, Dijon mustard, olive oil, kosher salt, black pepper, garlic]
+steps:
+  - "Salt the chops; fridge, uncovered, 30 min to 4 hours. Pat dry before cooking."
+  - "Potatoes halved, boiled in salted water till a knife slides in; drain, steam-dry 5 min."
+  - "Chops in a hot oiled pan, 4 min unmoved, flip, 3 min. 2 tbsp butter, garlic, sage; baste."
+  - "Pull at 140°F, rest on a board. Apple wedges into the same pan 4 min till browned."
+  - "Deglaze with 1 cup cider, scraping; reduce by half, 4 min."
+  - "Stir in 2 tbsp whole-grain mustard, 1 tsp Dijon mustard, ¼ cup cream, resting juices."
+  - "Potatoes smashed and crisped in the pork fat, or tossed in 2 tbsp butter."
 source_url: https://www.budgetbytes.com/apple-butter-pork-chops/
 image_url: https://www.budgetbytes.com/wp-content/uploads/2025/09/Apple-Butter-Pork-Chops-Front-With-Fork-and-Cut.jpg
 source_name: budgetbytes.com
@@ -45,9 +53,9 @@ need to be grey, and this is the single biggest upgrade available to a home cook
 4. Apples, cored and cut into thick wedges, into the same pan. 4 minutes to browned at
    the edges but still holding.
 5. Deglaze with a cup of cider, scraping. Reduce by half — 4 minutes. Then 2 tbsp
-   grain mustard, 1 tsp Dijon, ¼ cup cream, and any juice off the resting board.
+   whole-grain mustard, 1 tsp Dijon, ¼ cup cream, and any juice off the resting board.
    Simmer 2 minutes.
-6. Potatoes smashed under a glass and crisped in the pork fat, or just tossed in butter
+6. Potatoes smashed under a glass and crisped in the pork fat, or just tossed in 2 tbsp butter
    if you're out of patience.
 
 **Leftover plan:** slice the leftover chop thin off the bone and pack it with the apples

@@ -16,11 +16,19 @@ ingredients:
   - 1 large delicata squash || kabocha, or 2 lb butternut [produce]
   - 1 bunch scallions [produce]
   - 1 head bok choy || any hearty green [produce]
-  - 2 blocks extra-firm tofu [protein]
-  - 1 jar chili onion crunch || any crunchy chili oil [specialty]
-  - 1 stick butter [dairy]
-  - 1 bag short-grain rice [pantry]
-pantry: [white miso, maple syrup, rice vinegar, cornstarch, neutral oil, soy sauce, garlic, sesame seeds]
+  - 2 blocks extra-firm tofu {whole} [protein]
+  - 1 jar chili onion crunch || any crunchy chili oil {3 tbsp} [specialty]
+  - 1 stick butter {3 tbsp} [dairy]
+  - 1 bag short-grain rice {1½ cups} [pantry]
+pantry: [white miso, maple syrup, rice vinegar, cornstarch, neutral oil, garlic, sesame seeds]
+steps:
+  - "Tofu cubed, pressed 20 min; toss with 2 tbsp neutral oil, 3 tbsp cornstarch, 1 tsp salt."
+  - "Oven 425°F, two sheet pans heating empty. Rice: 1½ cups short-grain on to cook."
+  - "Squash in ½-inch half-moons, skin on, oiled and salted, on one hot pan; tofu on the other."
+  - "Both roast 25–30 min, flipped once."
+  - "Mash 3 tbsp butter, 2 tbsp white miso, 1 tbsp maple syrup, 1 tbsp rice vinegar, 1 garlic."
+  - "Bok choy halved, seared cut-side down 3 min; splash of water, lid, 2 min more."
+  - "Toss hot squash in miso butter. Tofu, greens, rice; chili crunch, scallions, sesame seeds."
 photo_url: https://images.pexels.com/photos/4899793/pexels-photo-4899793.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
 photo_credit: Denys Gromov / Pexels
 photo_source: https://www.pexels.com/photo/close-up-shot-of-a-dish-on-a-plate-4899793/
@@ -48,7 +56,7 @@ sauce fixes it.
 6. Bok choy, halved, seared cut-side down in a hot pan, 3 minutes, then a splash of water
    and a lid for 2 more.
 7. Toss the hot squash with the miso butter straight out of the oven so it melts into
-   every surface. Tofu, greens, rice. Chili crunch, scallions, sesame over everything.
+   every surface. Tofu, greens, rice. 3 tbsp chili crunch, scallions, sesame seeds over everything.
 
 **Leftover plan:** everything here is good cold or at room temperature, which is rare.
 Build the lunch boxes directly off the sheet pans while they're still warm.

@@ -18,11 +18,19 @@ ingredients:
   - 2 stalks celery || 1 celeriac, diced [produce]
   - 2 lb bone-in beef short ribs [protein]
   - 12 oz pappardelle || tagliatelle [pantry]
-  - 1 wedge Parmigiano-Reggiano [dairy]
-  - 1 can tomato paste [pantry]
-  - 1 bottle dry red wine [wine]
-  - 2 cans whole peeled tomatoes [pantry]
+  - 1 wedge Parmigiano-Reggiano {1 cup grated} [dairy]
+  - 1 can tomato paste {3 tbsp} [pantry]
+  - 1 bottle dry red wine {1 cup} [wine]
+  - 2 cans whole peeled tomatoes {whole} [pantry]
 pantry: [olive oil, garlic, yellow onions, bay leaves, black pepper, kosher salt, stock, thyme]
+steps:
+  - "Ribs salted heavily, patted dry, browned hard in batches in a Dutch oven, 4 min a side."
+  - "Yellow onion, carrots, celery in the fat, 12 min. Garlic, 1 min."
+  - "Push aside; 3 tbsp tomato paste in the bare pan until brick-red and sticking, 3 min."
+  - "Deglaze with 1 cup red wine, reduce by half. Tomatoes, 2 cups stock, bay leaves, thyme."
+  - "Ribs back in, mostly submerged. Lid on, 300°F, 2½–3 hours, until the meat shreds."
+  - "Bones out, meat shredded, fat skimmed. Meat back in; reduce 15 min uncovered if loose."
+  - "Pappardelle very al dente, finished in the sauce with pasta water. Parmigiano, parsley."
 per_plate_exempt: [tomatoes]
 source_url: https://pinchofyum.com/instant-pot-short-rib-ragu
 image_url: https://pinchofyum.com/tachyon/Gnochi-with-Ragu-Yoast.jpg

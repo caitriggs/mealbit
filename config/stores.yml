@@ -36,6 +36,33 @@ stores:
     name: Trader Joe's
     sub: proteins, dairy, pantry, specialty
     takes: [protein, dairy, bakery, pantry, specialty, wine]
+    # A kind says a shop sells pantry things; it doesn't say THIS shop sells this thing.
+    # Anything below goes to the next store instead. Matched by name, either way round,
+    # so "arbol" covers "dried árbol chiles". Add to it after a wasted trip.
+    never:
+      - arbol chile
+      - ancho chile
+      - dried chile
+      - chipotles in adobo
+      - mexican crema
+      - mexican drinking chocolate
+      - stone-ground grits
+      - shaoxing
+      - dry sherry
+      - fish sauce
+      - preserved lemon
+      - black mustard seed
+      - whole cloves
+      - culinary lavender
+      - dried rose petals
+      - halva
+      - demerara sugar
+      - assam
+      - tonic water
+      - pulled pork
+      - giardiniera
+      - mortadella        # a deli-counter cut; TJ has it rarely and pre-packed thin
+      - fresno chile
 
   - id: qfc
     short: QFC

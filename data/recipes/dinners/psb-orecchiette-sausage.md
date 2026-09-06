@@ -17,8 +17,15 @@ ingredients:
   - 1 lemon [produce]
   - 1.25 lb Italian sausage, casings removed [protein]
   - 12 oz orecchiette [pantry]
-  - 1 wedge Pecorino Romano [dairy]
+  - 1 wedge Pecorino Romano {¾ cup grated} [dairy]
 pantry: [olive oil, garlic, chili flakes, fennel seed, anchovies, kosher salt, black pepper, breadcrumbs]
+steps:
+  - "Pangrattato: ¾ cup breadcrumbs, 1 sliced garlic clove, pinch of chili in oil till gold."
+  - "Sausage into a wide oiled pan, pressed flat, 4 min untouched to crust, then broken up."
+  - "In the fat: 4 garlic cloves, 2 anchovy fillets, 1 tsp fennel seed, 1 tsp chili flakes."
+  - "Pasta into boiling salted water; broccoli in 2-inch lengths for the last 4 min."
+  - "Drain both into the sausage pan with a mug of pasta water; toss hard 2 min till it clings."
+  - "Off heat: ¾ cup Pecorino, lemon zest and juice, black pepper. Pangrattato at the table."
 source_url: https://www.skinnytaste.com/orecchiette-with-chicken-sausage-and/
 image_url: https://www.skinnytaste.com/wp-content/uploads/2011/04/Orecchiette-Pasta-with-Chicken-Sausage-_-Broccoli-Rabe-6.jpg
 source_name: skinnytaste.com
@@ -45,7 +52,7 @@ into one with contrast.
    cut into 2-inch lengths.
 5. Both drained together, straight into the sausage pan with a mug of pasta water.
    Toss hard over heat for 2 minutes until the water and fat emulsify and cling.
-6. Off heat: a big handful of Pecorino, lemon zest, a squeeze of juice, black pepper.
+6. Off heat: ¾ cup grated Pecorino, lemon zest, a squeeze of juice, black pepper.
 7. Pangrattato over the top at the table, not before.
 
 **Leftover plan:** reheats in a pan with a splash of water. Pack the pangrattato in a

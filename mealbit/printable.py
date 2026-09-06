@@ -102,12 +102,39 @@ def _ingredients(recipe):
             it = L.parse_item(str(line))
             if not it["name"]:
                 continue
-            qty = L.fmt_qty(it["qty"])
-            unit = L.fmt_unit(it["unit"], it["qty"]) if it["unit"] else ""
-            name = L.fmt_name(it["name"], it["qty"], it["unit"])
-            out.append({"store": store,
-                        "text": " ".join(x for x in (qty, unit, name) if x)})
+            use = (it.get("use") or "").strip()
+            if use and use.lower() not in ("whole", "all"):
+                # The amount the recipe uses, not the package it is sold in: "1 cup
+                # stone-ground grits", not "1 bag". The list still buys the bag.
+                name = _use_name(it)
+                text = f"{use} {name}"
+            else:
+                qty = L.fmt_qty(it["qty"])
+                unit = L.fmt_unit(it["unit"], it["qty"]) if it["unit"] else ""
+                name = L.fmt_name(it["name"], it["qty"], it["unit"])
+                text = " ".join(x for x in (qty, unit, name) if x)
+            out.append({"store": store, "text": text})
     return out
+
+
+def _use_name(it):
+    """The ingredient's name without its package word, for a `{use}` line."""
+    name = it["name"]
+    first, _, rest = name.partition(" ")
+    if first.lower() in L.PACKAGE_UNITS and rest:
+        name = rest
+    return re.sub(r"^(of|or)\s+", "", name).strip()
+
+
+def _steps(recipe):
+    """
+    The short numbered steps from `steps:` — which things get prepped or cooked together,
+    in what order. The household: "the complete lack of directions might be confusing to
+    many users." Each step is one printed line (the test holds it to 90 characters, which
+    is one line at this size) and there are at most seven, so a card with every other
+    section at its heaviest still fits its half-sheet; tools/card_fit.py measures it.
+    """
+    return [" ".join(str(s).split()) for s in (recipe.get("steps") or [])][:7]
 
 
 def _clip_sentences(text, budget):
@@ -158,6 +185,10 @@ def _tips(recipe, budget=430):
     # eight costs the note a sentence's worth of room.
     lines = len(L.ingredients(recipe)) + (1 if recipe.get("pantry") else 0)
     budget = max(260, budget - 30 * max(0, lines - 8))
+    # With numbered steps on the card the technique note is the *why*, not the method:
+    # one or two sentences. The steps carry the rest.
+    if recipe.get("steps"):
+        budget = min(budget, 260)
     body = _clip_sentences(move, budget)
     # "Second move:" / "Then:" introduce a genuinely separate instruction — a line break
     # there is the difference between two tips and one paragraph nobody reads.
@@ -186,8 +217,10 @@ def _leftover_plan(recipe):
                             ("**At the desk:**", "At the desk")):
         para = _para(recipe.get("body", ""), prefix)
         if para:
+            # With steps on the card the packing note is one instruction, not a paragraph.
+            budget = 140 if recipe.get("steps") else 185
             text = _clip_sentences(
-                _html.unescape(para).replace(prefix.strip("*"), "").strip(), 185)
+                _html.unescape(para).replace(prefix.strip("*"), "").strip(), budget)
             return text, heading
     return "", ""
 
@@ -249,11 +282,15 @@ ul.two li {{ break-inside:avoid; }}
 li {{ font-size:9.5pt; line-height:1.42; }}
 .tag {{ display:inline-block; width:24pt; font-size:6.5pt; font-weight:bold;
        vertical-align:1pt; letter-spacing:.3pt; }}
-.have {{ font-size:8pt; line-height:1.45; color:#6c7458; margin-bottom:8pt; }}
+.have {{ font-size:8pt; line-height:1.45; color:#6c7458; margin-bottom:5pt; }}
 .have b {{ color:#8a9178; letter-spacing:.6pt; text-transform:uppercase; font-size:7pt; }}
 
 .tips {{ border-top:1px solid #e7ebda; padding-top:7pt; margin-bottom:7pt; }}
 .tip {{ font-size:8.5pt; line-height:1.42; color:#3d4630; margin-bottom:4pt; }}
+.steps {{ margin:0 0 4pt 0; padding-left:13pt; font-size:8pt; line-height:1.35; color:#3d4630; }}
+.steps li {{ font-size:8pt; line-height:1.35; margin-bottom:1.5pt; padding-left:2pt; }}
+.pp-tag {{ font-size:7pt; letter-spacing:.5pt; text-transform:uppercase; color:#8a6a1e; font-weight:700;
+           margin:2pt 0 6pt; }}
 .tip b {{ color:#55760f; }}
 .left {{ border-top:1px solid #e7ebda; padding-top:5pt; margin-bottom:5pt;
         font-size:8.5pt; line-height:1.42; color:#3d4630; }}
@@ -269,7 +306,7 @@ li {{ font-size:9.5pt; line-height:1.42; }}
 .serves {{ font-size:8pt; color:#6c7458; line-height:1.4; }}
 .serves b {{ color:#262b1d; }}
 .qr {{ text-align:center; flex:0 0 auto; }}
-.qr svg {{ width:54pt; height:54pt; display:block; }}
+.qr svg {{ width:50pt; height:50pt; display:block; }}
 .qr .cap {{ font-size:5.8pt; color:#8a9178; margin-top:2pt; max-width:62pt; line-height:1.2; }}
 """
 
@@ -320,11 +357,10 @@ def _per_plate(recipe):
     items = [str(x) for x in (recipe.get("per_plate") or [])]
     if not items:
         return "", ""
-    from .render import _para
-    note = _para(recipe.get("body", ""), "**Per plate:**")
-    note = _clip_sentences(_html.unescape(note)
-                           .replace("Per plate:", "").strip(), 215)
-    return ", ".join(items), note
+    # The recipe body still carries a **Per plate:** paragraph (a test insists, so the
+    # dish is known to be complete without the ingredient), but the card prints only the
+    # tag. The household: no need for a paragraph, "just keep a tag".
+    return ", ".join(items), ""
 
 
 def _coffee_method(recipe, budget=400):
@@ -450,6 +486,8 @@ def _card(label, r):
                        f'{E(text)}</div>' for lead, text in _coffee_method(r))
     else:
         tips = "".join(f'<div class="tip"><b>&rsaquo;</b> {E(t)}</div>' for t in _tips(r))
+    steps = "".join(f'<li>{E(s)}</li>' for s in _steps(r)) if not coffee else ""
+    steps_html = f'<div class="h2">Steps</div><ol class="steps">{steps}</ol>' if steps else ""
     packing, packing_head = _leftover_plan(r)
     left = int(r.get("leftovers") or 0)
     meta, serves_line = _meta_and_foot(label, r)
@@ -460,9 +498,9 @@ def _card(label, r):
         f'<div class="title">{E(r["title"])}</div>'
         f'{_photo(r)}'
         f'<div class="h2">Shop for this</div><ul{ul_class}>{ings}</ul>{have}'
+        + steps_html
         + (f'<div class="tips"><div class="h2">{"Method" if coffee else "Technique"}</div>{tips}</div>' if tips else "")
-        + (f'<div class="left pp-box"><div class="h2">Per plate &mdash; {E(pp_items)} '
-           f'{_not_on(r)}</div>{E(pp_note)}</div>' if pp_items else "")
+        + (f'<div class="pp-tag">Per plate &mdash; {E(pp_items)} {_not_on(r)}</div>' if pp_items else "")
         + (f'<div class="left"><div class="h2">'
            f'{packing_head if (left or r.get("kind") == "lunch") else "Why it doesn&rsquo;t pack"}'
            f'</div>{E(packing)}</div>' if packing else "")

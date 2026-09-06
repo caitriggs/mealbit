@@ -16,12 +16,19 @@ ingredients:
   - 1 bunch parsley [produce]
   - 2 celery stalks || 1 fennel bulb [produce]
   - 1 small red onion [produce]
-  - 2 cans cannellini beans [pantry]
-  - 2 jars or tins olive-packed tuna [protein]
-  - 1 jar Castelvetrano olives [pantry]
+  - 2 cans cannellini beans {whole} [pantry]
+  - 2 jars or tins olive-packed tuna {whole} [protein]
+  - 1 jar Castelvetrano olives {1 cup} [pantry]
   - 2 lemons [produce]
-  - 1 jar sun-dried tomatoes || roasted red peppers [pantry]
+  - 1 jar sun-dried tomatoes || roasted red peppers {½ cup} [pantry]
 pantry: [olive oil, red wine vinegar, Dijon mustard, capers, garlic, chili flakes, oregano, kosher salt, black pepper]
+steps:
+  - "Dressing: ⅓ cup olive oil, 3 tbsp red wine vinegar, 1 tbsp Dijon mustard."
+  - "Add 2 grated garlic cloves, 2 tbsp capers, 1 tsp oregano, ½ tsp chili flakes, salt."
+  - "Beans rinsed into the dressing with sliced red onion, celery, 1 cup halved olives."
+  - "Add ½ cup chopped sun-dried tomatoes. Sit 20 min."
+  - "Tuna flaked in with its oil; zest and juice of 2 lemons."
+  - "Five jars. Parsley, a crack of pepper and a lemon wedge at the desk."
 per_plate_exempt: [sun-dried tomatoes]
 source_url: https://www.feastingathome.com/tuscan-white-bean-tuna-salad/
 image_url: https://www.feastingathome.com/wp-content/uploads/2019/05/White-bean-and-Tuna-Salad-101.jpg
@@ -39,7 +46,7 @@ amount of mayonnaise fixes it.
 1. Dressing: ⅓ cup olive oil, 3 tbsp red wine vinegar, 1 tbsp Dijon, 2 grated garlic
    cloves, 2 tbsp capers, 1 tsp oregano, ½ tsp chili flakes, plenty of salt and pepper.
 2. Beans drained and rinsed, tossed in the dressing with thin-sliced red onion, celery,
-   halved olives, chopped sun-dried tomatoes. **Sit 20 minutes** before packing.
+   a cup of halved olives, ½ cup chopped sun-dried tomatoes. **Sit 20 minutes** before packing.
 3. Tuna flaked in with its oil. Lemon zest and juice.
 4. Five jars. Parsley goes in **at the desk**, not in the jar — it blackens.
 

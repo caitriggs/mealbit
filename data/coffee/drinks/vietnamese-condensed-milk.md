@@ -7,8 +7,8 @@ seasons: [late-spring, summer, early-fall]
 cost_per_serving: 0.95
 shop_equivalent: 6.25
 ingredients:
-  - 1 can sweetened condensed milk [pantry]
-  - 1 bag dark-roast coffee, preferably with chicory [specialty]
+  - 1 can sweetened condensed milk {2 tbsp} [pantry]
+  - 1 bag dark-roast coffee, preferably with chicory {2 tbsp ground} [specialty]
 pantry: []
 photo_url: https://images.pexels.com/photos/31990173/pexels-photo-31990173.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
 photo_credit: 🇻🇳🇻🇳Nguyễn Tiến Thịnh 🇻🇳🇻🇳 / Pexels
@@ -24,7 +24,7 @@ $8 aluminium *phin* filter is the traditional way and worth owning, but any stro
 works.
 
 **Build:** 2 tbsp sweetened condensed milk in the bottom of a glass → 2–3 oz very strong
-hot coffee poured directly onto it → **stir until completely combined while hot** →
+hot coffee (2 tbsp ground, in a phin) poured directly onto it → **stir until completely combined while hot** →
 pour over a full glass of ice.
 
 **The move:** stir it while it's hot, before the ice. Condensed milk is dense enough to

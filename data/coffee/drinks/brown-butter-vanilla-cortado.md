@@ -7,8 +7,8 @@ seasons: [early-fall, late-fall, deep-winter, early-spring]
 cost_per_serving: 1.40
 shop_equivalent: 5.75
 ingredients:
-  - 1 half-gallon whole milk [dairy]
-  - 1 stick butter [dairy]
+  - 1 half-gallon whole milk {2 oz} [dairy]
+  - 1 stick butter {4 tbsp} [dairy]
   - 1 vanilla bean || 1 tbsp vanilla extract [pantry]
 pantry: [brown sugar, flaky salt]
 photo_url: https://images.pexels.com/photos/6166821/pexels-photo-6166821.jpeg?auto=compress&cs=tinysrgb&h=650&w=940

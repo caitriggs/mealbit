@@ -13,15 +13,23 @@ effort: medium
 register: comfort
 tags: [vegetarian, vegan-able, freezes-well, gets-better]
 ingredients:
+  - 1 yellow onion [produce]
   - 1½ lb eggplant || zucchini, or 1 lb mushrooms [produce]
   - 1 bunch cilantro [produce]
   - 2 hot green chiles || 1 jalapeño [produce]
-  - 2 cans coconut milk [pantry]
-  - 2 cans chickpeas [pantry]
-  - 1 bag basmati rice [pantry]
-  - 1 container Greek yogurt || coconut yogurt [dairy]
+  - 2 cans coconut milk {whole} [pantry]
+  - 2 cans chickpeas {whole} [pantry]
+  - 1 bag basmati rice {1½ cups} [pantry]
+  - 1 container Greek yogurt || coconut yogurt {½ cup} [dairy]
   - 4 naan || flatbread [bakery]
 pantry: [black mustard seed, cumin, turmeric, garam masala, canned tomatoes, ginger, garlic, neutral oil, kosher salt]
+steps:
+  - "Rice on. Char eggplants whole 10–12 min till collapsed; rest covered, peel, tear."
+  - "Tadka: 2 tbsp neutral oil, 1 tbsp black mustard seed till it pops, 2 tsp cumin seeds."
+  - "Onion 8 min to golden; grated ginger, garlic and the chiles, 1 min."
+  - "1 tsp turmeric, 2 tsp garam masala, canned tomatoes (1 can); 8 min, till the oil pools."
+  - "Both cans chickpeas, both cans coconut milk, the eggplant. Simmer 12 min. Salt well."
+  - "Cilantro, ½ cup yogurt, rice, naan."
 source_url: https://www.halfbakedharvest.com/simple-almond-chicken-chickpea-and-eggplant-curry/
 image_url: https://www.halfbakedharvest.com/wp-content/uploads/2015/07/Simple-Almond-Chicken-Chickpea-and-Eggplant-Curry-6.jpg
 source_name: halfbakedharvest.com
@@ -41,7 +49,7 @@ and slimy eggplant. Twelve minutes, and you will need to wipe the stove afterwar
 1. Char the eggplants whole, 10–12 minutes, turning until collapsed. Rest in a covered
    bowl 5 minutes — the steam loosens the skin. Peel, tear into rough strips, discard
    any stubborn stem.
-2. **Tadka:** hot oil, 1 tbsp black mustard seeds until they pop and skitter, then 2 tsp
+2. **Tadka:** 2 tbsp hot neutral oil, 1 tbsp black mustard seeds until they pop and skitter, then 2 tsp
    cumin seeds for 20 seconds. This takes 45 seconds and is where the flavor comes from.
 3. Onion, 8 minutes to soft and golden. Then a heap of grated ginger and garlic, plus
    the chiles, 1 minute.
@@ -50,7 +58,7 @@ and slimy eggplant. Twelve minutes, and you will need to wipe the stove afterwar
    for this.** It is the single most-skipped step in home curry and the reason home curry
    tastes raw.
 5. Chickpeas, coconut milk, torn eggplant. Simmer 12 minutes. Salt properly.
-6. Cilantro, yogurt, rice, naan.
+6. Cilantro, ½ cup yogurt, rice, naan.
 
 **Per plate:** cilantro is a finishing herb here, not a base one — the curry is built on mustard seed, turmeric and garam masala. Bowl up the no-cilantro portion, then scatter the other. The canned tomatoes cook down for 20 minutes and are not a raw tomato.
 

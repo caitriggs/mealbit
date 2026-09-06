@@ -61,7 +61,7 @@ only signal the library has about taste. Record them whenever they volunteer one
 send, in passing, mid-conversation.
 
 ```bash
-python tools/verdict.py <slug> --rating 5 --note "Sam wants this monthly" --who Ada
+python tools/verdict.py <slug> --rating 5 --note "Max wants this monthly" --who Cait
 python tools/verdict.py <slug> --rating 2 --note "grits were gluey"
 python tools/verdict.py <slug> --note "needs more lemon"           # a note, no rating
 ```
@@ -115,12 +115,18 @@ effort: easy                 # easy | medium | project (multi-hour; at most one 
 register: comfort            # comfort | elegant; a week needs two comfort
 tags: [crispy, weeknight]
 ingredients:
-  - 1 head green cabbage || napa cabbage [produce]         # EVERY produce line has a || fallback
+  - 1 head green cabbage {half} || napa cabbage [produce]  # EVERY produce line has a || fallback
   - 1½ lb boneless chicken thighs [protein]                # ceilings in data/portions.md
-  - 1 bag panko [pantry]
-  - 1 bottle tonkatsu sauce || Worcestershire + ketchup [specialty]
-pantry: [flour, eggs, neutral oil, rice vinegar, sugar, soy sauce, kosher salt]   # everything beyond salt, pepper, olive oil, white vinegar
-per_plate: []                # cilantro / raw tomatoes / arugula if bought; then a **Per plate:** paragraph
+  - 1 dozen eggs {3} [protein]                             # {use}: what the RECIPE takes; the list buys the package
+  - 1 bag panko {2 cups} [pantry]                          # every bag/jar/can/block/bottle/stick/dozen line needs one, or {whole}
+  - 1 bottle tonkatsu sauce {¼ cup} || Worcestershire + ketchup [specialty]
+pantry: [flour, neutral oil, rice vinegar, sugar, soy sauce, kosher salt]   # everything beyond salt, pepper, olive oil, white vinegar — and every one of these must be named in steps or the move
+steps:                       # 3–7 lines, each 90 chars or fewer (one printed line): what gets prepped or cooked together, in order
+  - "Slaw: shred the cabbage; toss with 2 tbsp rice vinegar, 1 tsp sugar and salt."
+  - "Bread the thighs: flour, beaten eggs, panko pressed on hard. Rest 5 min."
+  - "Shallow-fry in ½ in neutral oil, 4 min a side, to deep gold. Rack, salt at once."
+  - "Sauce: tonkatsu sauce warmed with a splash of soy. Slice, sauce over, slaw beside." 
+per_plate: []                # cilantro / raw tomatoes / arugula if bought; then a **Per plate:** paragraph in the body — the card prints only a tag
 photo_pending: true          # until a photo is pinned — see Photos
 rating: null
 ---
@@ -128,7 +134,14 @@ rating: null
 
 Every ingredient line ends in one kind tag — `[produce] [protein] [dairy] [bakery]
 [pantry] [specialty] [wine]` — and **never names a shop**; `config/stores.yml` decides
-that. Quantities are for four and believable: `data/portions.md` caps them (boneless meat
+that. A line bought as a package carries `{use}`: the amount the recipe actually takes
+out of it, or `{whole}`. The card prints the use amount and the list buys the package.
+`steps:` is what the cook reads; the body's numbered method can be longer, but the steps
+must name every cupboard item, or the card says "check you have cider vinegar" and never
+says why. Each step is one printed line (90 characters), because a card is a fixed
+half-sheet: seven one-line steps fit under the heaviest ingredient list, two-line steps
+do not. After writing or editing any recipe run `python tools/card_fit.py <slug>` — it
+prints how far the card overflows; anything over zero is being clipped off the bottom. Quantities are for four and believable: `data/portions.md` caps them (boneless meat
 1½ lb, ground 1 lb, beans 2 cans, cherry tomatoes 1 pint) and lists what is bought once
 for the week (herbs, a head of lettuce, jars). A per-plate ingredient (`diet.per_plate` in
 `household.yml`) is never load-bearing: declare `per_plate: [x]` and say in a `**Per

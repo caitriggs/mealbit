@@ -7,7 +7,7 @@ storage: fridge, sealed jar
 active_time: 10
 ingredients:
   - 1 vanilla bean || 1 tbsp vanilla extract [pantry]
-  - 1 jar cinnamon sticks [pantry]
+  - 1 jar cinnamon sticks {2} [pantry]
 pantry: [granulated sugar, flaky salt]
 tags: [workhorse, everyday]
 pairs_with: [espresso, cold-foam, iced]

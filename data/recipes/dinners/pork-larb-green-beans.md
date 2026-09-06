@@ -18,11 +18,18 @@ ingredients:
   - 1 bunch cilantro [produce]
   - 4 shallots || 1 red onion [produce]
   - 1 lb ground pork [protein]
-  - 1 bag sticky rice || jasmine rice [pantry]
-  - 1 bag raw jasmine rice (for toasting) [pantry]
+  - 1 bag sticky rice || jasmine rice {2 cups} [pantry]
+  - 1 bag raw jasmine rice (for toasting) {3 tbsp} [pantry]
   - 3 limes [produce]
   - 2 red Fresno chiles || 1 jalapeño [produce]
-pantry: [fish sauce, neutral oil, chili flakes, sugar]
+pantry: [fish sauce, neutral oil, sugar]
+steps:
+  - "Toast 3 tbsp raw jasmine rice in a dry pan 8 min till tea-coloured; grind to coarse sand."
+  - "2 cups sticky rice on. Green beans in a dry ripping-hot pan till blistered, 6–8 min; salt."
+  - "Same pan, slick of neutral oil, high heat: pork pressed flat 3 min, then broken up."
+  - "Off heat, dress hot: juice of 3 limes, 3 tbsp fish sauce, 1 tsp sugar, chiles, shallots."
+  - "Fold in 2 tbsp rice powder, then huge handfuls of torn mint just before serving."
+  - "Sticky rice and green beans alongside; extra rice powder at the table."
 per_plate: [cilantro]
 photo_url: https://images.pexels.com/photos/39303526/pexels-photo-39303526.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
 photo_credit: Vuong / Pexels

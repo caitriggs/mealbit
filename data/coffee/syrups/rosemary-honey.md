@@ -6,7 +6,7 @@ keeps_weeks: 5
 storage: fridge, sealed jar
 active_time: 8
 ingredients:
-  - 1 jar honey [pantry]
+  - 1 jar honey {½ cup} [pantry]
   - 1 bunch rosemary || dried rosemary [produce]
 pantry: [granulated sugar]
 tags: [herbal, iced, unexpected]

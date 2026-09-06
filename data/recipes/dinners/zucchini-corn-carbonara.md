@@ -17,10 +17,18 @@ ingredients:
   - 3 ears corn || 1.5 cups frozen corn [produce]
   - 1 large bunch basil || mint, or parsley [produce]
   - 6 oz pancetta or guanciale [protein]
-  - 1 wedge Pecorino Romano [dairy]
-  - 1 dozen eggs [protein]
+  - 1 wedge Pecorino Romano {1½ cups grated} [dairy]
+  - 1 dozen eggs {5} [protein]
   - 12 oz bucatini || spaghetti [pantry]
 pantry: [olive oil, black pepper, kosher salt, garlic]
+steps:
+  - "Zucchini grated, salted, 15 min in a colander, then squeezed hard in a towel."
+  - "Corn cut off the cobs; scrape the cobs with the back of the knife for their milk."
+  - "Pancetta from a cold wide pan, rendered slowly to crisp. Out; leave the fat."
+  - "Zucchini in the fat, high, 6–8 min. Corn and milk, 2 min. 2 sliced garlic cloves, 30 sec."
+  - "Off heat. Whisk 3 eggs + 2 yolks with 1½ cups grated Pecorino and a lot of black pepper."
+  - "Pasta very al dente; reserve 2 cups water. Into the off-heat pan, toss, wait 20 sec."
+  - "Eggs in with a splash of pasta water; toss, adding water, until glossy. Pancetta, basil."
 photo_url: https://images.pexels.com/photos/546945/pexels-photo-546945.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
 photo_credit: Maurijn Pach / Pexels
 photo_source: https://www.pexels.com/photo/shallow-focus-photo-of-pasta-546945/

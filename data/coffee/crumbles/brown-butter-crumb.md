@@ -6,7 +6,7 @@ keeps_weeks: 4
 storage: airtight jar, room temperature
 active_time: 25
 ingredients:
-  - 1 stick butter [dairy]
+  - 1 stick butter {4 tbsp} [dairy]
 pantry: [all-purpose flour, granulated sugar, vanilla extract, flaky salt]
 tags: [bakery, rich, showpiece]
 pairs_with: [miso-caramel, vanilla-cinnamon, cardamom-honey]

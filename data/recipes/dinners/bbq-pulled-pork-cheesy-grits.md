@@ -17,14 +17,22 @@ ingredients:
   - 1 bunch scallions [produce]
   - 3 red Fresno chiles || 1 red jalapeño [produce]
   - 2 lb fully-cooked pulled pork || leftover pork shoulder (see the Sunday braise) [protein]
-  - 1 bag stone-ground grits || polenta [pantry]
-  - 1 block sharp cheddar [dairy]
-  - 1 container sour cream [dairy]
-  - 1 bag frozen corn [pantry]
-pantry: [apple cider vinegar, sugar, tomato paste, smoked paprika, brown sugar, Worcestershire, Dijon mustard, garlic, butter, neutral oil, kosher salt, black pepper, hot sauce]
-photo_url: https://images.pexels.com/photos/36850055/pexels-photo-36850055.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
-photo_credit: Mohamed  Olwy / Pexels
-photo_source: https://www.pexels.com/photo/steaming-tender-pulled-pork-on-rustic-wooden-board-36850055/
+  - 1 bag stone-ground grits || polenta {1 cup} [pantry]
+  - 1 block sharp cheddar {1 cup grated} [dairy]
+  - 1 container sour cream {½ cup} [dairy]
+  - 1 bag frozen corn {1 cup} [pantry]
+  - 1 half-gallon whole milk {2 cups} [dairy]
+pantry: [apple cider vinegar, sugar, tomato paste, smoked paprika, brown sugar, Worcestershire, Dijon mustard, garlic, butter, hot sauce, kosher salt, black pepper]
+steps:
+  - "Pickle: Fresno rings in 3 tbsp cider vinegar, 2 tbsp sugar, 2 tbsp hot water, pinch salt."
+  - "Grits: 1 cup in 3 cups water + 2 cups milk, 1 tsp salt. Lowest heat, whisked, 25–40 min."
+  - "Sauce: 3 tbsp tomato paste, 3 tbsp brown sugar, 2 tbsp cider vinegar, ½ cup water,"
+  - "1 tbsp Worcestershire, 1 tsp Dijon mustard, 2 tsp smoked paprika, garlic, hot sauce."
+  - "Simmer 5 min. Pork tossed with half, spread thin on foil; broil 8–10 min till charred."
+  - "Grits off heat: 3 tbsp butter, 1 cup cheddar. Chard in butter, garlic, 1 cup corn."
+photo_url: https://images.pexels.com/photos/29716503/pexels-photo-29716503.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
+photo_credit: Costin Cerednicenco / Pexels
+photo_source: https://www.pexels.com/photo/delicious-romanian-dish-with-polenta-and-beef-29716503/
 photo_pinned: true
 rating: null
 ---
@@ -43,8 +51,8 @@ gets those crisp burnt ends that make the dish.
 1. **Pickle first:** thin-slice the Fresnos into rings, cover with 3 tbsp cider vinegar,
    2 tbsp sugar, 2 tbsp hot water, big pinch salt. Leave them. Twenty minutes is plenty.
 2. Grits: 1 cup stone-ground to 3 cups water + 2 cups milk, 1 tsp salt. Boil, then lowest
-   heat, whisked every few minutes, 25–40 minutes. Finish with 3 tbsp butter and a big
-   handful of grated cheddar off the heat. Season hard — under-salted grits are the
+   heat, whisked every few minutes, 25–40 minutes. Finish with 3 tbsp butter and 1 cup
+   grated cheddar off the heat. Season hard — under-salted grits are the
    number one failure here.
 3. **Quick BBQ sauce** (better than the jar, five minutes): 3 tbsp tomato paste, 3 tbsp
    brown sugar, 2 tbsp cider vinegar, 1 tbsp Worcestershire, 1 tsp Dijon, 2 tsp smoked
@@ -53,7 +61,7 @@ gets those crisp burnt ends that make the dish.
 4. Pork broken up on a foiled sheet pan, tossed with half the sauce, spread thin.
    **Broil 8–10 minutes** until the edges char. Toss with the rest of the sauce.
 5. Chard: stems sliced and cooked in butter 3 minutes, then the torn leaves with a splash
-   of water, 2 minutes. Sliced garlic at the end. A handful of corn in with the leaves.
+   of water, 2 minutes. Sliced garlic at the end. 1 cup of corn in with the leaves.
 6. Bowls: grits, pork, chard alongside, sour cream, pickled Fresnos and a spoon of their
    pink liquid, scallions.
 

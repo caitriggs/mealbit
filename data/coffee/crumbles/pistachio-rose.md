@@ -6,8 +6,8 @@ keeps_weeks: 6
 storage: airtight jar, room temperature
 active_time: 8
 ingredients:
-  - 1 bag shelled pistachios [pantry]
-  - 1 packet dried rose petals || culinary lavender [specialty]
+  - 1 bag shelled pistachios {¾ cup} [pantry]
+  - 1 packet dried rose petals || culinary lavender {1 tsp} [specialty]
 pantry: [granulated sugar, flaky salt, cardamom]
 tags: [floral, green, showpiece]
 pairs_with: [cardamom-honey, salted-honey-lavender, vanilla-cinnamon]

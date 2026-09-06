@@ -6,8 +6,8 @@ keeps_weeks: 5
 storage: fridge, sealed jar
 active_time: 8
 ingredients:
-  - 1 jar honey [pantry]
-  - 1 packet culinary lavender [specialty]
+  - 1 jar honey {½ cup} [pantry]
+  - 1 packet culinary lavender {2 tsp} [specialty]
 pantry: [flaky salt]
 tags: [floral, summer, easy-to-overdo]
 pairs_with: [iced, cold-foam, pistachio-crumble]

@@ -16,11 +16,19 @@ ingredients:
   - 1 lb sugar snap peas || asparagus, or green beans [produce]
   - 1 bunch scallions [produce]
   - 2 watermelon radishes || any radish [produce]
-  - 2 blocks extra-firm tofu [protein]
-  - 1 package soba noodles [pantry]
-  - 1 bag frozen shelled edamame [pantry]
+  - 2 blocks extra-firm tofu {whole} [protein]
+  - 1 package soba noodles {whole} [pantry]
+  - 1 bag frozen shelled edamame {1½ cups} [pantry]
   - 1 lemon [produce]
 pantry: [white miso, soy sauce, rice vinegar, toasted sesame oil, maple syrup, ginger, garlic, sesame seeds, neutral oil, cornstarch]
+steps:
+  - "Tofu pressed, cubed, tossed in 2 tbsp neutral oil and 3 tbsp cornstarch. 425°F, 20 min."
+  - "Glaze: 3 tbsp white miso, 2 tbsp maple syrup, 2 tbsp rice vinegar, 1 tbsp soy sauce."
+  - "Add 1 tbsp grated ginger, 1 tsp sesame oil. Brush on the tofu, 5 min more, brush again."
+  - "Soba boiled 4 min, rinsed cold and hard, tossed with 1 tsp sesame oil."
+  - "Snap peas blanched 90 sec, iced. 1½ cups edamame thawed. Radishes sliced."
+  - "Dressing: ¼ cup soy, 3 tbsp rice vinegar, 2 tbsp sesame oil, 1 tbsp maple, garlic, ginger."
+  - "Box soba, peas, edamame, radish, tofu; dressing apart. Desk: sesame seeds, scallions."
 photo_url: https://images.pexels.com/photos/36617968/pexels-photo-36617968.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
 photo_credit: 军 胡 / Pexels
 photo_source: https://www.pexels.com/photo/delicious-soba-noodles-with-fried-egg-36617968/

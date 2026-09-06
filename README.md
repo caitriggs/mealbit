@@ -113,7 +113,7 @@ python -m mealbit.meal_plan --send               # the real send; records to his
 python -m mealbit.audit                          # is the library deep enough for the season?
 python -m mealbit.audit --issue                  # the same, as a GitHub issue body
 
-python tests/test_mealbit.py                     # 80 tests, incl. a 52-week simulation
+python tests/test_mealbit.py                     # 85 tests, incl. a 52-week simulation
 python tools/screenshot.py                       # 412px light + dark PNGs into out/
 ```
 
@@ -168,7 +168,7 @@ data/
   images/           cached 320px thumbnails, carried inline in the email
   history.json      what was served, so rotation works
 tools/              photo and source finders; all show candidates and make you pick
-tests/              one file, 80 tests
+tests/              one file, 85 tests
 docs/               the household model, explained
 ```
 

@@ -17,14 +17,22 @@ ingredients:
   - 1 bunch cilantro [produce]
   - 1 bunch spring onions || scallions [produce]
   - 1½ lb boneless skinless chicken thighs [protein]
-  - 1 package corn tortillas [bakery]
-  - 1 block Monterey Jack || cheddar-jack [dairy]
-  - 1 container Mexican crema || sour cream [dairy]
-  - 2 jars salsa verde || 1.5 lb tomatillos, broiled and blended [pantry]
-  - 1 container queso fresco || feta [dairy]
+  - 1 package corn tortillas {12} [bakery]
+  - 1 block Monterey Jack || cheddar-jack {2 cups grated} [dairy]
+  - 1 container Mexican crema || sour cream {½ cup} [dairy]
+  - 2 jars salsa verde || 1.5 lb tomatillos, broiled and blended {2 cups} [pantry]
+  - 1 container queso fresco || feta {½ cup crumbled} [dairy]
   - 3 limes [produce]
   - 1 white onion [produce]
-pantry: [cumin, coriander, oregano, garlic, neutral oil, kosher salt, black pepper, stock, chili flakes]
+pantry: [cumin, oregano, neutral oil, kosher salt, black pepper, stock]
+steps:
+  - "Poach thighs: 2 cups salsa verde, ½ cup stock, 1 tsp cumin, 1 tsp oregano, ½ onion."
+  - "Covered, 20 min. Shred; 1 cup of the liquid back into the meat, the rest is sauce."
+  - "Asparagus in 1-in lengths in a dry ripping-hot pan till blackened in spots, 4 min. Salt."
+  - "Filling: chicken, half the asparagus, 1 cup grated Jack, lime juice, salt."
+  - "Fry 12 tortillas in ¼ in of neutral oil, 15 sec a side, till pliable. Drain on paper."
+  - "Roll, seam down, in a sauced dish; rest of the sauce and cheese over. 400°F, 20–25 min."
+  - "Crema, queso fresco, the rest of the asparagus, cilantro, spring onions, lime."
 source_url: https://www.gimmesomeoven.com/verde-chicken-enchilada-casserole/
 image_url: https://www.gimmesomeoven.com/wp-content/uploads/2018/08/Verde-Chicken-Enchilada-Casserole-Recipe-1-4.jpg
 source_name: gimmesomeoven.com

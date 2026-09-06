@@ -1237,9 +1237,16 @@ def test_market_availability_model():
 
     # Never means never, in any month.
     for month in (2, 8):
-        for item in ("lemon", "sweet potato", "tomatillo"):
+        for item in ("lemon", "sweet potato", "avocado"):
             ok, _why = L.market_has(item, month, avail)
             check(not ok, f"{item} should never route to the market (month {month})")
+
+    # Tomatillos were on the never-list; the household corrected it after a market run
+    # ("tomatillos are available at the FM"). They are a late-summer crop here.
+    ok_sep, _ = L.market_has("tomatillos", 9, avail)
+    ok_feb, _ = L.market_has("tomatillos", 2, avail)
+    check(ok_sep, "September tomatillos come from the market")
+    check(not ok_feb, "February tomatillos do not")
 
     # Seasonal items follow the month.
     ok_aug, _ = L.market_has("cherry tomatoes", 8, avail)
@@ -2029,11 +2036,11 @@ def test_verdicts_are_written_without_disturbing_the_recipe():
     dst = os.path.join(tmp, os.path.basename(src))
     shutil.copy(src, dst)
     before = open(dst, encoding="utf-8").read()
-    L.record_verdict(dst, 4, "great — more heat next time", "Sam", date(2026, 9, 5))
+    L.record_verdict(dst, 4, "great — more heat next time", "Max", date(2026, 9, 5))
     r = L.record_verdict(dst, 2, "grits were gluey", None, date(2026, 9, 12))
     check(r["rating"] == 2 and L.is_retired(r), "second verdict should set the rating and retire")
     check([e.get("rating") for e in r["feedback"]] == [4, 2], "feedback must keep every verdict in order")
-    check(r["feedback"][0]["who"] == "Sam" and "gluey" in r["feedback"][1]["note"],
+    check(r["feedback"][0]["who"] == "Max" and "gluey" in r["feedback"][1]["note"],
           "feedback entries lost their who/note")
     after = open(dst, encoding="utf-8").read()
     strip = lambda t: re.sub(r"^feedback:\n(?:  .*\n)*", "",
@@ -2227,6 +2234,111 @@ def test_coffee_reaches_the_list_and_the_printer():
             check(t["title"] in cards, f"week {wk}: {t['slug']} is to be made and has no card")
         # The method itself is on the card, not just the name.
         check(">Method<" in cards, f"week {wk}: coffee cards print no method")
+
+
+# ---------------------------------------------------------------- the card says how much
+
+def _card_pool():
+    return L.load_dinners() + L.load_lunches() + L.load_drinks() + L.load_syrups() + L.load_crumbles()
+
+
+def test_a_recipe_says_how_much_it_uses():
+    """
+    The list buys the package; the card says what the recipe takes out of it.
+
+    "1 dozen eggs" printed on a katsu card that uses three, and "1 bag stone-ground
+    grits" under a recipe that wants a cup. Every line bought as a package — a bag, a
+    jar, a block, a can, a bottle, a stick, a dozen — has to carry a `{use}` amount,
+    or `{whole}` when all of it goes in. Non-package lines ("1 bunch scallions",
+    "1½ lb chicken thighs") are used as bought and need nothing.
+    """
+    for r in _card_pool():
+        for line in L.ingredients(r):
+            it = L.parse_item(line)
+            if L.is_package(it):
+                check(it.get("use"),
+                      f"{r['slug']}: {line!r} is bought as a package; add {{<amount the "
+                      f"recipe uses>}} or {{whole}} before the [kind] tag")
+
+
+def test_every_recipe_has_steps():
+    """
+    Dinners and lunches carry `steps:` — three to seven short lines saying which things
+    get prepped or cooked together, in order. The technique note stays; the household:
+    "the complete lack of directions might be confusing to many users." Each line is
+    one printed line — 90 characters at the card's size — because a card is a half-sheet
+    and the overflow test is the real limit: seven one-line steps fit under the heaviest
+    ingredient list in the library; seven two-line steps do not.
+    """
+    for r in L.load_dinners() + L.load_lunches():
+        steps = r.get("steps") or []
+        check(3 <= len(steps) <= 7, f"{r['slug']}: wants 3–7 `steps:`, has {len(steps)}")
+        for s in steps:
+            check(len(str(s)) <= 90, f"{r['slug']}: a step is {len(str(s))} chars; one line is 90")
+
+
+_GRADE_WORDS = ("kosher", "neutral", "granulated", "all-purpose", "flaky", "whole", "ground",
+                "fresh", "dried", "extra-virgin", "unsalted", "toasted", "light", "dark", "plain")
+
+
+def _mentioned(item, text):
+    """Is this cupboard item named in the text — loosely, without its grade word?"""
+    key = L.normalize(item)
+    words = [w for w in key.split() if w not in _GRADE_WORDS]
+    if not words:
+        return True
+    if " ".join(words) in text:
+        return True
+    tail = " ".join(words[-2:])
+    return re.search(rf"\b{re.escape(tail)}\b", text) is not None
+
+
+def test_every_cupboard_item_is_used_on_the_card():
+    """
+    "Check you have apple cider vinegar" — and then nothing says what it is for. Every
+    pantry item beyond the four staples has to be named in the steps or the technique
+    note, so the cook can see where it goes.
+    """
+    staples, rotation = L.load_pantry()
+    for r in L.load_dinners() + L.load_lunches():
+        text = L.normalize(" ".join(str(s) for s in (r.get("steps") or []))
+                           + " " + (r.get("body") or ""))
+        for raw in r.get("pantry") or []:
+            it = L.parse_item(str(raw))
+            if not it["name"] or L.is_pantry(it, staples, rotation):
+                continue
+            check(_mentioned(it["name"], text),
+                  f"{r['slug']}: the card says check you have {it['name']!r} and the steps "
+                  f"never say where it goes")
+
+
+def test_a_store_never_list_reroutes():
+    """A store that takes the kind but has said it never carries the thing is skipped."""
+    from mealbit import config as C
+    stores = C.stores()
+    tj = next((s for s in stores if s["id"] == "tj"), None)
+    if not tj or "arbol chile" not in (tj.get("never") or []):
+        print("      (no tj never-list in this config — skipped)")
+        return
+    r = {"slug": "t", "title": "t", "ingredients": ["3 dried árbol chiles || 2 tsp chili flakes [specialty]",
+                                                    "1 jar chili crisp [specialty]"]}
+    routed, _ = P.route_to_stores([r], 9)
+    by = routed[0]["_by_store"]
+    check(not any("rbol" in x for x in by["tj"]), "TJ never carries árbol chiles; the line should move on")
+    check(any("rbol" in x for x in by["qfc"]), "the árbol line should land at the catch-all")
+    check(any("chili crisp" in x for x in by["tj"]), "chili crisp is not on the never-list and should stay at TJ")
+
+
+def test_the_card_prints_use_amounts_and_the_per_plate_tag():
+    from mealbit import printable as PR
+    katsu = next(r for r in L.load_dinners() if r["slug"] == "chicken-katsu-cabbage-slaw")
+    card = PR._card("Mon", katsu)
+    check("3 eggs" in card and "dozen" not in card, "the katsu card should say 3 eggs, not a dozen")
+    dal = next(r for r in L.load_dinners() if r.get("per_plate"))
+    card = PR._card("Mon", dal)
+    check('class="pp-tag"' in card, "a per-plate dish prints a per-plate tag")
+    check("pp-box" not in card, "the per-plate paragraph must not print on the card; the tag is enough")
+    check('class="steps"' in card, "the card prints numbered steps")
 
 
 def main():

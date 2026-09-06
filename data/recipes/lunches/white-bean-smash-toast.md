@@ -14,13 +14,19 @@ register: elegant
 tags: [five-minutes, vegetarian, pantry-only, emergency-lunch]
 ingredients:
   - 1 bunch parsley || basil in summer [produce]
-  - 1 can cannellini beans [pantry]
-  - 1 loaf sourdough [bakery]
-  - 1 jar chili onion crunch || any chili oil [specialty]
-  - 1 wedge Parmigiano-Reggiano [dairy]
+  - 1 can cannellini beans {whole} [pantry]
+  - 1 loaf sourdough {2 thick slices} [bakery]
+  - 1 jar chili onion crunch || any chili oil {2 tbsp} [specialty]
+  - 1 wedge Parmigiano-Reggiano {1 oz} [dairy]
   - 1 lemon [produce]
   - 1 tomato (summer only) || jarred sun-dried tomatoes [produce]
-pantry: [olive oil, garlic, chili flakes, kosher salt, black pepper, red wine vinegar, capers]
+pantry: [olive oil, garlic, chili flakes, kosher salt, black pepper, red wine vinegar]
+steps:
+  - "2 thick slices of sourdough toasted hard and dark."
+  - "Rub the hot toast with a halved raw garlic clove; flood with olive oil and salt."
+  - "Beans drained, fork-smashed with 2 tbsp olive oil, lemon zest and juice."
+  - "Then 1 tsp red wine vinegar, a pinch of chili flakes, salt, pepper; keep it lumpy."
+  - "2 tbsp chili crunch, shaved Parmigiano, parsley, more olive oil. Tomato if it's August."
 per_plate: [tomatoes]
 photo_url: https://images.pexels.com/photos/5150301/pexels-photo-5150301.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
 photo_credit: ROMAN ODINTSOV / Pexels
@@ -41,7 +47,7 @@ between beans on toast and something you'd order.
 2. **Rubbed with a halved raw garlic clove while still hot**, then flooded with olive
    oil and salt.
 3. Beans drained, smashed roughly with a fork with 2 tbsp olive oil, lemon juice and
-   zest, 1 tsp vinegar, a pinch of chili flakes, salt, pepper. Leave it lumpy.
+   zest, 1 tsp red wine vinegar, a pinch of chili flakes, salt, pepper. Leave it lumpy.
 4. Piled on. Chili crisp, shaved Parmigiano, parsley, more olive oil than seems
    reasonable. Tomato if it's August.
 

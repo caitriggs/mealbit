@@ -62,13 +62,13 @@ peak: raspberries, blueberries, marionberries, cherries, apricots, zucchini & su
 season: summer
 peak: tomatoes (the real ones, finally), corn, peppers, eggplant, zucchini, green beans,
   cucumbers, blueberries, blackberries, peaches & nectarines, plums, basil, shishitos,
-  melons, shell beans
+  melons, shell beans, tomatillos
 
 ## September
 season: early-fall
 peak: tomatoes (through mid-month), corn, peppers, eggplant, apples & pears begin,
-  Italian prune plums, winter squash begins, shell beans, kale, broccoli, cauliflower,
-  chanterelles (the season starts), grapes
+  Italian prune plums, winter squash begins, shell beans, tomatillos, kale, broccoli,
+  cauliflower, chanterelles (the season starts), grapes
 
 ## October
 season: early-fall

@@ -367,7 +367,23 @@ def relevant(url, terms, title=None):
     # Two independent words, wherever they land, plus the dish-noun and index checks
     # above. What no slug rule can see is a photo of the right dish made with the wrong
     # main ingredient; those go in data/rejected-sources.md by hand.
-    return sum(1 for t in terms if has(t)) >= 2
+    if sum(1 for t in terms if has(t)) < 2:
+        return False
+    # And one of them has to come from the title's HEAD — the words before the first
+    # "with", "over" or "on". That is the dish; what follows is what it sits on or under.
+    # "BBQ pulled pork over cheesy grits with chard and pickled Fresnos" matched PICKLED
+    # CHARD stems, a condiment: its two rarest words were both garnish, and the slug
+    # carried both. The sixth wrong match, and the first where every earlier rule held.
+    if title:
+        head = []
+        for w in title_words(title):
+            if w in ("with", "over", "on", "topped", "atop"):
+                break
+            head.append(w)
+        head = [w for w in head if w not in STOP and len(w) > 2]
+        if head and not any(has(w) for w in head):
+            return False
+    return True
 
 
 def rejected():

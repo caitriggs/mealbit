@@ -6,8 +6,8 @@ keeps_weeks: 6
 storage: fridge, sealed jar
 active_time: 10
 ingredients:
-  - 1 jar honey [pantry]
-  - 1 jar green cardamom pods [pantry]
+  - 1 jar honey {½ cup} [pantry]
+  - 1 jar green cardamom pods {12} [pantry]
 pantry: []
 tags: [floral, warming]
 pairs_with: [espresso, hot, pistachio-crumble]

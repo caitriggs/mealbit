@@ -18,12 +18,19 @@ ingredients:
   - 1 red onion [produce]
   - 2 jalapeños [produce]
   - 1 lb ground turkey (dark meat if you can) [pantry]
-  - 1 package flour tortillas (6-inch) [bakery]
-  - 1 block cheddar-jack || Monterey Jack [dairy]
-  - 1 container Mexican crema || sour cream [dairy]
-  - 1 jar pickled jalapeños [pantry]
+  - 1 package flour tortillas (6-inch) {12} [bakery]
+  - 1 block cheddar-jack || Monterey Jack {1 cup grated} [dairy]
+  - 1 container Mexican crema || sour cream {½ cup} [dairy]
+  - 1 jar pickled jalapeños {¼ cup} [pantry]
   - 3 limes [produce]
 pantry: [cumin, coriander, smoked paprika, oregano, chili flakes, garlic, neutral oil, kosher salt, black pepper, sugar]
+steps:
+  - "Broil husked, halved tomatillos, jalapeños and half the onion 8–10 min till blackened."
+  - "Blitz with the juice of 1 lime, 1 tsp sugar and plenty of salt; keep it chunky."
+  - "Mix 2 tsp cumin, 2 tsp coriander, 1 tsp smoked paprika, 1 tsp oregano, ½ tsp chili flakes."
+  - "Brown turkey hard in neutral oil, 3 min unmoved. Garlic and spices 1 min; ¼ cup salsa."
+  - "Warm tortillas. Roll 3 tbsp filling and a pinch of cheese in each, seam down, oiled tray."
+  - "Brush with oil; bake at 425°F 15–20 min till gold. Salsa, crema, onion, pickled jalapeños."
 per_plate: [cilantro]
 photo_url: https://images.pexels.com/photos/17429144/pexels-photo-17429144.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
 photo_credit: Jonathan  Reynaga / Pexels

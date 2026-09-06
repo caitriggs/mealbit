@@ -141,6 +141,15 @@ def parse_item(line):
     m_kind = re.search(r"\s*\[([a-z]+)\]\s*$", raw)
     if m_kind:
         kind, raw = m_kind.group(1), raw[:m_kind.start()].rstrip()
+    # A `{use}` amount is what the RECIPE uses, as opposed to what is bought: "1 bag
+    # stone-ground grits {1 cup}". The list buys the bag; the card says a cup. `{whole}`
+    # says the whole purchase goes in. A card that read "1 dozen eggs" for a katsu that
+    # takes three is what this fixes.
+    use = None
+    m_use = re.search(r"\s*\{([^}]*)\}\s*", raw)
+    if m_use:
+        use = m_use.group(1).strip() or None
+        raw = (raw[:m_use.start()] + " " + raw[m_use.end():]).strip()
     fallback = None
     if "||" in raw:
         raw, fallback = [p.strip() for p in raw.split("||", 1)]
@@ -182,8 +191,26 @@ def parse_item(line):
         unit, rest = UNITS[m.group(1).lower()], m.group(2)
 
     name = _VARIETY.sub("", rest.strip(" ,")).strip()
-    return {"kind": kind, "qty": qty, "unit": unit, "name": name,
+    return {"kind": kind, "qty": qty, "unit": unit, "name": name, "use": use,
             "key": normalize(name), "fallback": fallback, "raw": line.strip()}
+
+
+# Bought in a package that is bigger than the recipe's use. A line with one of these as
+# its unit has to say what the recipe takes out of it, or the card lies about amounts.
+PACKAGE_UNITS = {"bag", "jar", "block", "container", "bottle", "can", "tub", "box",
+                 "package", "carton", "stick", "loaf", "dozen", "tin", "packet", "bar",
+                 "tablet", "half-gallon", "four-pack", "jug", "wedge", "tube"}
+
+
+def is_package(item):
+    """True when the buy unit is a package the recipe only partly uses."""
+    unit = (item.get("unit") or "").lower()
+    if unit in PACKAGE_UNITS:
+        return True
+    # "1 half-gallon whole milk", "1 four-pack tonic water": the unit did not parse as a
+    # word because of the hyphen, so it is the first word of the name.
+    first = (item.get("name") or "").split(" ")[0].lower()
+    return first in PACKAGE_UNITS
 
 
 

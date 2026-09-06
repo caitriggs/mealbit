@@ -7,9 +7,9 @@ seasons: [late-spring, summer]
 cost_per_serving: 1.50
 shop_equivalent: 6.75
 ingredients:
-  - 1 half-gallon whole milk || 1 carton barista oat milk [dairy]
-  - 1 jar honey [pantry]
-  - 1 packet culinary lavender [specialty]
+  - 1 half-gallon whole milk || 1 carton barista oat milk {6 oz} [dairy]
+  - 1 jar honey {½ cup} [pantry]
+  - 1 packet culinary lavender {2 tsp} [specialty]
 pantry: [flaky salt, granulated sugar]
 photo_url: https://images.pexels.com/photos/15023076/pexels-photo-15023076.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
 photo_credit: Julissa Pires / Pexels

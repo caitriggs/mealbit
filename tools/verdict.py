@@ -2,7 +2,7 @@
 """
 Record what the household thought of a dish, on the recipe itself.
 
-    python tools/verdict.py chicken-katsu-curry --rating 5 --note "Sam wants this monthly"
+    python tools/verdict.py chicken-katsu-curry --rating 5 --note "Max wants this monthly"
     python tools/verdict.py bbq-pulled-pork-cheesy-grits --rating 2 --note "grits were gluey"
     python tools/verdict.py some-lunch --note "needs more lemon"          # note only
     python tools/verdict.py --reset-all       # a fresh fork: the last household's opinions are not yours

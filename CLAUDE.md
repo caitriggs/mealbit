@@ -177,7 +177,8 @@ Break these and the newsletter stops doing its job, even if it still renders:
     plate:**` paragraph, or `per_plate_exempt: [x]` with a reason (cooked down, roasted —
     not raw). Enforced by a test; nothing is inferred from prose. This was documented from
     day one and enforced nowhere, which is how a panzanella shipped with raw tomato juice
-    *as the dressing*. The email and the card name the person: "not on Sam's plate".
+    *as the dressing*. The email names the person: "not on Max's plate". **The card
+    prints only a tag** — "Per plate — cilantro — not on Max's" — never the paragraph.
 
 12. **Three attachments, three formats, and only one of them is HTML.** The shopping list
     is HTML because its checkboxes get tapped in the aisle. The recipe cards are a **PDF**
@@ -220,13 +221,33 @@ Break these and the newsletter stops doing its job, even if it still renders:
     It used to key on a `last_served` field on the recipe that nothing wrote, so it did
     nothing; history is the one record of what was served and the only thing consulted.
 
-17. **The template carries nothing that is anyone's.** The upstream ships with placeholder
-    names, no `config/onboarded.yml`, an empty `history.json`, a clear `this-week.yml`, no
+17. **The template carries nothing that is anyone's.** The upstream ships with the starter
+    names (Cait and Max, whose kitchen this was written for), no `config/onboarded.yml`,
+    an empty `history.json`, a clear `this-week.yml`, no
     verdicts, and **no cron in either workflow** — it must never send from itself, and a
     scheduled run on a public repository with placeholder config is a red run every
     Saturday. `python tools/schedule.py --write` adds the schedule for the household's own
     timezone during onboarding; `--remove` puts the template back. A test holds all of
     this on the upstream and is a no-op on a copy.
+
+18. **The card says how much the recipe uses, and what to do.** The list buys the
+    package; the card says what comes out of it: `1 bag stone-ground grits {1 cup}`,
+    `1 dozen eggs {3}`, `{whole}` when all of it goes in. Every package-unit line
+    (`library.PACKAGE_UNITS`) must carry one; a test insists. Every dinner and lunch
+    carries `steps:` — three to seven lines, **each 90 characters or fewer, which is one
+    printed line** — saying which things are prepped or cooked together and in what
+    order — and every "check you have" item has to be named in the steps or the technique
+    note, or the cook is left holding cider vinegar with no idea where it goes. **A card is
+    a half-sheet, full stop**: seven one-line steps fit under the heaviest ingredient list
+    in the library and seven two-line steps do not, the photo is what gives, and
+    `python tools/card_fit.py <slug>` measures the real thing. Run it on every recipe you
+    touch; a card that overflows loses its bottom silently.
+
+19. **A shop's `never:` list beats its `takes:`.** A kind says a shop sells pantry things;
+    it doesn't say this shop sells this thing. `config/stores.yml` lets a store list what
+    it never carries (Trader Joe's: dried árbol chiles, chipotles in adobo, Mexican crema,
+    grits...) and the router moves the line on to the next store, intact. Grow the list
+    after a wasted trip. The catch-all ignores it.
 
 ## The email HTML has hard constraints
 
@@ -244,9 +265,10 @@ Break these and the newsletter stops doing its job, even if it still renders:
 ## Before you commit
 
 ```bash
-python tests/test_mealbit.py     # 80 tests, including a 52-week rotation simulation
+python tests/test_mealbit.py     # 85 tests, including a 52-week rotation simulation
 python -m mealbit.meal_plan      # renders out/meal_plan.html + out/cards.pdf
 python tools/screenshot.py       # 412px light + dark
+python tools/card_fit.py         # every card in the library against its half-sheet
 ```
 
 The test suite is the guard on hand-edited data. A malformed recipe file should fail
@@ -314,11 +336,14 @@ it stays a queue.
 
 **A representative photo must never become the recipe behind the QR.**
 
-**The recipe matcher has been wrong five times** (`tools/find_sources.py`). Site search is
+**The recipe matcher has been wrong six times** (`tools/find_sources.py`). Site search is
 loose, so the URL slug must carry the dish's identity: **FORMS** (wrap, bowl, soup) must
 agree, taken as the *last* form noun because English puts the filling before the
-container; **NAMES** (katsu, hummus) must be present; index pages are rejected. What no
-URL rule can see — the right dish with the wrong main ingredient — goes in
+container; **NAMES** (katsu, hummus) must be present; a word from the title's **head**
+(before the first "with" or "over") must be present — the sixth wrong match was pickled
+chard *stems* for pulled pork over grits *with chard and pickled Fresnos*, two garnish
+words in the slug and none of the dish; index pages are rejected. What no URL rule can
+see — the right dish with the wrong main ingredient — goes in
 `data/rejected-sources.md`, per recipe. No two recipes may share a source. Every link is
 verified live before it is written.
 

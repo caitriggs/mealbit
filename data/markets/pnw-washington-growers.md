@@ -37,7 +37,6 @@ never:
   - turmeric root
   - olive
   - sweet potato        # needs a long hot season; WA growers don't do it commercially
-  - tomatillo           # turns up occasionally, never reliably — not worth a wasted trip
   - shishito pepper     # a few growers try it; too rare to plan a dinner around
   - napa cabbage        # sometimes at Asian-grower stalls, but not dependable
   - bok choy            # same
@@ -129,7 +128,6 @@ fallback_exempt:
   - sweet potato
   - tarragon
   - thyme
-  - tomatillo
   - waxy potato
   - white onion
   - yellow onion

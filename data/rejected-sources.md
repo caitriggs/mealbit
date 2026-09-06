@@ -32,3 +32,5 @@
   — for `cottage-cheese-berries-maple`. a blog post ABOUT French cottage cheese, not a recipe for a berry bowl. No form and no dish name on either side, so nothing but the ingredient words to compare — a case only a person can rule out.
 - <https://www.feastingathome.com/brothy-beans-on-garlic-toast/>
   — for `white-bean-smash-toast`. brothy beans ladled onto toast; ours are smashed onto it. Also already the source for the `brothy-white-beans-kale` dinner, which it fits exactly — two cards would have carried the same photo and the same QR.
+- <https://www.davidlebovitz.com/pickled-chard-stems-swiss-recipe/>
+  — for `bbq-pulled-pork-cheesy-grits`. PICKLED CHARD stems, a condiment. Ours is pulled pork over grits; the chard and the pickled Fresnos are the garnish. The two rarest title words were both garnish words, and the slug carried both — so the matcher now also requires a word from the title's head, before the first "with" or "over".
