@@ -152,6 +152,12 @@ def _tips(recipe, budget=430):
     if not move:
         return []
     move = _html.unescape(move)
+    # The photo absorbs most of the slack, but a card that buys eleven things and leans
+    # on eight more has already spent the height a long technique note needs. The red
+    # lentil dal overflowed its sheet by one line on the library review; every line over
+    # eight costs the note a sentence's worth of room.
+    lines = len(L.ingredients(recipe)) + (1 if recipe.get("pantry") else 0)
+    budget = max(260, budget - 30 * max(0, lines - 8))
     body = _clip_sentences(move, budget)
     # "Second move:" / "Then:" introduce a genuinely separate instruction — a line break
     # there is the difference between two tips and one paragraph nobody reads.
@@ -225,7 +231,7 @@ body {{ font-family: Helvetica, Arial, sans-serif; color:#262b1d; background:#ff
    week cramped, so instead the photo shrinks (flex-shrink on a flex item wins over its
    height) and the list and technique are never touched. Floor at 0.95in so it stays a
    photograph rather than a stripe. */
-.photo {{ width:100%; flex:0 1 auto; height:1.68in; min-height:0.95in; object-fit:cover;
+.photo {{ width:100%; flex:0 1 auto; height:1.68in; min-height:0.8in; object-fit:cover;
          border-radius:5pt; display:block; margin-bottom:9pt; }}
 /* No verified photo yet: a labelled rule beats an empty grey box, which reads as broken. */
 .nophoto {{ border-top:1.5pt solid #e7ebda; margin-bottom:9pt; }}
