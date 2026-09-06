@@ -1,0 +1,82 @@
+name: Seasonal refresh
+
+# Opens a GitHub issue near the end of each month describing exactly what the NEXT
+# month's season pool is missing. The template carries no schedule: `python
+# tools/schedule.py --write` adds one (the 25th, 09:00 local) between the markers under
+# `on:`, one cron line per UTC offset the household's zone uses. A second firing in the
+# same month only updates the issue, so no gate is needed.
+#
+# WHY AN ISSUE AND NOT GENERATED RECIPES
+#
+# Selection is already seasonal — the eligible pool changes with the month on its own and
+# needs no maintenance. What degrades is DEPTH: a season bucket runs about nine weeks and
+# currently holds 10-14 dinners, so from roughly week four the plan repeats itself.
+#
+# The fix is more recipes, and recipes are hand-written on purpose. The whole argument for
+# a library over an LLM improvising weekly (build brief, section 5) is that a recipe file
+# is readable, editable and auditable. Auto-committing generated recipes nobody reviewed
+# would throw that away to save the smallest part of the work. So this job does the part a
+# human is bad at — noticing, monthly, that late-spring is two dinners short and
+# chicken-light — and leaves the writing to a person or a Claude session working from the
+# issue.
+
+on:
+  workflow_dispatch:
+  # mealbit:schedule-start
+  # mealbit:schedule-end
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install --quiet -r requirements.txt
+
+      - name: Audit the library
+        id: audit
+        run: |
+          set -euo pipefail
+          python -m mealbit.audit                       # readable form, into the log
+          python -m mealbit.audit --issue > /tmp/issue.md
+          NEXT=$(TZ=America/Los_Angeles date -d "$(date +%Y-%m-01) +1 month" '+%B %Y')
+          echo "title=Seasonal refresh — $NEXT" >> "$GITHUB_OUTPUT"
+          # Nothing to say if the coming season is already well stocked.
+          if grep -q "Nothing to do" /tmp/issue.md; then
+            echo "needed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "needed=true"  >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open the issue
+        if: steps.audit.outputs.needed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TITLE: ${{ steps.audit.outputs.title }}
+        run: |
+          set -euo pipefail
+          # Idempotent: re-running in the same month updates the existing issue rather
+          # than stacking duplicates.
+          EXISTING=$(gh issue list --state open --search "$TITLE in:title" \
+                       --json number,title \
+                       --jq ".[] | select(.title==\"$TITLE\") | .number" | head -1)
+          if [ -n "$EXISTING" ]; then
+            echo "Updating existing issue #$EXISTING"
+            gh issue edit "$EXISTING" --body-file /tmp/issue.md
+          else
+            gh issue create --title "$TITLE" --body-file /tmp/issue.md \
+              --label seasonal-refresh 2>/dev/null \
+            || gh issue create --title "$TITLE" --body-file /tmp/issue.md
+          fi
+
+      - name: Well stocked
+        if: steps.audit.outputs.needed != 'true'
+        run: echo "Next month's season is well stocked — no issue opened."

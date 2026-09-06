@@ -1,0 +1,44 @@
+# Where this household shops, in the order it visits. As shipped it is a worked example
+# (a West Seattle household); the onboarding survey rewrites it for yours. The shopping list is grouped by
+# these, in this order, and an ingredient goes to the FIRST store whose `takes:` covers
+# its kind.
+#
+# Kinds a recipe can tag an ingredient with:
+#   produce   fresh fruit, vegetables, herbs
+#   protein   meat, fish, tofu, eggs
+#   dairy     cheese, butter, cream, yogurt
+#   bakery    bread, tortillas, pita, naan
+#   pantry    dry goods, cans, oils, spices, condiments a supermarket always has
+#   specialty things a plain supermarket may not — chili crisp, preserved lemon, saffron
+#   wine      wine, cider and cooking alcohol
+#
+# `everything` is the catch-all. Exactly one store must declare it, or an ingredient can
+# fall off the list with nobody told — the failure this system refuses to allow.
+#
+# A `kind: farmers_market` store is also checked against its `availability:` model for the
+# current month: if the market can't credibly stock a thing (a lemon in Washington, a
+# pepper in February) the ingredient moves on to the next store and the newsletter says
+# why. That model is shared by every Puget Sound market; only `tips:` is yours.
+
+stores:
+  - id: market
+    short: FM
+    name: West Seattle Farmers Market
+    kind: farmers_market
+    when: Sunday 10am–2pm, year-round
+    where: California Ave SW between SW Alaska and SW Oregon
+    availability: data/markets/pnw-washington-growers.md
+    tips: data/markets/west-seattle.md
+    takes: [produce]
+
+  - id: tj
+    short: TJ
+    name: Trader Joe's
+    sub: proteins, dairy, pantry, specialty
+    takes: [protein, dairy, bakery, pantry, specialty, wine]
+
+  - id: qfc
+    short: QFC
+    name: QFC
+    sub: everything else — and the safety net for a market miss
+    takes: [everything]

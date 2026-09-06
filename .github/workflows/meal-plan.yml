@@ -1,0 +1,187 @@
+name: Mealbit
+
+# Delivery leg for the weekly meal plan + Coffee Ritual newsletter. This runs on GitHub's
+# runners because they allow outbound SMTP; the Claude cloud environment blocks raw SMTP
+# sockets.
+#
+# Recipients live in config/household.yml:
+#   scheduled runs  -> the household address (send.to in config/household.yml)
+#   manual dispatch -> "self" sends a [TEST] to send.test_to only; "household" sends for real
+#
+# TIMING: send.day / send.hour in the household's timezone — by default Saturday 5pm, so
+# there is an evening to read it and swap a meal before the Sunday market run.
+#
+# THE TEMPLATE CARRIES NO SCHEDULE. The upstream repository must never send from itself.
+# `python tools/schedule.py --write` computes the cron lines for the household's timezone
+# (one per UTC offset the zone uses, so daylight saving is covered) and writes them
+# between the two marker comments below. Onboarding runs it; nothing else edits this file.
+#
+# NOTE: schedule + workflow_dispatch only work from the repository's DEFAULT branch. If
+# the default branch changes, this file must exist there or the emails stop firing
+# silently, with no error anywhere.
+
+on:
+  workflow_dispatch:
+    inputs:
+      recipient:
+        description: "self = smoke test to send.test_to only; household = the real send"
+        type: choice
+        options: [self, household]
+        default: self
+      today:
+        description: "Optional date override (YYYY-MM-DD) for previewing another week"
+        type: string
+        default: ""
+      box:
+        description: "Dinners already shopped for (a meal kit). 0 = a normal week."
+        type: choice
+        options: ["0", "1", "2", "3"]
+        default: "0"
+      box_leftovers:
+        description: "Lunch servings each boxed dinner yields (a 2-person kit leaves ~1)"
+        type: choice
+        options: ["1", "2"]
+        default: "1"
+  # mealbit:schedule-start
+  # mealbit:schedule-end
+
+permissions:
+  contents: write          # the real send commits history.json and the cleared this-week.yml
+
+concurrency:
+  group: mealbit
+  cancel-in-progress: false
+
+jobs:
+  newsletter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install --quiet -r requirements.txt
+
+      - name: Install Chromium for the PDF cards
+        # The printable recipe cards are a PDF, rendered from the same CSS the layout is
+        # written in. Deliberately NOT in requirements.txt: the send path degrades to
+        # attaching the HTML cards if this is missing, so a bad Playwright release costs
+        # a nicer attachment, never the week's dinner plan. `|| true` keeps it that way.
+        #
+        # `python -m playwright`, not the `playwright` console script: the script is
+        # installed into the same step that is already running, and is not reliably on
+        # PATH yet. That is what silently failed the first time, leaving the package
+        # importable with no browser behind it.
+        #
+        # continue-on-error, and NOT masked with `|| echo`: a failure here must be
+        # visible in the run summary, but must never fail the job.
+        run: |
+          pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+          python -c "from mealbit import topdf; print('PDF renderer:', 'ready' if topdf.to_pdf('<p>x</p>') else 'UNAVAILABLE — cards will go as HTML')"
+        continue-on-error: true
+
+      - name: Check the household is set up
+        # Fails in plain English if the send would go to nobody — placeholder addresses
+        # in config/household.yml and no MEALBIT_SEND_* secrets. Better a red X with a
+        # sentence than a green run that emailed household@example.com.
+        env:
+          MEALBIT_SEND_FROM: ${{ secrets.MEALBIT_SEND_FROM }}
+          MEALBIT_SEND_TO: ${{ secrets.MEALBIT_SEND_TO }}
+          MEALBIT_SEND_TEST_TO: ${{ secrets.MEALBIT_SEND_TEST_TO }}
+        run: python tools/setup_status.py --ci
+
+      - name: Run the test suite
+        # The library is data, and data gets hand-edited. A malformed recipe file should
+        # stop the send here, not produce a broken newsletter in the family's inbox.
+        run: python tests/test_mealbit.py
+
+      - name: Resolve run parameters
+        id: cfg
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            # Decide from the household's LOCAL calendar, not UTC, and with tolerance:
+            # GitHub's cron runs late — on 2026-09-05 by almost four hours — and an
+            # exact-hour check sent nothing that week. tools/send_gate.py sends if the
+            # scheduled moment was within the last few hours and history.json does not
+            # already hold the week; that second check is what makes the DST twin cron
+            # and a late duplicate safe.
+            python tools/send_gate.py >> "$GITHUB_OUTPUT"
+            echo "test_flag="   >> "$GITHUB_OUTPUT"   # scheduled = the real send
+            echo "date_flag="   >> "$GITHUB_OUTPUT"
+            echo "box_flag="    >> "$GITHUB_OUTPUT"   # a scheduled week is never boxed
+          else
+            echo "send=true" >> "$GITHUB_OUTPUT"
+            if [ "${{ github.event.inputs.recipient }}" = "household" ]; then
+              echo "test_flag=" >> "$GITHUB_OUTPUT"
+            else
+              echo "test_flag=--test" >> "$GITHUB_OUTPUT"
+            fi
+            if [ -n "${{ github.event.inputs.today }}" ]; then
+              echo "date_flag=--today ${{ github.event.inputs.today }}" >> "$GITHUB_OUTPUT"
+            else
+              echo "date_flag=" >> "$GITHUB_OUTPUT"
+            fi
+            # A changeover week: some dinners arrived in a meal kit, so they take the
+            # first cooking nights and buy nothing.
+            if [ "${{ github.event.inputs.box }}" != "0" ] && [ -n "${{ github.event.inputs.box }}" ]; then
+              echo "box_flag=--box ${{ github.event.inputs.box }} --box-leftovers ${{ github.event.inputs.box_leftovers }}" >> "$GITHUB_OUTPUT"
+            else
+              echo "box_flag=" >> "$GITHUB_OUTPUT"
+            fi
+          fi
+
+      - name: Send the newsletter
+        if: steps.cfg.outputs.send == 'true'
+        env:
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          # Real addresses live in secrets so the repository can be public; the file
+          # config/household.yml carries placeholders. Leave these unset to use the file.
+          MEALBIT_SEND_FROM: ${{ secrets.MEALBIT_SEND_FROM }}
+          MEALBIT_SEND_TO: ${{ secrets.MEALBIT_SEND_TO }}
+          MEALBIT_SEND_TEST_TO: ${{ secrets.MEALBIT_SEND_TEST_TO }}
+        run: |
+          echo "Sending (${{ steps.cfg.outputs.test_flag || 'household' }})"
+          python -m mealbit.meal_plan --send \
+            ${{ steps.cfg.outputs.test_flag }} ${{ steps.cfg.outputs.date_flag }} \
+            ${{ steps.cfg.outputs.box_flag }}
+
+      - name: Commit the rotation history
+        # Only a real send advances the rotation, so only a real send has anything to
+        # commit. Without this the runner's history.json is discarded and next week
+        # re-picks the same meals.
+        if: steps.cfg.outputs.send == 'true' && steps.cfg.outputs.test_flag == ''
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/history.json data/this-week.yml; then
+            echo "history.json unchanged — nothing to commit."
+            exit 0
+          fi
+          git config user.name  "mealbit-bot"
+          git config user.email "mealbit-bot@users.noreply.github.com"
+          # this-week.yml holds any "not that dish this week" request; the send consumed
+          # it and cleared it, and the cleared file has to land with the history.
+          git add data/history.json data/this-week.yml
+          git commit -m "chore: record week of $(TZ=$(python -c "from mealbit import config as C; print(C.household()['timezone'])") date +%Y-%m-%d)"
+          git push
+
+      - name: Upload the newsletter and the printable cards
+        # out/cards.pdf is the two-sheet print view — two dinners per landscape sheet,
+        # cut down the middle. Download it from the run summary and print it, or open
+        # out/meal_plan.html to check the render.
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mealbit-week
+          path: |
+            out/*.html
+            out/*.pdf
+          if-no-files-found: ignore
+
+      - name: Nothing due
+        if: steps.cfg.outputs.send != 'true'
+        run: echo "No send due for this firing — exiting cleanly."

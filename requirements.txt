@@ -1,0 +1,17 @@
+# Runtime: the newsletter itself needs only PyYAML — everything else is stdlib
+# (smtplib, email, argparse, random). Keeping the dependency surface at one package is
+# deliberate: this job runs unattended every Saturday and must not break on an upstream
+# release.
+PyYAML>=6.0
+
+# QR codes on the printed recipe cards (pure Python, no compiled deps, no transitive
+# packages). Optional at runtime: without it a card prints the URL instead of a code,
+# so a failed install can never block a send.
+segno>=1.6
+
+# Deliberately NOT pinned here, and installed as its own CI step instead: Playwright
+# renders the printable cards to PDF and drives the 412px light/dark render check, but a
+# bad release or a browser-download failure must cost a nicer attachment, never the
+# Saturday send. mealbit/topdf.py returns None when it is missing and the cards are
+# attached as HTML. See .github/workflows/meal-plan.yml and tools/screenshot.py.
+# playwright>=1.40

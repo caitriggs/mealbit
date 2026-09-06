@@ -1,0 +1,7 @@
+# The repository this one was forked from. tools/setup_status.py compares it to the
+# `origin` remote: a different owner means "this is somebody's fork", and a fork that has
+# not been onboarded yet (no config/onboarded.yml) is what makes Claude open with the
+# setup survey instead of waiting to be asked.
+#
+# Leave this alone in a fork. It is how the fork knows it is one.
+repo: caitriggs/mealbit

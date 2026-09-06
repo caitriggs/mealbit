@@ -1,0 +1,8 @@
+# This week's overrides. Written by the agent (tools/this_week.py) when someone says
+# "not the pulled pork this week" or "put the katsu on the menu"; read by the planner for
+# the week starting `week_of`; cleared by the real send. Slugs are file names under
+# data/recipes/ without the .md. Nothing here is permanent — a dish you never want again
+# is a verdict (tools/verdict.py), not a skip.
+week_of: null
+skip: []
+pin: []

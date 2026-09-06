@@ -1,0 +1,64 @@
+# Who this newsletter is for. Everything household-specific lives here and in stores.yml;
+# nothing in mealbit/ or data/ should need editing to run this for a different home.
+#
+# As shipped this is a PLACEHOLDER household — Ada and Sam. The onboarding survey
+# (.claude/skills/mealbit-onboarding) rewrites it from your answers; you never edit it.
+
+household:
+  # Who eats. Dinners are cooked to serve 4 — two at the table, two as next-day lunches —
+  # so this list is assumed to be TWO people. More than two is not supported yet; see
+  # docs/household-model.md for why it is not just a number.
+  eaters: [Ada, Sam]
+  timezone: America/Los_Angeles
+
+send:
+  # Gmail. The app password comes from the GMAIL_APP_PASSWORD environment variable /
+  # repository secret, never from this file.
+  #
+  # The three addresses below are PLACEHOLDERS and stay that way in the file. The real
+  # ones are repository secrets — MEALBIT_SEND_FROM, MEALBIT_SEND_TO, MEALBIT_SEND_TEST_TO —
+  # which the workflow passes in as environment variables and which override the file.
+  # For a local send, export the same three variables.
+  from: you@gmail.com
+  to: household@example.com             # the real send
+  test_to: you@gmail.com                # --test goes here and only here
+  subject: Mealbit
+  day: Saturday                         # local day and hour the scheduled send lands;
+  hour: 17                              # tools/schedule.py turns these into cron lines
+
+diet:
+  # Never planned, in any recipe. Matched inside ingredient names, so "salmon" also
+  # excludes "salmon fillet".
+  exclude_ingredients: [shrimp]
+  exclude_tags: []
+  # Per-plate, not excluded: the recipe stays, the ingredient goes on the other plate at
+  # the end, and every recipe that buys one has to be complete without it. A test holds
+  # that. Keyed by the eater who does NOT get it.
+  per_plate:
+    Sam: [cilantro, raw tomatoes]
+  protein_preference: [chicken, pork, beef, turkey]
+  monthly_caps:
+    whitefish: 2
+
+meals:
+  # Dinners are cooked Monday onward, this many nights a week (2 to 5). The rest of the
+  # week is deliberately unplanned.
+  dinners_per_week: 4
+  # What lunch means here:
+  #   leftovers  dinners are cooked to serve 4 and two portions become tomorrow's lunches;
+  #              the other lunch slots come from two Sunday batches and five-minute builds
+  #   fresh      dinners are cooked for the table only; every lunch is a Sunday batch or a
+  #              five-minute build
+  #   none       no lunch planning at all — dinners only
+  lunch_mode: leftovers
+
+coffee:
+  gear: [espresso]                      # any of: espresso, moka, aeropress, french-press
+  espresso_machine: null                # name it if you like; it prints on the coffee card
+  grinder: null
+  cold_foam_frother: false
+  drinks_per_week: 2
+  # What the household actually spends at coffee shops, for the "saved this week" line.
+  # Real numbers or leave them out — the email would rather print nothing than a guess.
+  monthly_coffee_spend: null
+  monthly_visits: null
