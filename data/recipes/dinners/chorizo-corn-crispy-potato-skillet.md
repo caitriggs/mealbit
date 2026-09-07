@@ -18,13 +18,21 @@ ingredients:
   - 1 bunch cilantro [produce]
   - 1 red onion [produce]
   - 1 lb fresh Mexican chorizo || fresh Italian sausage + 2 tsp smoked paprika [protein]
-  - 1 container Mexican crema || sour cream [dairy]
-  - 1 container cotija || feta [dairy]
-  - 1 bag raw peanuts || sliced almonds [pantry]
+  - 1 container Mexican crema || sour cream {½ cup} [dairy]
+  - 1 container cotija || feta {½ cup crumbled} [dairy]
+  - 1 bag raw peanuts || sliced almonds {⅓ cup} [pantry]
   - 3 limes [produce]
   - 3 dried árbol chiles || 2 tsp chili flakes [specialty]
   - 1 avocado [produce]
 pantry: [neutral oil, garlic, sesame seeds, kosher salt, black pepper, cumin, apple cider vinegar, sugar, olive oil]
+steps:
+  - "Salsa macha: ¾ cup oil, 4 sliced garlic cloves, 3 seeded árbol chiles, ⅓ cup peanuts,"
+  - "2 tbsp sesame seeds; 8 min, gently. Cool; splash cider vinegar, pinch sugar, salt; pulse."
+  - "Potatoes halved, boiled in salted water 12 min. Drain, steam-dry, crush with a glass."
+  - "Corn off the cob into a dry ripping-hot skillet, single layer, 4 min untouched. Out."
+  - "Chorizo pressed flat 4 min, broken up, cooked through. Out; the red fat stays."
+  - "Potatoes cut-side down in the fat 6 min, flip, 4 more. Salt, cumin. Everything back in."
+  - "Red onion in, lime over. Crema, cotija, avocado, cilantro, a big spoon of salsa macha."
 per_plate: [cilantro]
 photo_url: https://images.pexels.com/photos/34429593/pexels-photo-34429593.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
 photo_credit: Laura oliveira / Pexels
@@ -47,7 +55,7 @@ crisps in eight and has ten times the surface area.
 1. **Salsa macha:** ¾ cup neutral oil over medium-low with 4 sliced garlic cloves, 3
    stemmed and seeded árbol chiles, ⅓ cup raw peanuts, 2 tbsp sesame seeds. **Eight
    minutes, gently** — you want everything toasted, nothing burnt. Off the heat, cooled
-   5 minutes, then a splash of vinegar, a pinch of sugar and salt, and a few short pulses
+   5 minutes, then a splash of cider vinegar, a pinch of sugar and salt, and a few short pulses
    in a blender. Leave it rubbly.
 2. Potatoes halved, boiled in well-salted water 12 minutes until a knife goes in. Drained,
    steam-dried 5 minutes, then **crushed lightly with the bottom of a glass**.

@@ -19,8 +19,15 @@ ingredients:
   - 1 small red onion [produce]
   - 1½ lb boneless skinless chicken thighs [protein]
   - 2 balls fresh mozzarella || burrata [dairy]
-  - 1 loaf day-old sourdough or ciabatta [bakery]
+  - 1 loaf day-old sourdough or ciabatta {6 cups torn} [bakery]
 pantry: [olive oil, red wine vinegar, garlic, kosher salt, black pepper, Dijon mustard, capers, oregano, flaky salt]
+steps:
+  - "Tomatoes in chunks with 2 tsp salt and 1 tbsp red wine vinegar; they stay in their bowl."
+  - "Bread torn, in olive oil and salt, 400°F oven 12 min till crisp. Onion thin, in water."
+  - "Thighs flattened, oiled, salted, oregano, pepper; grill 5–6 min a side. Rest, slice thick."
+  - "Dressing: 3 tbsp red wine vinegar, 2 tsp Dijon mustard, 1 garlic clove, 1 tbsp capers"
+  - "and ½ cup olive oil. Toss bread with two-thirds, 10 min; cucumber, onion, basil, cheese."
+  - "Chicken on top, remaining dressing, flaky salt, more basil. Tomato bowl at the table."
 source_url: https://www.themediterraneandish.com/tomato-panzanella-salad-recipe/
 image_url: https://www.themediterraneandish.com/wp-content/uploads/2026/04/Panzanella-Salad-7.jpg
 source_name: themediterraneandish.com

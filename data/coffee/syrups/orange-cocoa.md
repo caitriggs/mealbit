@@ -6,7 +6,7 @@ keeps_weeks: 4
 storage: fridge, sealed jar
 active_time: 10
 ingredients:
-  - 1 tin cocoa powder [pantry]
+  - 1 tin cocoa powder {⅓ cup} [pantry]
   - 2 oranges || any orange [produce]
 pantry: [granulated sugar, vanilla extract, flaky salt]
 tags: [chocolate, december]

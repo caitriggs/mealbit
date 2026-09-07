@@ -21,6 +21,13 @@ ingredients:
   - 1 shallot [produce]
   - 1 red Fresno chile || 1 tsp chili flakes [produce]
 pantry: [olive oil, red wine vinegar, garlic, kosher salt, black pepper, chili flakes, oregano, flaky salt]
+steps:
+  - "Chimichurri: 1½ cups parsley, 2 tbsp oregano, 4 minced garlic cloves, shallot, chile."
+  - "Add ½ cup olive oil, 3 tbsp red wine vinegar, 1 tsp salt, 1 tsp chili flakes. Sit 30 min."
+  - "Potatoes boiled in heavily salted water 18 min, drained, steam-dried 5 min."
+  - "Oven 450°F. Potatoes smashed flat on an oiled sheet, olive oil and salt, 25 min."
+  - "Steak out 30 min ahead, dried, salted. Hottest grill or pan, 2–3 min a side, to 125°F."
+  - "Rest 10 min. Slice thin across the grain. Chimichurri over, flaky salt, potatoes, salad."
 source_url: https://www.skinnytaste.com/grilled-flank-steak-with-chimichurri/
 image_url: https://www.skinnytaste.com/wp-content/uploads/2015/05/Grilled-Flank-Steak-with-Chimichurri-9.jpg
 source_name: skinnytaste.com

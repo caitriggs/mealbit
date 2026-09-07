@@ -15,12 +15,19 @@ tags: [five-minutes, vegetarian, no-cooking, portable]
 ingredients:
   - 3 carrots [produce]
   - 1 bunch parsley || mint [produce]
-  - 1 container hummus [pantry]
-  - 1 block feta [dairy]
-  - 1 package large flour tortillas || lavash [bakery]
-  - 1 bag pine nuts || sliced almonds [pantry]
+  - 1 container hummus {1 cup} [pantry]
+  - 1 block feta {2 oz} [dairy]
+  - 1 package large flour tortillas || lavash {2} [bakery]
+  - 1 bag pine nuts || sliced almonds {2 tbsp} [pantry]
   - 1 lemon [produce]
 pantry: [harissa, olive oil, cumin, honey, red wine vinegar, kosher salt, black pepper, za'atar]
+steps:
+  - "Slaw: 3 carrots grated on the big holes, dressed a few minutes ahead."
+  - "Slaw dressing: 1 tbsp red wine vinegar, 1 tbsp olive oil, 1 tsp honey, ½ tsp cumin, salt."
+  - "Hummus: 1 cup mixed with 1 tbsp harissa and a squeeze of lemon."
+  - "Warm 2 tortillas 20 sec; spread the hummus to the edges."
+  - "Slaw in a line off-center, feta crumbled, 2 tbsp pine nuts, parsley, a pinch of za'atar."
+  - "Roll tight, wrap in foil, cut on the diagonal."
 photo_url: https://images.pexels.com/photos/4899802/pexels-photo-4899802.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
 photo_credit: Denys Gromov / Pexels
 photo_source: https://www.pexels.com/photo/close-up-shot-of-a-dish-on-a-plate-4899802/

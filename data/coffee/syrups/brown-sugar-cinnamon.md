@@ -6,8 +6,8 @@ keeps_weeks: 4
 storage: fridge, sealed jar
 active_time: 8
 ingredients:
-  - 1 bag dark brown sugar [pantry]
-  - 1 jar cinnamon sticks [pantry]
+  - 1 bag dark brown sugar {¾ cup} [pantry]
+  - 1 jar cinnamon sticks {1} [pantry]
 pantry: [vanilla extract, flaky salt]
 tags: [iced, workhorse]
 pairs_with: [cold-foam, iced, oat-milk]

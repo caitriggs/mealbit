@@ -16,11 +16,19 @@ ingredients:
   - 1 lb seasonal vegetable for roasting || whatever looks best at the market [produce]
   - 1 bunch parsley [produce]
   - 1 small red onion [produce]
-  - 1 bag pearled farro [pantry]
-  - 3 cans chickpeas [pantry]
-  - 1 block feta [dairy]
+  - 1 bag pearled farro {1½ cups} [pantry]
+  - 3 cans chickpeas {whole} [pantry]
+  - 1 block feta {6 oz} [dairy]
   - 2 lemons [produce]
 pantry: [tahini, olive oil, cumin, coriander, smoked paprika, garlic, kosher salt, black pepper, apple cider vinegar, sugar, chili flakes]
+steps:
+  - "Farro: 1½ cups simmered in salted water 25 min; drain, spread on a tray to cool."
+  - "Chickpeas drained, towel-dried, loose skins rubbed off. Roast bare at 425°F, 30 min."
+  - "Toss with olive oil, 2 tsp cumin, 1 tsp coriander, 1 tsp smoked paprika, salt; 5 min more."
+  - "The vegetable cut and roasted alongside."
+  - "Pickle red onion: ½ cup apple cider vinegar, ½ cup hot water, 1 tbsp sugar, 1 tsp salt."
+  - "Tahini: ⅓ cup, juice of 2 lemons, 1 grated garlic clove, ½ tsp salt; whisk in ice water."
+  - "Box farro, vegetable, feta, onion; chickpeas apart. Desk: tahini, parsley, chili flakes."
 source_url: https://www.budgetbytes.com/mediterranean-farro-salad-with-spiced-chickpeas/
 image_url: https://www.budgetbytes.com/wp-content/uploads/2016/02/Mediterranean-Farro-Salad-with-Spiced-Chickpeas-close.jpg
 source_name: budgetbytes.com
@@ -35,7 +43,7 @@ oil first, then toss in oil and spice for the last 5.** Oiled-from-the-start chi
 steam inside their own coating and go leathery. Dry-first, oil-last gives you something
 that actually crunches on Thursday.
 
-1. Farro simmered in salted water 25 minutes. Drained, spread on a tray to cool fast —
+1. Farro, 1½ cups, simmered in salted water 25 minutes. Drained, spread on a tray to cool fast —
    grain left hot in a pot sweats and clumps.
 2. Chickpeas drained, rolled dry in a towel, **loose skins rubbed off** (this matters).
    Roasted bare at 425°F for 30 minutes, then tossed with olive oil, 2 tsp cumin, 1 tsp

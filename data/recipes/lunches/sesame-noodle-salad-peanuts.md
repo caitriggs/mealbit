@@ -17,11 +17,17 @@ ingredients:
   - 2 carrots [produce]
   - 1 bunch scallions [produce]
   - 1 bunch cilantro [produce]
-  - 1 package dried wheat noodles || spaghetti [pantry]
-  - 1 jar dry-roasted peanuts [pantry]
-  - 1 block extra-firm tofu || 2 cups shredded rotisserie chicken [protein]
+  - 1 package dried wheat noodles || spaghetti {1 lb} [pantry]
+  - 1 jar dry-roasted peanuts {½ cup} [pantry]
+  - 1 block extra-firm tofu || 2 cups shredded rotisserie chicken {whole} [protein]
   - 2 limes [produce]
 pantry: [peanut butter, soy sauce, rice vinegar, toasted sesame oil, honey, garlic, ginger, chili flakes, sesame seeds, neutral oil]
+steps:
+  - "1 lb noodles cooked, rinsed cold, tossed with 1 tsp sesame oil."
+  - "Sauce: ⅔ cup peanut butter, ⅓ cup soy sauce, ¼ cup rice vinegar, 3 tbsp sesame oil."
+  - "Add 2 tbsp honey, 3 garlic cloves, 2 tbsp ginger, 1 tsp chili flakes; thin with hot water."
+  - "Shred cabbage, carrots; crisp cubed tofu in neutral oil. Toss with noodles and sauce; box."
+  - "Jar apart for the desk: ½ cup crushed peanuts, sesame seeds, scallions, cilantro, lime."
 per_plate: [cilantro]
 source_url: https://www.feastingathome.com/cold-noodle-salad/
 image_url: https://www.feastingathome.com/wp-content/uploads/2024/09/cold-noodle-salad-9.jpg
@@ -36,11 +42,11 @@ watery vinaigrette, so they don't go soggy. Day five tastes like day one.
 then toss them in a teaspoon of sesame oil before the sauce.** Warm noodles absorb the
 dressing and turn pasty by Tuesday; cold, oiled noodles stay separate.
 
-1. Noodles cooked, rinsed cold, tossed with 1 tsp sesame oil.
+1. Noodles, the whole pound, cooked, rinsed cold, tossed with 1 tsp sesame oil.
 2. Sauce blitzed or whisked: ⅔ cup peanut butter, ⅓ cup soy, ¼ cup rice vinegar,
    3 tbsp sesame oil, 2 tbsp honey, 3 garlic cloves, 2 tbsp grated ginger, 1 tsp chili
    flakes, and hot water a tablespoon at a time until it pours like heavy cream.
-3. Cabbage and carrots shredded fine. Tofu pressed, cubed and crisped in oil, or chicken
+3. Cabbage and carrots shredded fine. Tofu pressed, cubed and crisped in neutral oil, or chicken
    shredded.
 4. Everything tossed. **Portion into five containers.**
 5. **Keep separate, in a jar:** crushed peanuts, sesame seeds, scallions, cilantro, lime

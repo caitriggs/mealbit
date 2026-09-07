@@ -147,6 +147,10 @@ def stores():
             catch_all.append(s["id"])
         s.setdefault("short", s["id"].upper()[:3])
         s.setdefault("sub", "")
+        never = s.get("never") or []
+        if not isinstance(never, list) or not all(isinstance(x, str) for x in never):
+            raise ConfigError(f"stores.yml: {s['id']}: `never:` must be a list of ingredient names")
+        s["never"] = never
         if s.get("kind") == "farmers_market":
             for key in ("availability", "tips"):
                 p = s.get(key)
@@ -166,3 +170,21 @@ def market_store():
 
 def takes(store, kind):
     return EVERYTHING in store["takes"] or kind in store["takes"]
+
+
+def never_stocks(store, key):
+    """
+    True when the store's `never:` list covers this ingredient (normalized key).
+
+    A kind says a shop sells dairy; it doesn't say this shop sells THIS thing. Trader
+    Joe's takes pantry and specialty and does not carry dried árbol chiles, and a list
+    that sends you there for them is a list that gets ignored. Matched as a substring
+    both ways, so "arbol" covers "dried arbol chile" and "chipotles in adobo" covers
+    "small can chipotles in adobo".
+    """
+    from .library import normalize
+    for x in store.get("never") or []:
+        n = normalize(x)
+        if n and (n in key or key in n):
+            return True
+    return False

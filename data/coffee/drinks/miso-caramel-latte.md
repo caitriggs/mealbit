@@ -7,9 +7,9 @@ seasons: [early-fall, late-fall, deep-winter]
 cost_per_serving: 1.70
 shop_equivalent: 7.25
 ingredients:
-  - 1 half-gallon whole milk [dairy]
+  - 1 half-gallon whole milk {6 oz} [dairy]
   - 1 pint heavy cream [dairy]
-  - 1 tub white miso [specialty]
+  - 1 tub white miso {1½ tbsp} [specialty]
 pantry: [granulated sugar, butter, vanilla extract, flaky salt]
 photo_url: https://images.pexels.com/photos/5567613/pexels-photo-5567613.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
 photo_credit: Denys Gromov / Pexels

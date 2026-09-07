@@ -22,15 +22,23 @@ ingredients:
   - 1 head green cabbage [produce]
   - 1 white onion [produce]
   - 4 lb bone-in pork shoulder (butt) [protein]
-  - 1 package corn tortillas [bakery]
-  - 1 container Mexican crema [dairy]
-  - 1 container cotija [dairy]
+  - 1 package corn tortillas {12} [bakery]
+  - 1 container Mexican crema {½ cup} [dairy]
+  - 1 container cotija {½ cup crumbled} [dairy]
   - 4 dried guajillo chiles [specialty]
   - 2 dried ancho chiles [specialty]
   - 1 dried chipotle || 1 canned chipotle in adobo [specialty]
   - 4 limes [produce]
   - 1 orange [produce]
 pantry: [cumin, coriander, oregano, cinnamon, bay leaves, garlic, yellow onions, apple cider vinegar, neutral oil, kosher salt, black pepper, stock]
+steps:
+  - "Pork in 4 chunks, salted. Brown hard in neutral oil in a Dutch oven, in batches. Out."
+  - "Chiles stemmed and seeded, toasted 30 sec a side, soaked in hot water 20 min."
+  - "Blend chiles, 4 garlic cloves, 1 tbsp cumin, 1 tsp coriander, 1 tbsp oregano, cinnamon."
+  - "Add 3 tbsp cider vinegar, juice of the orange, 1 cup soaking water, 1 tbsp salt."
+  - "Yellow onions in the pork fat, 10 min. Paste in, fried hard 5 min until the oil separates."
+  - "Pork back in, 2 cups stock, bay leaves. Lid on, 300°F, 3–3½ hours, until it shreds."
+  - "Shred; half tossed in sauce, broiled 6–8 min. Tortillas, cabbage, cilantro, crema, cotija."
 per_plate: [cilantro]
 source_url: https://www.davidlebovitz.com/slow-cooked-chipotle-pork-carnitas-mexican-shoulder-cooker/
 image_url: https://www.davidlebovitz.com/wp-content/uploads/2020/02/Roast-chipotle-slow-cooked-pork-carnitas-instant-pot-8.jpg
@@ -53,7 +61,7 @@ serving time, not at braising time.** Braised pork is soft; broiled-after-braisi
 has burnt ends. Reheat the same way all week.
 
 1. Pork cut into 4 large chunks, salted heavily. Brown hard in a Dutch oven, in batches,
-   until genuinely dark. Out.
+   in neutral oil until genuinely dark. Out.
 2. Chiles stemmed and seeded, toasted 30 seconds a side, soaked in hot water 20 minutes.
    Blend with 4 garlic cloves, 1 tbsp cumin, 1 tsp coriander, 1 tbsp oregano, a small
    piece of cinnamon stick, 3 tbsp cider vinegar, the juice of an orange, 1 cup of the

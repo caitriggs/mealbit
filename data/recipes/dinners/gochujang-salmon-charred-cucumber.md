@@ -16,8 +16,16 @@ ingredients:
   - 4 slicing cucumbers || any crisp cucumber, or 1 lb green beans [produce]
   - 1 bunch scallions || 1 small red onion [produce]
   - 1.5 lb salmon fillet, skin on [protein]
-  - 1 bag short-grain rice [pantry]
-pantry: [gochujang, toasted sesame oil, rice vinegar, honey, soy sauce, garlic, ginger, sesame seeds]
+  - 1 bag short-grain rice {1½ cups} [pantry]
+pantry: [gochujang, toasted sesame oil, rice vinegar, honey, soy sauce, garlic, ginger]
+steps:
+  - "Rice: 1½ cups short-grain, rinsed clear, on to cook."
+  - "Glaze: 3 tbsp gochujang, 2 tbsp honey, 1 tbsp each soy sauce, rice vinegar, sesame oil."
+  - "Whisk in 2 grated garlic cloves and 1 tbsp grated ginger."
+  - "Cucumbers halved, seeded, cut in 3-inch batons, dried well on a towel."
+  - "Dry cast iron, ripping hot: cucumbers cut-side down 3 min. Salt, rice vinegar, scallions."
+  - "Salmon skin-down on a foiled pan. Broil 6 min, brush on half the glaze, broil 3–4 more."
+  - "Rest 5 min. Remaining glaze at the table, rice alongside."
 source_url: https://www.skinnytaste.com/gochujang-glazed-salmon/
 image_url: https://www.skinnytaste.com/wp-content/uploads/2016/05/Gochujang-Glazed-Salmon-4.jpg
 source_name: skinnytaste.com

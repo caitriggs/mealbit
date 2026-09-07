@@ -7,9 +7,9 @@ seasons: [late-fall, deep-winter, early-spring]
 cost_per_serving: 1.75
 shop_equivalent: 7.00
 ingredients:
-  - 1 half-gallon whole milk [dairy]
+  - 1 half-gallon whole milk {6 oz} [dairy]
   - 1 pint heavy cream [dairy]
-  - 1 box Mexican drinking chocolate (Abuelita or Ibarra) [specialty]
+  - 1 box Mexican drinking chocolate (Abuelita or Ibarra) {4 oz} [specialty]
   - 1 ancho chile || 1 tsp ancho chile powder [specialty]
 pantry: [cinnamon, cocoa powder, granulated sugar, flaky salt, vanilla extract]
 photo_url: https://images.pexels.com/photos/11048259/pexels-photo-11048259.jpeg?auto=compress&cs=tinysrgb&h=650&w=940

@@ -7,9 +7,9 @@ seasons: [deep-winter, early-spring, late-fall]
 cost_per_serving: 1.55
 shop_equivalent: 6.75
 ingredients:
-  - 1 half-gallon whole milk || 1 carton barista oat milk [dairy]
-  - 1 jar honey [pantry]
-  - 1 jar green cardamom pods [pantry]
+  - 1 half-gallon whole milk || 1 carton barista oat milk {6 oz} [dairy]
+  - 1 jar honey {½ cup} [pantry]
+  - 1 jar green cardamom pods {12} [pantry]
 pantry: [granulated sugar]
 photo_url: https://images.pexels.com/photos/459489/pexels-photo-459489.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
 photo_credit: Pixabay / Pexels

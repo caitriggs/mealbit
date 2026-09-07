@@ -7,9 +7,9 @@ seasons: [late-fall, deep-winter, early-spring]
 cost_per_serving: 1.65
 shop_equivalent: 7.00
 ingredients:
-  - 1 half-gallon whole milk || 1 carton barista oat milk [dairy]
-  - 1 jar tahini [pantry]
-  - 1 bottle maple syrup [pantry]
+  - 1 half-gallon whole milk || 1 carton barista oat milk {6 oz} [dairy]
+  - 1 jar tahini {¼ cup} [pantry]
+  - 1 bottle maple syrup {¼ cup} [pantry]
 pantry: [cinnamon, flaky salt, vanilla extract]
 photo_url: https://images.pexels.com/photos/14366134/pexels-photo-14366134.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
 photo_credit: Thomas Plets / Pexels

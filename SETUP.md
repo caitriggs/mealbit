@@ -26,7 +26,7 @@ Clone it and install:
 git clone <your fork>
 cd mealbit
 pip install -r requirements.txt
-python tests/test_mealbit.py         # 80 tests; they pass on the template as shipped
+python tests/test_mealbit.py         # 85 tests; they pass on the template as shipped
 ```
 
 ## 2. Say who you are — `config/household.yml`
@@ -35,7 +35,7 @@ Open it. Everything is commented. The parts that matter:
 
 ```yaml
 household:
-  eaters: [Ada, Sam]                   # two names — see the note below
+  eaters: [Cait, Max]                  # two names — see the note below
   timezone: America/Los_Angeles
 
 send:
@@ -48,7 +48,7 @@ send:
 diet:
   exclude_ingredients: [shrimp]        # never planned
   per_plate:
-    Sam: [cilantro, raw tomatoes]      # Sam skips these; the dish is built without them
+    Max: [cilantro, raw tomatoes]      # Max skips these; the dish is built without them
 ```
 
 **Two eaters.** Dinners are cooked to serve four: two at the table, two as the next day's

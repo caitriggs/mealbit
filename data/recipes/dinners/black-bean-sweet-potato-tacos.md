@@ -16,15 +16,22 @@ ingredients:
   - 1½ lb sweet potatoes [produce]
   - 1 bunch cilantro [produce]
   - 1 small red cabbage || any cabbage [produce]
-  - 2 cans black beans [pantry]
-  - 1 package corn tortillas [bakery]
-  - 1 container cotija || feta [dairy]
-  - 1 container Mexican crema || sour cream [dairy]
+  - 2 cans black beans {whole} [pantry]
+  - 1 package corn tortillas {12} [bakery]
+  - 1 container cotija || feta {½ cup crumbled} [dairy]
+  - 1 container Mexican crema || sour cream {½ cup} [dairy]
   - 2 avocados [produce]
   - 1 red onion [produce]
   - 3 limes [produce]
   - 1 dried chipotle in adobo (small can) [specialty]
 pantry: [cumin, smoked paprika, coriander, olive oil, garlic, apple cider vinegar, sugar, kosher salt, oregano]
+steps:
+  - "Pickle red onion: ½ cup cider vinegar, ½ cup hot water, 1 tbsp sugar, 1 tsp salt."
+  - "Sweet potato in ¾-in cubes with oil, 2 tsp cumin, 1 tsp smoked paprika, 1 tsp coriander."
+  - "Roast at 450°F in a single layer, 25–30 min, flipped once, till the edges go dark."
+  - "Drained beans into olive oil, sliced garlic, 1 minced chipotle + adobo, 1 tsp oregano."
+  - "Splash of water; smash a third of the beans. Cabbage shredded thin, squeezed with lime."
+  - "Tortillas charred on the flame. Beans, sweet potato, cabbage, pickled onion, crema, cotija"
 per_plate: [cilantro]
 source_url: https://www.budgetbytes.com/sweet-potato-taco-meal-prep/
 image_url: https://www.budgetbytes.com/wp-content/uploads/2018/02/Sweet-Potato-Taco-Meal-Prep-H1.jpg

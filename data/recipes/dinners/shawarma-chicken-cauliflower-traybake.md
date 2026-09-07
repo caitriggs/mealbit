@@ -17,10 +17,18 @@ ingredients:
   - 1 bunch parsley [produce]
   - 1 small red onion [produce]
   - 1.5 lb boneless skinless chicken thighs [protein]
-  - 1 container Greek yogurt [dairy]
-  - 1 package pita or flatbread [bakery]
+  - 1 container Greek yogurt {½ cup} [dairy]
+  - 1 package pita or flatbread {whole} [bakery]
   - 1 lemon [produce]
 pantry: [tahini, cumin, coriander, smoked paprika, turmeric, cinnamon, garlic, olive oil, kosher salt, black pepper]
+steps:
+  - "Rub: 2 tsp cumin, 2 tsp coriander, 1 tsp smoked paprika, 1 tsp turmeric, ½ tsp cinnamon."
+  - "Add 1 tsp pepper, 4 grated garlic cloves, 3 tbsp olive oil, salt. Half on the cauliflower."
+  - "Rest of the rub whisked with ½ cup yogurt onto the thighs. Oven 425°F, two pans."
+  - "Cauliflower cut-side down, onion wedges tucked in; chicken on its own pan. 30–35 min."
+  - "Tahini sauce: ⅓ cup tahini, juice of the lemon, 1 grated garlic clove, ½ tsp salt."
+  - "Whisk in ice water 1 tbsp at a time, past the seize, until pale and pourable."
+  - "Slice the chicken. Pita, everything piled on, tahini over, parsley and a squeeze of lemon."
 source_url: https://www.skinnytaste.com/chicken-shawarma-sheet-pan-dinner/
 image_url: https://www.skinnytaste.com/wp-content/uploads/2025/09/Chicken-Shawarma-Sheet-Pan-Dinner-8.jpg
 source_name: skinnytaste.com
@@ -38,7 +46,7 @@ flat contact with hot metal is how you get a browned face instead of pale floret
 
 1. Rub: 2 tsp cumin, 2 tsp coriander, 1 tsp smoked paprika, 1 tsp turmeric, ½ tsp
    cinnamon, 1 tsp black pepper, 4 grated garlic cloves, 3 tbsp olive oil, big pinch
-   salt. Half onto the chicken, half onto the cauliflower.
+   salt. Half onto the cauliflower; the rest whisked with ½ cup yogurt onto the chicken.
 2. Oven 425°F. Cauliflower broken into large flat-faced florets, cut-side down on the
    pan. Red onion in thick wedges tucked around. Chicken on a second pan.
 3. Both in, 30–35 minutes. Don't stir the cauliflower.

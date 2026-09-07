@@ -6,7 +6,7 @@ keeps_weeks: 8
 storage: airtight jar, room temperature
 active_time: 15
 ingredients:
-  - 1 bag raw hazelnuts [pantry]
+  - 1 bag raw hazelnuts {1 cup} [pantry]
 pantry: [granulated sugar, flaky salt, butter]
 tags: [nutty, crunchy, workhorse]
 pairs_with: [vanilla-cinnamon, miso-caramel, orange-cocoa]

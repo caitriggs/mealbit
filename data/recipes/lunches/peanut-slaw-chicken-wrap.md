@@ -17,11 +17,18 @@ ingredients:
   - 1 bunch cilantro [produce]
   - 1 bunch scallions [produce]
   - 2 cups shredded rotisserie chicken || any leftover cooked chicken [protein]
-  - 1 jar dry-roasted peanuts [pantry]
-  - 1 package large flour tortillas [bakery]
+  - 1 jar dry-roasted peanuts {¼ cup} [pantry]
+  - 1 package large flour tortillas {2} [bakery]
   - 3 limes [produce]
   - 1 carrot [produce]
-pantry: [peanut butter, soy sauce, rice vinegar, toasted sesame oil, honey, ginger, garlic, chili flakes, sriracha]
+pantry: [peanut butter, soy sauce, rice vinegar, toasted sesame oil, honey, ginger, garlic, sriracha]
+steps:
+  - "Dressing: 3 tbsp peanut butter, 1 tbsp soy sauce, 1 tbsp rice vinegar, 2 tsp sesame oil."
+  - "Add 1 tsp honey, 1 tsp ginger, 1 grated garlic clove, sriracha; loosen with 1–2 tsp water."
+  - "Half the cabbage and the carrot shredded thin; toss with dressing and juice of 1 lime."
+  - "Fold the chicken through."
+  - "Warm 2 tortillas. Filling in a line; ¼ cup peanuts crushed over, cilantro, scallions."
+  - "Roll tight, wrap in foil, cut on the diagonal."
 per_plate: [cilantro]
 photo_url: https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
 photo_credit: Pixabay / Pexels

@@ -6,8 +6,8 @@ keeps_weeks: 6
 storage: airtight jar, room temperature
 active_time: 6
 ingredients:
-  - 1 package halva [specialty]
-  - 1 bag sesame seeds [pantry]
+  - 1 package halva {3 oz} [specialty]
+  - 1 bag sesame seeds {¼ cup} [pantry]
 pantry: [flaky salt]
 tags: [nutty, sweet, unusual]
 pairs_with: [maple-tahini, miso-caramel, cardamom-honey]

@@ -1,14 +1,15 @@
 # Who this newsletter is for. Everything household-specific lives here and in stores.yml;
 # nothing in mealbit/ or data/ should need editing to run this for a different home.
 #
-# As shipped this is a PLACEHOLDER household — Ada and Sam. The onboarding survey
-# (.claude/skills/mealbit-onboarding) rewrites it from your answers; you never edit it.
+# As shipped this is the STARTER household — Cait and Max, whose kitchen this was written
+# for. The onboarding survey (.claude/skills/mealbit-onboarding) rewrites it from your
+# answers; you never edit it.
 
 household:
   # Who eats. Dinners are cooked to serve 4 — two at the table, two as next-day lunches —
   # so this list is assumed to be TWO people. More than two is not supported yet; see
   # docs/household-model.md for why it is not just a number.
-  eaters: [Ada, Sam]
+  eaters: [Cait, Max]
   timezone: America/Los_Angeles
 
 send:
@@ -35,7 +36,7 @@ diet:
   # the end, and every recipe that buys one has to be complete without it. A test holds
   # that. Keyed by the eater who does NOT get it.
   per_plate:
-    Sam: [cilantro, raw tomatoes]
+    Max: [cilantro, raw tomatoes, arugula]
   protein_preference: [chicken, pork, beef, turkey]
   monthly_caps:
     whitefish: 2

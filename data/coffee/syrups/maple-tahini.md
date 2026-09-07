@@ -6,8 +6,8 @@ keeps_weeks: 3
 storage: fridge — separates, shake or stir before use
 active_time: 5
 ingredients:
-  - 1 jar tahini [pantry]
-  - 1 bottle maple syrup [pantry]
+  - 1 jar tahini {¼ cup} [pantry]
+  - 1 bottle maple syrup {¼ cup} [pantry]
 pantry: [cinnamon, vanilla extract, flaky salt]
 tags: [nutty, dairy-free]
 pairs_with: [espresso, hot, oat-milk, sesame-crumble, halva-crumble]

@@ -52,7 +52,7 @@ either:
 
 A test enforces this, because it was documented and unenforced once, and a salad shipped
 with raw tomato juice *as the dressing*. The email and the card name the person:
-"cilantro — not on Sam's plate."
+"cilantro — not on Max's plate."
 
 ## Protein
 

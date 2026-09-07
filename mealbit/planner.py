@@ -573,6 +573,11 @@ def route_to_stores(recipes, month):
             for st in stores:
                 if not C.takes(st, kind):
                     continue
+                # The shop takes this kind of thing but has said it never carries this
+                # particular thing: move on, line intact. The catch-all takes everything
+                # and validation makes sure there is one.
+                if C.never_stocks(st, item["key"]) and C.EVERYTHING not in st["takes"]:
+                    continue
                 if st.get("kind") == "farmers_market":
                     ok, why = L.market_has(item["key"], month, avail, seasonal)
                     if not ok:

@@ -17,13 +17,20 @@ ingredients:
   - 2 celery stalks [produce]
   - 1 bunch scallions [produce]
   - 1 rotisserie chicken || 2 lb poached chicken thighs [protein]
-  - 1 can diced green chiles [pantry]
-  - 1 jar pickled jalapeños [pantry]
-  - 1 package sturdy bread or tortillas [bakery]
-  - 1 bag pepitas [pantry]
+  - 1 can diced green chiles {whole} [pantry]
+  - 1 jar pickled jalapeños {2 tbsp} [pantry]
+  - 1 package sturdy bread or tortillas {5 pieces} [bakery]
+  - 1 bag pepitas {⅓ cup} [pantry]
   - 2 limes [produce]
   - 1 avocado [produce]
 pantry: [mayonnaise, Greek yogurt, cumin, coriander, smoked paprika, garlic, kosher salt, black pepper]
+steps:
+  - "Chicken pulled into shreds while warm; salt it right away."
+  - "Dressing: ½ cup mayonnaise, ½ cup Greek yogurt, the can of green chiles, juice of 1 lime."
+  - "Add 2 tbsp chopped pickled jalapeños, 1 tbsp brine, 2 tsp cumin, 1 tsp coriander."
+  - "Add 1 tsp smoked paprika, 2 grated garlic cloves, lots of black pepper."
+  - "Fold in chicken, sliced celery and scallions. Taste for salt and lime. Five boxes."
+  - "Cilantro, ⅓ cup pepitas, avocado packed apart. Desk: toasted bread or a tortilla, lime."
 per_plate: [cilantro]
 photo_url: https://images.pexels.com/photos/11256807/pexels-photo-11256807.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
 photo_credit: Tolga Aslantürk / Pexels

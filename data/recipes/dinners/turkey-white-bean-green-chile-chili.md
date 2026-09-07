@@ -17,14 +17,22 @@ ingredients:
   - 2 poblano peppers || 1 green bell + 1 jalapeño [produce]
   - 1 bunch scallions [produce]
   - 1 lb ground turkey (dark meat) [protein]
-  - 2 cans cannellini or great northern beans [pantry]
-  - 1 can diced green chiles [pantry]
-  - 1 bag cornmeal || 1 box cornbread mix [pantry]
-  - 1 container sour cream [dairy]
-  - 1 block Monterey Jack [dairy]
+  - 2 cans cannellini or great northern beans {whole} [pantry]
+  - 1 can diced green chiles {whole} [pantry]
+  - 1 bag cornmeal || 1 box cornbread mix {1 cup} [pantry]
+  - 1 container sour cream {½ cup} [dairy]
+  - 1 block Monterey Jack {1 cup grated} [dairy]
   - 3 limes [produce]
-  - 1 jar pickled jalapeños [pantry]
+  - 1 jar pickled jalapeños {¼ cup} [pantry]
+  - 1 carton buttermilk || whole milk {1 cup} [dairy]
+  - 1 dozen eggs {2} [protein]
 pantry: [cumin, coriander, oregano, garlic, yellow onions, stock, neutral oil, butter, kosher salt, black pepper, flour, baking powder, sugar]
+steps:
+  - "Char poblanos black; steam 5 min covered, peel, chop. Brown turkey in neutral oil; out."
+  - "Yellow onion 8 min. Garlic, 2 tbsp cumin, 1 tbsp coriander, 1 tbsp oregano, 1 min."
+  - "Beans, poblanos, green chiles, 4 cups stock, turkey back. Simmer 25 min; lime, salt."
+  - "Cornbread: 1 cup each cornmeal and flour, 1 tbsp baking powder, 2 tbsp sugar, 1 tsp salt."
+  - "Stir in 1 cup buttermilk, 2 eggs, 6 tbsp melted butter. Buttered skillet, 400°F, 22 min."
 per_plate: [cilantro]
 photo_url: https://images.pexels.com/photos/32667184/pexels-photo-32667184.jpeg?auto=compress&cs=tinysrgb&h=650&w=940
 photo_credit: Magda Ehlers / Pexels

@@ -34,7 +34,7 @@ sys.path.insert(0, ROOT)
 
 PLACEHOLDER_ADDRESSES = {"you@gmail.com", "household@example.com", "you@example.com",
                          "eater@example.com"}
-PLACEHOLDER_NAMES = {"Ada", "Sam"}
+PLACEHOLDER_NAMES = {"Cait", "Max"}     # the starter household the template ships with
 
 
 def _origin():

@@ -6,7 +6,7 @@ keeps_weeks: 5
 storage: airtight jar, room temperature
 active_time: 20
 ingredients:
-  - 1 bag rolled oats [pantry]
+  - 1 bag rolled oats {½ cup} [pantry]
 pantry: [brown sugar, butter, cinnamon, cardamom, nutmeg, all-purpose flour, flaky salt]
 tags: [cozy, bakery, autumn]
 pairs_with: [brown-sugar-cinnamon, vanilla-cinnamon, miso-caramel]

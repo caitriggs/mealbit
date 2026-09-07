@@ -128,11 +128,11 @@ Write `config/onboarded.yml` — overwrite, never append:
 ```yaml
 repo: their-github-name/their-repo   # exactly what `git remote get-url origin` names
 onboarded: 2026-09-06                # today
-for: [Ada, Sam]                      # first names only
+for: [Cait, Max]                     # first names only
 by: Claude, from the setup survey
 ```
 
-Commit everything together ("Set up Mealbit for Ada and Sam"). Then the **only** thing
+Commit everything together ("Set up Mealbit for Cait and Max"). Then the **only** thing
 you say is their first week, in this shape and nothing more:
 
 > Here's your first week, starting Monday the 14th:
