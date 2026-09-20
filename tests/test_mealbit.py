@@ -359,9 +359,10 @@ def test_exclusions_actually_exclude():
               f"{r['slug']} survived exclusion but still contains an excluded ingredient")
     check(len(kept) < len(pool), "exclusion list removed nothing at all — it is not working")
 
-    # And it must not be over-eager: an empty list excludes nothing.
+    # And it must not be over-eager: an empty list excludes nothing. A dish the household
+    # has retired with a verdict is out for a different reason and is not counted here.
     none_cfg = dict(L.load_household(), exclude_ingredients=[])
-    check(all(not P._excluded(r, none_cfg) for r in pool),
+    check(all(not P._excluded(r, none_cfg) for r in pool if not L.is_retired(r)),
           "an empty exclusion list should keep every recipe")
 
 
@@ -2078,7 +2079,11 @@ def test_shipped_library_carries_no_verdicts():
                             text=True, cwd=ROOT).stdout.strip()
     import yaml
     up = yaml.safe_load(open(os.path.join(ROOT, "config", "upstream.yml"))).get("repo", "")
-    if up and up.lower() not in origin.lower():
+    # Compare the repository PATH, not a substring: "caitriggs/mealbit" is inside
+    # "caitriggs/mealbit-capperfam", and a substring test made a household's first
+    # verdict fail its own build.
+    origin_repo = "/".join(re.sub(r"\.git$", "", origin.rstrip("/")).replace(":", "/").split("/")[-2:]).lower()
+    if up and origin_repo != up.lower():
         return   # a fork: its verdicts are its own
     for r in L.load_dinners() + L.load_lunches():
         check(r.get("rating") is None and not r.get("feedback"),
