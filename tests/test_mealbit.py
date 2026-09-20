@@ -1501,6 +1501,13 @@ def test_a_year_without_failing():
     protein or cuisine inside a week, always holds the comfort and effort balance.
     """
     real = L.load_history()
+    # P.record() also clears data/this-week.yml, exactly as a real send does. This
+    # simulation ran on the send workflow's own checkout, cleared the household's
+    # pins, and the send that followed planned a different week than the one asked
+    # for. Put the file back the way it was found.
+    import shutil
+    bak = L.THIS_WEEK + ".bak"
+    shutil.copy(L.THIS_WEEK, bak)
     try:
         L.save_history({"weeks": []})
         d = date(2026, 8, 29)
@@ -1528,6 +1535,7 @@ def test_a_year_without_failing():
               "an excluded recipe was served during the year-long simulation")
     finally:
         L.save_history(real)
+        shutil.move(bak, L.THIS_WEEK)
 
 
 # ---------------------------------------------------------------- rendering

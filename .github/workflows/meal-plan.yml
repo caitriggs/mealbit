@@ -99,6 +99,13 @@ jobs:
         # stop the send here, not produce a broken newsletter in the family's inbox.
         run: python tests/test_mealbit.py
 
+      - name: Put back anything the tests touched
+        # The suite simulates sends, which record history and clear this-week.yml.
+        # It restores both, but a send ran once on a checkout where it had not, and
+        # the household's pins for the week were gone. The send reads the files as
+        # committed, full stop.
+        run: git checkout -- data/this-week.yml data/history.json
+
       - name: Resolve run parameters
         id: cfg
         run: |
