@@ -2001,7 +2001,8 @@ def test_this_week_refuses_a_typo():
               "tools/this_week.py accepted an unknown slug")
         r = subprocess.run([sys.executable, "tools/this_week.py", "--skip", d,
                             "--today", "2026-09-05"], capture_output=True, text=True, cwd=ROOT)
-        check(r.returncode == 0 and L.load_overrides() == {"week_of": start, "skip": [d], "pin": []},
+        ov = L.load_overrides()
+        check(r.returncode == 0 and (ov["week_of"], ov["skip"], ov["pin"]) == (start, [d], []),
               f"tools/this_week.py did not record a valid skip: {r.stdout}{r.stderr}")
     _with_this_week(body)
 
@@ -2017,7 +2018,8 @@ def test_a_real_send_clears_this_week():
         R.render(P.build_plan(today))
         check(L.load_overrides()["skip"], "a preview cleared this-week.yml")
         P.record(P.build_plan(today))
-        check(L.load_overrides() == {"week_of": None, "skip": [], "pin": []},
+        ov = L.load_overrides()
+        check(ov["week_of"] is None and not ov["skip"] and not ov["pin"] and not ov["skip_market"],
               "record() did not clear this week's request")
         # A request for a LATER week survives a send for this one.
         L.save_overrides(start + timedelta(days=7), ["x"], [])
