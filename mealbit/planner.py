@@ -540,7 +540,7 @@ def _strip_fallback(line):
     return head + tag
 
 
-def route_to_stores(recipes, month):
+def route_to_stores(recipes, month, skip_market=False):
     """
     Decide which shop each ingredient comes from, per the household's config/stores.yml.
 
@@ -554,6 +554,11 @@ def route_to_stores(recipes, month):
 
     Exactly one store takes `everything`, which config validation enforces, so every
     ingredient lands somewhere. Nothing silently vanishes.
+
+    `skip_market` is the household saying "we're not going this week" (data/this-week.yml):
+    the farmers market is passed over entirely and produce lands at the next store that
+    takes it, fallbacks dropped, with no per-item explanation — there is nothing to
+    correct in the model.
 
     Returns (routed_recipes, moves). Each routed recipe is a shallow copy carrying
     `_by_store: {store_id: [line, ...]}`; the originals are not mutated.
@@ -579,6 +584,9 @@ def route_to_stores(recipes, month):
                 if C.never_stocks(st, item["key"]) and C.EVERYTHING not in st["takes"]:
                     continue
                 if st.get("kind") == "farmers_market":
+                    if skip_market:
+                        bounced = True
+                        continue
                     ok, why = L.market_has(item["key"], month, avail, seasonal)
                     if not ok:
                         moves.append({"item": item["name"], "why": why,
@@ -902,10 +910,14 @@ def build_plan(today, seed=None, box=None):
     # Decide the shop for every ingredient BEFORE consolidating, so the store lists and
     # their quantities are right — and route the dinners and lunches themselves, so the
     # printed cards tag each line with the same shop the list sends you to.
-    dinners, m1 = route_to_stores(dinners, start.month)
-    lunches, m2 = route_to_stores(lunches, start.month)
-    drinks, m3 = route_to_stores([c["drink"] for c in coffee], start.month)
-    to_make, m4 = route_to_stores(to_make, start.month)
+    # "We're missing the market this week": every produce line goes to the next store
+    # that takes it, and the email says where instead of listing the stalls.
+    raw_ov = L.load_overrides()
+    skip_market = bool(raw_ov.get("skip_market")) and raw_ov["week_of"] == start
+    dinners, m1 = route_to_stores(dinners, start.month, skip_market)
+    lunches, m2 = route_to_stores(lunches, start.month, skip_market)
+    drinks, m3 = route_to_stores([c["drink"] for c in coffee], start.month, skip_market)
+    to_make, m4 = route_to_stores(to_make, start.month, skip_market)
     for c, d in zip(coffee, drinks):
         c["drink"] = d
     moves = _unique_moves(m1 + m2 + m3 + m4)
@@ -933,6 +945,8 @@ def build_plan(today, seed=None, box=None):
         "boxed": [d for d in dinners if d.get("external")],
         "market": L.load_market_vendors(),
         "market_store": C.market_store(),
+        "skip_market": skip_market,
+        "produce_store": C.produce_fallback_store(),
         "stores": C.stores(),
         "market_tips": _market_tips(season),
         "coffee": coffee,

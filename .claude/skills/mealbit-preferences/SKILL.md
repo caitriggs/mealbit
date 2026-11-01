@@ -26,6 +26,7 @@ edit; they never do. Every change ends with the tests, a render, a look, and a c
 | "Trader Joe's doesn't carry X" | that store's `never:` list in `config/stores.yml` | the line moves to the next store; matched by name |
 | "we always have soy sauce" | `data/pantry.md` | be sparing — anything in there is a line the shopper never sees |
 | "not the pulled pork this week" / "we loved it" / "add a katsu" | not a preference — a dish | `.claude/skills/mealbit-recipes`: one-week skips and pins, verdicts, new recipes, the seasonal refresh |
+| "we're skipping the market this weekend" | not a preference — one week | `python tools/this_week.py --skip-market`, commit; produce routes to the next store that takes it and the email says so. Adding a store that takes produce after the market (a Whole Foods, say) is the preference half, in `config/stores.yml` |
 
 **Two eaters is not a preference.** If they ask for a third person, explain that dinners
 serve four as two-plus-two-lunches and the whole plan is built on two; point at

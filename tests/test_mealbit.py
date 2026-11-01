@@ -1930,6 +1930,43 @@ def test_this_week_skips_and_pins_are_honoured():
     _with_this_week(body)
 
 
+def test_skipping_the_market_reroutes_produce():
+    """
+    "We're missing the farmers market this weekend." One flag in this-week.yml, for that
+    week only: no produce line lands at the market, nothing is explained item by item,
+    the next store that takes produce gets it all, and the email says so in place of the
+    stall notes. Any other week is untouched.
+    """
+    from mealbit import config as C
+    ms = C.market_store()
+    if not ms:
+        print("      (no farmers market in this config — skipped)")
+        return
+
+    def body():
+        today = date(2026, 11, 1)
+        start = P.week_start(today)
+        L.save_overrides(start, [], [], skip_market=True)
+        plan = P.build_plan(today)
+        check(plan["skip_market"], "the plan did not see skip_market for its own week")
+        for grp in plan["shopping"]:
+            if grp.get("store") == ms["id"] or grp.get("id") == ms["id"]:
+                check(not grp.get("lines"), "produce still landed at the skipped market")
+        check(not plan["market_moves"], "a skipped market should not explain each item it lacks")
+        fallback = C.produce_fallback_store()
+        check(fallback and fallback["id"] != ms["id"], "no store after the market takes produce")
+        routed = [line for d in plan["dinners"] if not d.get("external")
+                  for line in d["_by_store"].get(fallback["id"], [])]
+        check(routed, f"no produce reached {fallback['name']} with the market skipped")
+        html = R.render(plan)
+        check("No market this" in html and fallback["name"] in html,
+              "the email should say the market is skipped and where produce is instead")
+        # The flag is for one week. The following week plans as usual.
+        later = P.build_plan(today + timedelta(days=7))
+        check(not later["skip_market"], "skip_market leaked into the following week")
+    _with_this_week(body)
+
+
 def test_this_week_refuses_a_typo():
     """A misspelt slug must fail the run, not silently plan the dish someone asked to skip."""
     def body():

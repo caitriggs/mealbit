@@ -209,7 +209,9 @@ Break these and the newsletter stops doing its job, even if it still renders:
 15. **A request is a file, a verdict is a rating, and neither is a diet rule.** "Not the
     pulled pork this week" is `data/this-week.yml` — skips and pins for **one** named
     Monday, written by `tools/this_week.py`, read by the planner, **cleared by the real
-    send** and committed by the workflow. "Never again" is `rating:` on the recipe, written
+    send** and committed by the workflow. So is `skip_market: true` (`--skip-market`):
+    the week they miss the market, produce routes to the next store that takes it and
+    the email says so instead of listing the stalls; a model correction it is not. "Never again" is `rating:` on the recipe, written
     by `tools/verdict.py`; **1–2 retires the dish** until re-rated, 3+ stays, `null` is no
     opinion, and `feedback:` keeps every verdict in their words. The scheduled send takes
     no arguments, so the file is the only way a Tuesday request reaches Saturday. A slug
@@ -265,7 +267,7 @@ Break these and the newsletter stops doing its job, even if it still renders:
 ## Before you commit
 
 ```bash
-python tests/test_mealbit.py     # 85 tests, including a 52-week rotation simulation
+python tests/test_mealbit.py     # 86 tests, including a 52-week rotation simulation
 python -m mealbit.meal_plan      # renders out/meal_plan.html + out/cards.pdf
 python tools/screenshot.py       # 412px light + dark
 python tools/card_fit.py         # every card in the library against its half-sheet
