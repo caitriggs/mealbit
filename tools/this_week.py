@@ -32,6 +32,9 @@ def main(argv=None):
                     help="leave this dinner or lunch out this week")
     ap.add_argument("--pin", action="append", default=[], metavar="SLUG",
                     help="put this dinner on the menu this week")
+    ap.add_argument("--skip-market", action="store_true",
+                    help="not going to the farmers market this week; produce moves to the next store")
+    ap.add_argument("--market", action="store_true", help="going after all; undo --skip-market")
     ap.add_argument("--clear", action="store_true", help="forget every request")
     ap.add_argument("--today", default=None, help="YYYY-MM-DD; the week is the Monday after")
     a = ap.parse_args(argv)
@@ -45,10 +48,11 @@ def main(argv=None):
         print("cleared data/this-week.yml")
         return 0
 
-    if not a.skip and not a.pin:
+    if not a.skip and not a.pin and not a.skip_market and not a.market:
         ov = L.load_overrides()
         if ov["week_of"]:
-            print(f"week of {ov['week_of']}:  skip {ov['skip'] or '-'}   pin {ov['pin'] or '-'}")
+            print(f"week of {ov['week_of']}:  skip {ov['skip'] or '-'}   pin {ov['pin'] or '-'}"
+                  + ("   no market this week" if ov["skip_market"] else ""))
         else:
             print("nothing set for this week")
         print("\ndinners:")
@@ -77,11 +81,18 @@ def main(argv=None):
     # Same week: merge with what is already there. A different week: start over — the
     # old request was for a week that has passed or was never sent.
     ov = L.load_overrides()
-    skip, pin = ([], []) if ov["week_of"] != start else (ov["skip"], ov["pin"])
+    same = ov["week_of"] == start
+    skip, pin = (ov["skip"], ov["pin"]) if same else ([], [])
+    skip_market = ov["skip_market"] if same else False
     skip = [s for s in skip + a.skip if s not in a.pin]
     pin = [s for s in pin + a.pin if s not in a.skip]
-    L.save_overrides(start, skip, pin)
-    print(f"week of {start}:  skip {skip or '-'}   pin {pin or '-'}")
+    if a.skip_market:
+        skip_market = True
+    if a.market:
+        skip_market = False
+    L.save_overrides(start, skip, pin, skip_market)
+    print(f"week of {start}:  skip {skip or '-'}   pin {pin or '-'}"
+          + ("   no market this week" if skip_market else ""))
     print("written to data/this-week.yml — render to see the week, then commit it")
     return 0
 

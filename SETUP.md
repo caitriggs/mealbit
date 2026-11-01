@@ -26,7 +26,7 @@ Clone it and install:
 git clone <your fork>
 cd mealbit
 pip install -r requirements.txt
-python tests/test_mealbit.py         # 85 tests; they pass on the template as shipped
+python tests/test_mealbit.py         # 86 tests; they pass on the template as shipped
 ```
 
 ## 2. Say who you are — `config/household.yml`

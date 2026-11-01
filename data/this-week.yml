@@ -6,3 +6,6 @@
 week_of: null
 skip: []
 pin: []
+# true when the household is missing the market this week: produce routes to the next
+# store that takes it, and the email says so instead of listing the stalls.
+skip_market: false

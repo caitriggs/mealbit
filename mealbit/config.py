@@ -168,6 +168,17 @@ def market_store():
     return next((s for s in stores() if s.get("kind") == "farmers_market"), None)
 
 
+def produce_fallback_store():
+    """The first store after the farmers market that takes produce — where a lemon, or a
+    whole skipped market, lands. The catch-all if nothing else does."""
+    for s in stores():
+        if s.get("kind") == "farmers_market":
+            continue
+        if takes(s, "produce"):
+            return s
+    return None
+
+
 def takes(store, kind):
     return EVERYTHING in store["takes"] or kind in store["takes"]
 

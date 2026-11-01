@@ -30,6 +30,7 @@ one week it names and the real send clears it.
 2. **Library first.** Write the skip and re-render:
    ```bash
    python tools/this_week.py --skip <slug>          # the week is the Monday after today
+   python tools/this_week.py --skip-market          # "we're missing the market this weekend": produce moves to the next store that takes it; --market undoes it
    python -m mealbit.meal_plan                      # the plan re-picks around the gap
    ```
    The planner fills the slot from the library under every rule (season, cooldown, no

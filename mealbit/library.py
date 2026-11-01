@@ -713,12 +713,16 @@ _THIS_WEEK_TEMPLATE = """\
 week_of: {week_of}
 skip: {skip}
 pin: {pin}
+# true when the household is missing the market this week: produce routes to the next
+# store that takes it, and the email says so instead of listing the stalls.
+skip_market: {skip_market}
 """
 
 
 def load_overrides():
-    """{"week_of": date|None, "skip": [slugs], "pin": [slugs]} — empty when nothing is set."""
-    empty = {"week_of": None, "skip": [], "pin": []}
+    """{"week_of": date|None, "skip": [slugs], "pin": [slugs], "skip_market": bool} —
+    empty when nothing is set."""
+    empty = {"week_of": None, "skip": [], "pin": [], "skip_market": False}
     if not os.path.exists(THIS_WEEK):
         return empty
     raw = yaml.safe_load(open(THIS_WEEK, encoding="utf-8")) or {}
@@ -727,17 +731,19 @@ def load_overrides():
         week_of = date.fromisoformat(week_of)
     return {"week_of": week_of,
             "skip": [str(x) for x in (raw.get("skip") or [])],
-            "pin": [str(x) for x in (raw.get("pin") or [])]}
+            "pin": [str(x) for x in (raw.get("pin") or [])],
+            "skip_market": bool(raw.get("skip_market", False))}
 
 
-def save_overrides(week_of, skip=(), pin=()):
+def save_overrides(week_of, skip=(), pin=(), skip_market=False):
     def _list(xs):
         xs = list(dict.fromkeys(xs))
         return "[" + ", ".join(xs) + "]"
     with open(THIS_WEEK, "w", encoding="utf-8") as f:
         f.write(_THIS_WEEK_TEMPLATE.format(
             week_of=week_of.isoformat() if week_of else "null",
-            skip=_list(skip), pin=_list(pin)))
+            skip=_list(skip), pin=_list(pin),
+            skip_market="true" if skip_market else "false"))
 
 
 def clear_overrides():

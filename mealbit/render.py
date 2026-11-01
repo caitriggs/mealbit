@@ -317,7 +317,8 @@ def _market(plan):
     moved = ""
     if moves:
         moved = (f'<tr><td style="padding:10px 20px 0;">'
-                 + _p('<b class="c-ink" style="color:' + INK + ';">Buy at QFC instead:</b> '
+                 + _p('<b class="c-ink" style="color:' + INK + ';">Buy at '
+                      + E((plan.get("produce_store") or {}).get("name") or "the shop") + ' instead:</b> '
                       + ", ".join(f'{E(m["item"])} <span style="color:' + MUTE + ';">('
                                   + E(m["why"].split("—")[0].strip()) + ')</span>'
                                   for m in moves), size=11)
@@ -344,6 +345,15 @@ def _market(plan):
     ms = plan.get("market_store")
     if not ms:
         return ""           # this household shops no farmers market; nothing to say
+    if plan.get("skip_market"):
+        # Not going this week. Say where the produce is on the list instead, and still
+        # show what is in season — that is the guide to buying well at a supermarket.
+        ps = plan.get("produce_store") or {}
+        return (
+            section(f"🌿 No market this {plan['shop_day'].strftime('%A')}",
+                    f'Produce is on the list under {E(ps.get("name") or "the shop")} this week. '
+                    f'In season now, so worth looking for there:')
+            + f'<tr><td style="padding:8px 20px 0;">{chips}</td></tr>')
     where = " &middot; ".join(E(x) for x in (ms.get("when"), ms.get("where")) if x)
     return (
         section(f"🌿 At the market {plan['shop_day'].strftime('%A')}",
@@ -357,7 +367,7 @@ def _prep(plan):
         f'<tr><td class="c-ink" style="font:400 12px Arial;color:{INK};padding:5px 0;'
         f'line-height:1.6;">&bull;&nbsp; {_md_bold(b)}</td></tr>' for b in plan["prep"])
     return (
-        section("⏱️ Sunday prep", 'One block, after the market.')
+        section("⏱️ Sunday prep", 'One block, after the shop.' if plan.get("skip_market") else 'One block, after the market.')
         + f'<tr><td style="padding:6px 20px 0;"><table role="presentation" width="100%" '
           f'cellpadding="0" cellspacing="0">{items}</table></td></tr>')
 
