@@ -34,3 +34,17 @@
   — for `white-bean-smash-toast`. brothy beans ladled onto toast; ours are smashed onto it. Also already the source for the `brothy-white-beans-kale` dinner, which it fits exactly — two cards would have carried the same photo and the same QR.
 - <https://www.davidlebovitz.com/pickled-chard-stems-swiss-recipe/>
   — for `bbq-pulled-pork-cheesy-grits`. PICKLED CHARD stems, a condiment. Ours is pulled pork over grits; the chard and the pickled Fresnos are the garnish. The two rarest title words were both garnish words, and the slug carried both — so the matcher now also requires a word from the title's head, before the first "with" or "over".
+- <https://www.skinnytaste.com/maple-dijon-sheet-pan-chicken/>
+  — for `sheet-pan-sausage-brussels-apples`. a maple-Dijon sheet pan of CHICKEN thighs. Ours is Italian sausage with Brussels sprouts and apples — same pan, same glaze idea, wrong protein, and the page title says chicken.
+- <https://alexandracooks.com/2013/02/26/honey-soy-chicken-drumsticks-thighs-or-wings/>
+  — for `korean-braised-chicken-potatoes`. oven-BAKED honey-soy DRUMSTICKS. Ours is a gochujang braise of thighs with potatoes and carrots in a pot — no honey, no oven, no vegetables in theirs.
+- <https://www.wellplated.com/sheet-pan-chicken-sweet-potatoes-apples-brussels-sprouts/>
+  — for `sheet-pan-sausage-brussels-apples`. sheet pan CHICKEN with SWEET potatoes, apples and sprouts. The second chicken tray offered for a sausage tray; the slug carries every vegetable word and the wrong protein.
+- <https://www.skinnytaste.com/korean-grilled-chicken-breast/>
+  — for `korean-braised-chicken-potatoes`. GRILLED Korean chicken BREAST. Ours is a braise of bone-in thighs with potatoes and carrots in sauce — right cuisine, wrong cut, wrong method, no vegetables.
+- <https://www.skinnytaste.com/baked-chicken-thighs-with-brussels-sprouts-and-sweet-potato/>
+  — for `korean-braised-chicken-potatoes`. one-pot BAKED thighs with Brussels sprouts and SWEET potato — not Korean at all, nothing red in it. Third chicken page offered for this slug; the slug carried `chicken` and `potato` and nothing of the dish.
+- <https://www.skinnytaste.com/braised-chicken-thighs-with-mushrooms-and-leeks/>
+  — for `korean-braised-chicken-potatoes`. braised thighs with MUSHROOMS and LEEKS, a pale French-leaning braise. Right form, wrong everything in the pot: no gochujang, no potatoes, no carrots. Fourth miss for this slug; left on stock photography.
+- <https://www.skinnytaste.com/sheet-pan-meatballs-with-chickpeas-cauliflower-and-butternut-squash/>
+  — for `chickpea-squash-tagine-couscous`. sheet-pan MEATBALLS with chickpeas, cauliflower and squash — a meat traybake. Ours is a vegetarian chickpea and squash tagine over couscous; shares two ingredient words and nothing else.
