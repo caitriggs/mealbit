@@ -298,7 +298,7 @@ def pick_lunches(pool, season, hist, cfg, rng):
         cands = eligible(pool, season, hist, "lunches", cfg, widen, cd)
         prep = [r for r in cands if r.get("lunch_style") == "sunday-prep"]
         asm = [r for r in cands if r.get("lunch_style") == "assembly"]
-        out = _spread(prep, ms["n_prep"], rng) + _spread(asm, ms["n_assembly"], rng)
+        out = _spread(prep, ms["n_prep"], rng, hist) + _spread(asm, ms["n_assembly"], rng, hist)
         if len(out) == ms["n_lunches"]:
             notes = []
             if widen:
@@ -310,10 +310,18 @@ def pick_lunches(pool, season, hist, cfg, rng):
         f"Add files to data/recipes/lunches/.")
 
 
-def _spread(cands, n, rng):
-    """Pick n, preferring distinct proteins, then falling back to any."""
+def _spread(cands, n, rng, hist=None):
+    """
+    Pick n, preferring distinct proteins, then falling back to any.
+
+    Untried first, as for dinners (rule 16): a shuffle alone sent the same two lunches
+    out two weeks running while seven in the library had never been served. The
+    shuffle still decides the order within the untried and the tried.
+    """
     order = list(cands)
     rng.shuffle(order)
+    if hist is not None:
+        order.sort(key=lambda r: L.weeks_since(hist, "lunches", r["slug"]) is not None)
     picked, seen = [], set()
     for r in order:
         if len(picked) == n:
